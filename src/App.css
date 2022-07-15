@@ -36,3 +36,12 @@
     transform: rotate(360deg);
   }
 }
+/* RMP Dashboard */
+.rmpNotiBox{
+  background-color: palevioletred;
+  width:170px;
+  border-radius: 5px;
+  text-align: left;
+  font-size: 18px;
+
+}
