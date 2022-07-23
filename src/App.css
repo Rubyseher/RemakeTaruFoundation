@@ -1,47 +1,82 @@
-.App {
-  text-align: center;
+
+
+/* General */
+
+.floating-img{
+  transform: translateY(-20%);
+  animation: floater 2.5s infinite;
+  transition: ease 0.9s;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+@keyframes floater {
+  0%{transform: translateY(-20%);transition: ease 0.9s;}
+  50%{transform: translateY(20%);transition: ease 0.9s;}
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.react-calendar {
+  border:none !important;
+  border-radius: 7px;
+  -webkit-box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.25);
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.react-calendar__tile--now {
+  background: rgb(239, 210, 239) !important;
+}
+:root {
+  --lightBlue: #f8faff;
+}
+.shadow {
+  -webkit-box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.25);
+}
+.timeSlotBox{
+  background-color: white;
+  border-radius: 10px;
+  padding: 7px 14px;
+  color: black;
+  float:right;
+  font-weight: 500;
+}
+.multiBox{
   color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-/* RMP Dashboard */
-.rmpNotiBox{
-  background-color: palevioletred;
-  width:170px;
-  border-radius: 5px;
+  background-color: rgb(180, 112, 216);
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+  padding: 18px 26px;
+  font-weight: 600;
+  border-radius: 10px;
   text-align: left;
   font-size: 18px;
+}
 
+.hex {
+  display: flex;
+  position: relative;
+  width: 240px;
+  height: 265px;
+  background-color: #03627d;
+  -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+.smallHex{
+  width: 160px;
+  height: 165px;
+}
+.wave{
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat;
+  background-image: url('./img/wave-9.svg');
+}
+/* RMP Dashboard */
+.rmpNotiBox {
+  color: white;
+  background-color: palevioletred;
+  width: 450px;
+  padding: 18px 26px;
+  font-weight: 600;
+  margin: 10px;
+  border-radius: 10px;
+  text-align: left;
+  font-size: 18px;
 }
