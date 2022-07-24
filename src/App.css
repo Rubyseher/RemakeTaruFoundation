@@ -3,16 +3,21 @@
 /* General */
 
 .floating-img{
-  transform: translateY(-20%);
-  animation: floater 2.5s infinite;
-  transition: ease 0.9s;
+	transform: translatey(0px);
+	animation: float 6s ease-in-out infinite;
 }
 
-@keyframes floater {
-  0%{transform: translateY(-20%);transition: ease 0.9s;}
-  50%{transform: translateY(20%);transition: ease 0.9s;}
+@keyframes float {
+	0% {
+		transform: translatey(0px);
+	}
+	50% {
+		transform: translatey(-10px);
+	}
+	100% {
+		transform: translatey(0px);
+	}
 }
-
 .react-calendar {
   border:none !important;
   border-radius: 7px;
