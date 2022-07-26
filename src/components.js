@@ -41,10 +41,11 @@ export const RmpNotification = () => {
 
 export const PatientsToday= () => {
     return (
-        <div className="rmpNotiBox shadow">
+        <div className="patientTodayBox shadow">
             <span className="timeSlotBox shadow">10:00 pm - 11:00 pm</span>
-            Dr.Singh singh<br />
-            <span style={{ fontWeight: 400, fontSize: 14 }}>Dentist</span>
+            <img src='/img/meet.png' width={50} className='meetLogo'/>
+            Mr.Singh singh<br />
+            <span style={{ fontWeight: 400, fontSize: 14 }}>44 yrs</span>
         </div>
     )
 }

@@ -18,6 +18,21 @@
 		transform: translatey(0px);
 	}
 }
+.meetLogo{
+  float: right;
+  margin: -5px 5px 0 0;
+}
+.patientTodayBox{
+  color: white;
+  background-color: palevioletred;
+  width: 750px;
+  padding: 18px 26px;
+  font-weight: 600;
+  margin: 10px;
+  border-radius: 10px;
+  text-align: left;
+  font-size: 18px;
+}
 .react-calendar {
   border:none !important;
   border-radius: 7px;

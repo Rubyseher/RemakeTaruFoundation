@@ -15,7 +15,6 @@ function RmpDashboard() {
     }, [])
     return (
         <div>
-
             <div style={{ display: 'flex', backgroundColor: ' var(--lightBlue)', padding: '30px 60px' }}>
                 <div >
                     <h3 >Notification</h3>
