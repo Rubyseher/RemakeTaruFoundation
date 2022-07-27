@@ -3,13 +3,14 @@ import { RmpNotification, MultipurposeButton } from './components'
 import axios from "./axios.js";
 
 function RmpDashboard() {
-    const [Notification, setNotification] = useState([])
+    const [Notification, setNotification] = React.useState([])
 
     useEffect(() => {
         async function fetchData() {
-            const data = await axios.get('/rmp')
-            console.log(data);
-            setNotification(data)
+            const db = await axios.get('/rmp')
+            console.log(db.data);
+
+            setNotification((oldState) => db.data)
         }
         fetchData();
     }, [])
@@ -20,9 +21,8 @@ function RmpDashboard() {
                     <h3 >Notification</h3>
                     <div style={{ display: 'inline-flex', width: '900', flexFlow: 'wrap', overflow: 'scroll', height: '230px' }}>
                         {
-                            Notification.length!=0 && Array.from(Notification).forEach((item, i) => (
-                                <RmpNotification />
-                                // console.log("onw")
+                            Notification && Notification.map((d) => (
+                                <RmpNotification name={d.name} date={d.date} spec={d.specialization} time={d.time}/>
                             ))
                         }
                     </div>
