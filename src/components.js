@@ -1,9 +1,11 @@
-import React from "react";
+import React, { Fragment } from "react";
 import Navbar from 'react-bootstrap/Navbar'
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import App from "./App";
 import "./App.css";
+import CancelIcon from '@mui/icons-material/Cancel';
+import IconButton from '@mui/material/IconButton';
 
 export const NavbarMain = () => {
     return (
@@ -41,12 +43,19 @@ export const RmpNotification = (props) => {
 
 export const PatientsToday = () => {
     return (
-        <div className="patientTodayBox shadow">
-            <span className="timeSlotBox shadow">10:00 pm - 11:00 pm</span>
-            <img src='/img/meet.png' width={50} className='meetLogo' />
-            Mr.Singh singh<br />
-            <span style={{ fontWeight: 400, fontSize: 14 }}>44 yrs</span>
-        </div>
+        <Fragment>
+            {/* <IconButton color="secondary" aria-label="add to shopping cart" className='close_button'>
+                <CancelIcon sx={{ color: 'red', fontSize: 25 }} />
+            </IconButton> */}
+            <div className="patientTodayBox shadow">
+                <span className="timeSlotBox shadow">10:00 pm - 11:00 pm</span>
+                <img src='/img/meet.png' width={50} className='meetLogo' />
+                Mr.Singh singh<br />
+                <span style={{ fontWeight: 400, fontSize: 14 }}>44 yrs</span>
+            </div>
+
+        </Fragment>
+
     )
 }
 
