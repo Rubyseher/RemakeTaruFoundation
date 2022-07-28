@@ -17,7 +17,7 @@ function DocDashboard() {
                     <PatientsToday />
                     <PatientsToday />
                 </div>
-                <img src='./img/Hospital_wheelchair.gif' height='410' style={{ float: 'right', marginTop: '-60px' }} />
+                <img src='./img/Hospital_wheelchair.gif' height='420' style={{ float: 'right', marginTop: '-70px' }} />
 
             </div>
 

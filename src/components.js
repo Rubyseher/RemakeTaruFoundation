@@ -4,9 +4,8 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import App from "./App";
 import "./App.css";
-import CancelIcon from '@mui/icons-material/Cancel';
 import IconButton from '@mui/material/IconButton';
-
+import CancelRoundedIcon from '@mui/icons-material/CancelRounded';
 export const NavbarMain = () => {
     return (
         <Navbar bg="light" variant="light" >
@@ -43,22 +42,44 @@ export const RmpNotification = (props) => {
 
 export const PatientsToday = () => {
     return (
-        <Fragment>
-            {/* <IconButton color="secondary" aria-label="add to shopping cart" className='close_button'>
-                <CancelIcon sx={{ color: 'red', fontSize: 25 }} />
-            </IconButton> */}
-            <div className="patientTodayBox shadow">
-                <span className="timeSlotBox shadow">10:00 pm - 11:00 pm</span>
-                <img src='/img/meet.png' width={50} className='meetLogo' />
-                Mr.Singh singh<br />
-                <span style={{ fontWeight: 400, fontSize: 14 }}>44 yrs</span>
-            </div>
+        <div className="patientTodayBox shadow">
+            <IconButton color="primary" aria-label="add to shopping cart" className='close_button'>
+                <CancelRoundedIcon sx={{ color: 'red', fontSize: 30, backgroundColor: 'white', borderRadius: '30px' }} />
+            </IconButton>
+            <span className="timeSlotBox shadow">10:00 pm - 11:00 pm</span>
+            <IconButton color="primary" className='meetLogo'>
+                <img src='/img/meet.png' width={50}  />
+            </IconButton>
 
-        </Fragment>
+            Mr.Singh singh<br />
+            <span style={{ fontWeight: 400, fontSize: 14 }}>44 yrs</span>
+        </div>
 
     )
 }
-
+// function EasingComponent() {
+//     const { background, rotateX } = useSpring({
+//       from: {
+//         background: '#46e891',
+//         rotateX: 0,
+//       },
+//       to: {
+//         background: '#277ef4',
+//         rotateX: 190,
+//       },
+//       config: {
+//         duration: 2000,
+//         easing: easings.easeInOutQuart,
+//       },
+//       loop: { reverse: false },
+//     })
+  
+//     return (
+//       <animated.div
+//         style={{ background, width: 120, height: 120, borderRadius: 16, rotateX}}
+//       />
+//     )
+//   }
 export const Footer = () => {
     <a href="https://storyset.com/health">Health illustrations by Storyset</a>
 }
