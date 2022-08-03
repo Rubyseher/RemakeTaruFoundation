@@ -1,0 +1,63 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+label {
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  /* display: block; */
+  width: 650px;
+  height: 100px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+
+.card {
+  position: relative;
+  height: 100%;
+  border: none;
+  width: 100%;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transition: all 600ms;
+  transition: all 600ms;
+  z-index: 20;
+  border-radius: 10px;
+
+}
+
+.card div {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  /* text-align: center; */
+  /* line-height: 200px; */
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  /* border-radius: 10px; */
+}
+
+.card .back {
+  /* background: #222; */
+  z-index: 300;
+  color: rgb(0, 0, 0);
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+.card {
+  background: none;
+}
+.back {
+  /* background: rgba(203, 18, 18, 0.734); */
+}
+input {
+  display: none;
+}
+
+:checked + .card {
+  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+}

@@ -27,9 +27,19 @@
   background-color: palevioletred;
   width: 650px;
   padding: 18px 6px 18px 26px;
-  font-weight: 600;
+  font-weight: 600; 
   margin: 0 auto;
-  margin: 12px 0 15px 30px;
+  /* margin: 12px 0 15px 30px; */
+  border-radius: 10px;
+  text-align: left;
+  font-size: 18px;
+}
+.patientTodayBack{
+  padding: 18px 6px 18px 26px;
+  font-weight: 600; 
+  background-color: #ffd3da;
+  margin: 0 auto;
+  /* margin: 12px 0 15px 30px; */
   border-radius: 10px;
   text-align: left;
   font-size: 18px;

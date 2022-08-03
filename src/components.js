@@ -42,7 +42,7 @@ export const RmpNotification = (props) => {
 
 export const PatientsToday = () => {
     return (
-        <div className="patientTodayBox shadow">
+        <div className="patientTodayBox shadow" >
             <IconButton color="primary" aria-label="add to shopping cart" className='close_button'>
                 <CancelRoundedIcon sx={{ color: 'red', fontSize: 30, backgroundColor: 'white', borderRadius: '30px' }} />
             </IconButton>
@@ -53,6 +53,16 @@ export const PatientsToday = () => {
 
             Mr.Singh singh<br />
             <span style={{ fontWeight: 400, fontSize: 14 }}>44 yrs</span>
+        </div>
+
+    )
+}
+
+export const PatientsTodayBack = () => {
+    return (
+        <div className="patientTodayBack">
+            Are you sure you want to cancel the appointment?<br />
+            Yes
         </div>
 
     )
