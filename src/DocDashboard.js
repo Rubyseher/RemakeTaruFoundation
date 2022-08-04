@@ -21,6 +21,27 @@ function DocDashboard() {
                                 <div class="back"> <PatientsTodayBack /></div>
                             </div>
                         </label>
+                        <label>
+                            <input type="checkbox" />
+                            <div class="card">
+                                <div class="front"> <PatientsToday /></div>
+                                <div class="back"> <PatientsTodayBack /></div>
+                            </div>
+                        </label>
+                        <label>
+                            <input type="checkbox" />
+                            <div class="card">
+                                <div class="front"> <PatientsToday /></div>
+                                <div class="back"> <PatientsTodayBack /></div>
+                            </div>
+                        </label>
+                        <label>
+                            <input type="checkbox" />
+                            <div class="card">
+                                <div class="front"> <PatientsToday /></div>
+                                <div class="back"> <PatientsTodayBack /></div>
+                            </div>
+                        </label>
                     </div>
                     <img src='./img/Hospital_wheelchair.gif' height='420' style={{ float: 'right', marginTop: '-70px' }} />
 

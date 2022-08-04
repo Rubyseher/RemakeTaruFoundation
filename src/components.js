@@ -6,6 +6,8 @@ import App from "./App";
 import "./App.css";
 import IconButton from '@mui/material/IconButton';
 import CancelRoundedIcon from '@mui/icons-material/CancelRounded';
+import Button from '@mui/material/Button';
+import DeleteIcon from '@mui/icons-material/Delete';
 export const NavbarMain = () => {
     return (
         <Navbar bg="light" variant="light" >
@@ -48,7 +50,7 @@ export const PatientsToday = () => {
             </IconButton>
             <span className="timeSlotBox shadow">10:00 pm - 11:00 pm</span>
             <IconButton color="primary" className='meetLogo'>
-                <img src='/img/meet.png' width={50}  />
+                <img src='/img/meet.png' width={50} />
             </IconButton>
 
             Mr.Singh singh<br />
@@ -61,8 +63,11 @@ export const PatientsToday = () => {
 export const PatientsTodayBack = () => {
     return (
         <div className="patientTodayBack">
-            Are you sure you want to cancel the appointment?<br />
-            Yes
+            Cancel the appointment?<br />
+            <Button variant="outlined" startIcon={<DeleteIcon />} color="error"
+                sx={{fontWeight:'bold', borderRadius:'10px',width:'150px',marginTop:'4px',backgroundColor:'white'}}>
+                Yes
+            </Button>
         </div>
 
     )
@@ -83,7 +88,7 @@ export const PatientsTodayBack = () => {
 //       },
 //       loop: { reverse: false },
 //     })
-  
+
 //     return (
 //       <animated.div
 //         style={{ background, width: 120, height: 120, borderRadius: 16, rotateX}}

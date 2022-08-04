@@ -44,6 +44,10 @@
   text-align: left;
   font-size: 18px;
 }
+.patientTodayBack Button:hover{
+  color:rgb(255, 255, 255);
+  background-color: red;
+}
 .react-calendar {
   border:none !important;
   border-radius: 17px;
