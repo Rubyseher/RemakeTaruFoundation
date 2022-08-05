@@ -1,59 +1,72 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import "./App.css";
-import { PatientsToday, PatientsTodayBack } from "./components"
+import EventBusyIcon from '@mui/icons-material/EventBusy';
+import { PatientsToday, PatientsTodayBack, MultipurposeButton } from "./components"
 import './FlipBox.css'
+import axios from './axios.js';
 
 function DocDashboard() {
     const [value, onChange] = useState(new Date());
+
+    const [PatientsList, setPatientsList] = React.useState([])
+
+    useEffect(() => {
+        async function fetchData() {
+            const db = await axios.get('/doc')
+            console.log(db.data);
+
+            setPatientsList((oldState) => db.data)
+        }
+        fetchData();
+    }, [])
+
     return (
-        <div>
-            {
-                <div style={{ display: 'flex', padding: '30px 0px 30px 60px', backgroundColor: ' var(--lightBlue)' }}>
-                    <Calendar onChange={onChange} value={value} class='react-calendar' />
+        <div style={{backgroundColor: ' var(--lightBlue)'}}>
+            <h2 style={{textAlign:'center',paddingTop:'30px'}}>Schedule</h2>
 
-                    <div style={{ display: 'inline-flex', flexFlow: 'wrap', overflow: 'scroll', height: '330px' }}>
-                        <label>
-                            <input type="checkbox" />
-                            <div class="card">
-                                <div class="front"> <PatientsToday /></div>
-                                <div class="back"> <PatientsTodayBack /></div>
-                            </div>
-                        </label>
-                        <label>
-                            <input type="checkbox" />
-                            <div class="card">
-                                <div class="front"> <PatientsToday /></div>
-                                <div class="back"> <PatientsTodayBack /></div>
-                            </div>
-                        </label>
-                        <label>
-                            <input type="checkbox" />
-                            <div class="card">
-                                <div class="front"> <PatientsToday /></div>
-                                <div class="back"> <PatientsTodayBack /></div>
-                            </div>
-                        </label>
-                        <label>
-                            <input type="checkbox" />
-                            <div class="card">
-                                <div class="front"> <PatientsToday /></div>
-                                <div class="back"> <PatientsTodayBack /></div>
-                            </div>
-                        </label>
-                    </div>
-                    <img src='./img/Hospital_wheelchair.gif' height='420' style={{ float: 'right', marginTop: '-70px' }} />
+            <div style={{ display: 'flex', padding: '10px 0px 30px 60px'}}>
+                <Calendar onChange={onChange} value={value} class='react-calendar' />
 
+                <div style={{ display: 'inline-flex', flexFlow: 'wrap', overflow: 'scroll', height: '330px' }}>
+                    <label>
+                        <input type="checkbox" />
+                        <div class="card">
+                            <div class="front"> <PatientsToday /></div>
+                            <div class="back"> <PatientsTodayBack /></div>
+                        </div>
+                    </label>
+                    <label>
+                        <input type="checkbox" />
+                        <div class="card">
+                            <div class="front"> <PatientsToday /></div>
+                            <div class="back"> <PatientsTodayBack /></div>
+                        </div>
+                    </label>
+                    <label>
+                        <input type="checkbox" />
+                        <div class="card">
+                            <div class="front"> <PatientsToday /></div>
+                            <div class="back"> <PatientsTodayBack /></div>
+                        </div>
+                    </label>
+                    <label>
+                        <input type="checkbox" />
+                        <div class="card">
+                            <div class="front"> <PatientsToday /></div>
+                            <div class="back"> <PatientsTodayBack /></div>
+                        </div>
+                    </label>
                 </div>
-            }
-            {/* <label>
-                <input type="checkbox" />
-                <div class="card">
-                    <div class="front"> <PatientsToday /></div>
-                    <div class="back"> <PatientsTodayBack /></div>
-                </div>
-            </label> */}
+                <img src='./img/Hospital_wheelchair-2.gif' height='420' style={{ float: 'right', marginTop: '-70px' }} />
+
+            </div>
+            <div style={{ display: 'flex', justifyContent: 'center', backgroundColor: '#fefaf2' }}>
+                <MultipurposeButton color={'#9879ce'} bg={'#eae1fa'} text={'Publish Free Slots'} />
+                <MultipurposeButton color={'#ee6173'} bg={'#fad7db'} text={'Cancel All Appointments'} />
+                <MultipurposeButton color={'#f5b343'} bg={'#fcefd9'} text={'Show Patient Details'} />
+            </div>
         </div>
     )
 }

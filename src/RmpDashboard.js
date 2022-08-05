@@ -30,11 +30,11 @@ function RmpDashboard() {
                 <img src='./img/doctor.gif' height='380px' style={{ float: 'right',marginTop:'-50px' }} />
             </div>
 
-            <div style={{ display: 'flex' }}>
-                <MultipurposeButton />
-                <MultipurposeButton />
-                <MultipurposeButton />
-                <MultipurposeButton />
+            <div style={{ display: 'flex' ,justifyContent:'center'}}>
+                <MultipurposeButton color={'#9879ce'} text={'Publish Free Slots'}/>
+                <MultipurposeButton color={'#ee6173'} text={'Cancel All Appointments'}/>
+                <MultipurposeButton color={'#f5b343'} text={'Show Patient Details'}/>
+                <MultipurposeButton color={'#56c4ae'} text={'Book Appointments'}/>
             </div>
 
         </div>

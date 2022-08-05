@@ -6,6 +6,7 @@ import App from "./App";
 import "./App.css";
 import IconButton from '@mui/material/IconButton';
 import CancelRoundedIcon from '@mui/icons-material/CancelRounded';
+import MoreTimeIcon from '@mui/icons-material/MoreTime';
 import Button from '@mui/material/Button';
 import DeleteIcon from '@mui/icons-material/Delete';
 export const NavbarMain = () => {
@@ -65,7 +66,7 @@ export const PatientsTodayBack = () => {
         <div className="patientTodayBack">
             Cancel the appointment?<br />
             <Button variant="outlined" startIcon={<DeleteIcon />} color="error"
-                sx={{fontWeight:'bold', borderRadius:'10px',width:'150px',marginTop:'4px',backgroundColor:'white'}}>
+                sx={{ fontWeight: 'bold', borderRadius: '10px', width: '150px', marginTop: '4px', backgroundColor: 'white' }}>
                 Yes
             </Button>
         </div>
@@ -98,10 +99,14 @@ export const PatientsTodayBack = () => {
 export const Footer = () => {
     <a href="https://storyset.com/health">Health illustrations by Storyset</a>
 }
-export const MultipurposeButton = () => {
+export const MultipurposeButton = ({ color, text, bg }) => {
     return (
-        <div className="multiBox" >
-            Book <br />Appointments
+        <div className="multiBox shadow" style={{ backgroundColor: `${color}` }}>
+            <div className='circle-multi'style={{ backgroundColor: `${bg}` }}>
+                <MoreTimeIcon sx={{ color: `${color}`,fontSize:45}} />
+            </div>
+            <p>{text} </p>
+            {/* {text} */}
         </div>
     )
 }
