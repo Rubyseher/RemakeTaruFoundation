@@ -62,6 +62,20 @@
    right: -30px;
    top: -40px;
 }
+.circle-services{
+  position: relative;
+  top: 5px;
+  left: 30px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
+  /* margin-left: 80px; */
+  margin: 0 auto;
+  /* margin: 10px 0px 20px 0px; */
+}
 .circle-multi{
   width: 60px;
   height: 60px;
@@ -78,12 +92,39 @@
   color:white;
   border-radius: 20px;
 }
+.services-container{
+  background-color: white;
+  height: 50px;
+  border-radius: 15px;
+  width: 250px;
+  margin:0 auto;
+  margin-bottom:40px;
+
+  display: flex;
+}
+.title-main{
+  text-align: center;
+  margin:60px 0 40px 0;
+  font-size:40;
+  color:var(--royalBlue);
+}
 .react-calendar__tile--active{
   background: #c0b6f5 !important;
   border-radius: 20px;
 }
 :root {
   --lightBlue: #f8faff;
+  --babyBlue: #ebf2fe;
+  --darkBlue: #4e7de3;
+  --royalBlue: #1b53ac;
+}
+.parallax{
+  background: white;
+  padding: 20;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform:translate(-50%,-50%);
 }
 .shadow {
   -webkit-box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.25);

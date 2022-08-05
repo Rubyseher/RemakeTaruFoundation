@@ -9,6 +9,8 @@ import CancelRoundedIcon from '@mui/icons-material/CancelRounded';
 import MoreTimeIcon from '@mui/icons-material/MoreTime';
 import Button from '@mui/material/Button';
 import DeleteIcon from '@mui/icons-material/Delete';
+import { Parallax, Background } from 'react-parallax';
+
 export const NavbarMain = () => {
     return (
         <Navbar bg="light" variant="light" >
@@ -30,6 +32,30 @@ export const NavbarMain = () => {
                 </Nav>
             </Container>
         </Navbar>
+    )
+}
+
+export const Services = () =>{
+    return(
+        <div className="services-container shadow">
+            <span style={{margin:'12px 0 0 25px'}}><b>Peditratian</b></span>
+            <div className='circle-services' style={{ backgroundColor:'var(--babyBlue)' }}>
+                <MoreTimeIcon sx={{ color:'var(--royalBlue)', fontSize: 25 }} />
+            </div>
+        </div>
+    )
+}
+export const ParallaxContainer = () => {
+    return (
+        <Parallax bgImage='./img/parallaxDoc2.webp' strength={500}
+            bgImageStyle={{ width: '100%' }} style={{ height: '670px' }}>
+            <div style={{ height: 500 }}>
+                <div className='parallax' style={{background:'transparent'}}>
+                    <img src="/img/healthcare.png" width={800} style={{marginTop:'90px'}}/>
+                    {/* <img src="/img/forAll.png" /> */}
+                </div>
+            </div>
+        </Parallax>
     )
 }
 
@@ -102,8 +128,8 @@ export const Footer = () => {
 export const MultipurposeButton = ({ color, text, bg }) => {
     return (
         <div className="multiBox shadow" style={{ backgroundColor: `${color}` }}>
-            <div className='circle-multi'style={{ backgroundColor: `${bg}` }}>
-                <MoreTimeIcon sx={{ color: `${color}`,fontSize:45}} />
+            <div className='circle-multi' style={{ backgroundColor: `${bg}` }}>
+                <MoreTimeIcon sx={{ color: `${color}`, fontSize: 45 }} />
             </div>
             <p>{text} </p>
             {/* {text} */}
