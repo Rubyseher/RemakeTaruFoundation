@@ -37,7 +37,7 @@ export const NavbarMain = () => {
 
 export const Services = () =>{
     return(
-        <div className="services-container shadow">
+        <div className="services-container">
             <span style={{margin:'12px 0 0 25px'}}><b>Peditratian</b></span>
             <div className='circle-services' style={{ backgroundColor:'var(--babyBlue)' }}>
                 <MoreTimeIcon sx={{ color:'var(--royalBlue)', fontSize: 25 }} />

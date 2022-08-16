@@ -64,8 +64,8 @@
 }
 .circle-services{
   position: relative;
-  top: 5px;
-  left: 30px;
+  top: 12px;
+  left: 40px;
   width: 40px;
   height: 40px;
   display: flex;
@@ -94,27 +94,76 @@
 }
 .services-container{
   background-color: white;
-  height: 50px;
+  height: 65px;
+  line-height: 42px;
   border-radius: 15px;
-  width: 250px;
+  width: 270px;
   margin:0 auto;
-  margin-bottom:40px;
-
+  margin-bottom:45px;
   display: flex;
+  -webkit-box-shadow: 0px 2px 7px 0px rgba(162, 162, 162, 0.25);
+  box-shadow: 0px 2px 7px 0px rgba(162, 162, 162, 0.25);
+  transition: box-shadow .2s ease-in;
+}
+.services-container:hover {
+  -webkit-box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.25);
+}
+.mission{
+  text-align: center;
+  line-height: 30px;
+  padding-right: 90px;
+  font-size: 17px;
+}
+.mission h4{
+  padding: 20px 0 10px 0;
+}
+#whoAreWe{
+  margin: 70px 0 10px 0;
+}
+.hover-underline-animation {
+  display: inline-block;
+  position: relative;
+  /* width: 100%; */
+}
+
+.hover-underline-animation:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #000000;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
 .title-main{
-  text-align: center;
-  margin:60px 0 40px 0;
-  font-size:40;
-  color:var(--royalBlue);
+  font-size:3.3vw;
+  font-weight:600;
+  letter-spacing: -2px;
+background: #2974ed;
+background: linear-gradient(to right, #2974ed 39%, #a34ebe 55%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+text-align: center;
+/* margin:60px 0 40px 0; */
+padding:60px 0 40px 0;
 }
 .react-calendar__tile--active{
   background: #c0b6f5 !important;
   border-radius: 20px;
 }
 :root {
+  --lightPurple: #f1e7ff;
   --lightBlue: #f8faff;
-  --babyBlue: #ebf2fe;
+  --babyBlue: #f3f7ff;
   --darkBlue: #4e7de3;
   --royalBlue: #1b53ac;
 }
@@ -151,7 +200,13 @@
   text-align: center;
   font-size: 18px;
 }
-
+.corner-blob{
+  float:right;
+  height: 120vh; 
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 .multiBox p{
   text-align: center;
   margin: 0 auto;

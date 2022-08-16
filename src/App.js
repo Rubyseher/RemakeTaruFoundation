@@ -5,6 +5,8 @@ import LoginPg from './LoginPg';
 import MainPg from './MainPg';
 import DocDashboard from './DocDashboard';
 import RmpDashboard from './RmpDashboard'
+import PatientDashboard from './PatientDashboard'
+import Login from "./LoginPg"
 function App() {
   return (
     <div className="App">
@@ -14,6 +16,8 @@ function App() {
         <Route path="/about" element={<LoginPg />} />
         <Route path="/rmp" element={<RmpDashboard />} />
         <Route path="/doc" element={<DocDashboard />} />
+        <Route path="/patient" element={<PatientDashboard />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
     </div>
   );
