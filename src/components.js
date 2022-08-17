@@ -1,9 +1,11 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect, setState } from "react";
 import Navbar from 'react-bootstrap/Navbar'
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import App from "./App";
 import "./App.css";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCoffee,faCarrot,faBacterium,faCommentMedical,faLungs,faBrain,faBone,faTooth,faHeadSideCough ,faHandDots,faBaby,faPersonPregnant,faHeartPulse} from '@fortawesome/free-solid-svg-icons'
 import IconButton from '@mui/material/IconButton';
 import CancelRoundedIcon from '@mui/icons-material/CancelRounded';
 import MoreTimeIcon from '@mui/icons-material/MoreTime';
@@ -35,14 +37,70 @@ export const NavbarMain = () => {
     )
 }
 
-export const Services = () =>{
-    return(
-        <div className="services-container">
-            <span style={{margin:'12px 0 0 25px'}}><b>Peditratian</b></span>
-            <div className='circle-services' style={{ backgroundColor:'var(--babyBlue)' }}>
-                <MoreTimeIcon sx={{ color:'var(--royalBlue)', fontSize: 25 }} />
+export const Services = () => {
+    const servicesList = [
+            {
+                specialization: "Pediatrician",
+                icon: faBaby
+            }
+            , {
+                specialization: "Dermatologist",
+                icon: faHandDots
+            },
+            {
+                specialization: "Gynocologist",
+                icon: faPersonPregnant
+            }
+            , {
+                specialization: "Cardiologist",
+                icon: faHeartPulse
+            },
+            {
+                specialization: "General",
+                icon: faHeadSideCough
+            }
+            , {
+                specialization: "Dentist",
+                icon: faTooth
+            }
+            , {
+                specialization: "Orthopaedic ",
+                icon: faBone
+            },
+            {
+                specialization: "Psychiatrists",
+                icon: faCommentMedical
+            }
+            , {
+                specialization: "Pulmonologist",
+                icon: faLungs
+            },
+            {
+                specialization: "Neurologist",
+                icon: faBrain
+            },
+            {
+                specialization: "Oncologist",
+                icon: faBacterium
+            },
+            {
+                specialization: "Gastroenterologist",
+                icon: faCarrot
+            }
+        ];
+
+    return (
+        servicesList.map(i=>
+            <div className="services-container">
+                <span style={{ margin: '12px 0 0 25px' }}><b>{i.specialization}</b></span>
+                <div className='circle-services' style={{ backgroundColor: 'var(--babyBlue)' }}>
+                    {/* <MoreTimeIcon sx={{ color:'var(--royalBlue)', fontSize: 25 }} /> */}
+                    <FontAwesomeIcon icon={i.icon} size='xl' color="var(--darkBlue)"/>
+
+                </div>
+
             </div>
-        </div>
+        )
     )
 }
 export const ParallaxContainer = () => {
@@ -50,8 +108,8 @@ export const ParallaxContainer = () => {
         <Parallax bgImage='./img/parallaxDoc2.webp' strength={500}
             bgImageStyle={{ width: '100%' }} style={{ height: '670px' }}>
             <div style={{ height: 500 }}>
-                <div className='parallax' style={{background:'transparent'}}>
-                    <img src="/img/healthcare.png" width={800} style={{marginTop:'90px'}}/>
+                <div className='parallax' style={{ background: 'transparent' }}>
+                    <img src="/img/healthcare.png" width={800} style={{ marginTop: '90px' }} />
                     {/* <img src="/img/forAll.png" /> */}
                 </div>
             </div>

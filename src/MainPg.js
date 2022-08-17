@@ -8,40 +8,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import SickIcon from '@mui/icons-material/Sick';
 // import healthcare from './img/healthcare.svg'
 function MainPg() {
-    const servicesList = [
-        {
-            specialization: "Pediatrician",
-            icon: "ChildCareIcon"
-        }
-        , {
-            specialization: "Dermatologist",
-            icon: "FaceRetouchingNaturalIcon"
-        },
-        {
-            specialization: "Gynocologist",
-            icon: "PregnantWomanIcon"
-        }
-        , {
-            specialization: "Cardiologist",
-            icon: "FavoriteIcon"
-        },
-        {
-            specialization: "General",
-            icon: "SickIcon"
-        }
-        , {
-            specialization: "Dentist",
-            icon: "FaceRetouchingNaturalIcon"
-        },
-        {
-            specialization: "Gynocologist",
-            icon: "PregnantWomanIcon"
-        }
-        , {
-            specialization: "Cardiologist",
-            icon: "FavoriteIcon"
-        }
-    ]
+
     return (
         <div style={{ background: 'var(--babyBlue)' }}>
             <ParallaxContainer />
@@ -49,17 +16,6 @@ function MainPg() {
             {/* ur services comes next  */}
             <h1 className="title-main">Our Services</h1>
             <div style={{ display: 'inline-flex', width: '900', flexFlow: 'wrap', margin: '0px 230px 60px 230px' }}>
-                <Services />
-                <Services />
-                <Services />
-                <Services />
-                <Services />
-                <Services />
-                <Services />
-                <Services />
-                <Services />
-                <Services />
-                <Services />
                 <Services />
             </div>
 
