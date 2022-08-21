@@ -31,7 +31,7 @@ function RmpDashboard() {
             </div>
 
             <div style={{ display: 'flex' ,justifyContent:'center'}}>
-                <MultipurposeButton color={'#9879ce'} text={'Publish Free Slots'}/>
+                <MultipurposeButton color={'#9879ce'} text={'Register musltiple users'}/>
                 <MultipurposeButton color={'#ee6173'} text={'Cancel All Appointments'}/>
                 <MultipurposeButton color={'#f5b343'} text={'Show Patient Details'}/>
                 <MultipurposeButton color={'#56c4ae'} text={'Book Appointments'}/>
