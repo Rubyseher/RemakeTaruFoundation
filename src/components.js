@@ -38,6 +38,25 @@ export const NavbarMain = () => {
         </Navbar>
     )
 }
+export const EachVital =()=>{
+    return(
+  <div style={{display:'flex',border:'2px solid blue',height:'fit-content'}}>
+            <span>
+                25<br/>
+                Jun 22 <br/>
+            </span>
+            <div style={{display:'inline-flex',border:'2px solid green'}}>
+                <div className="vitalTitle">Vials</div><br/>
+                BP:90/120
+                Weight:77kgs
+                <div className="vitalTitle">Prescription</div><br/>
+                20mg methyl daily morning for 10 days
+                5mg dolo night for 5 days
+            </div>
+
+        </div>
+    )
+}
 
 export const Services = () => {
     const servicesList = [

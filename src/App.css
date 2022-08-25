@@ -160,16 +160,50 @@ text-align: center;
 /* margin:60px 0 40px 0; */
 padding:60px 0 40px 0;
 }
+.welcome{
+  font-size:3.0vw;
+  font-weight:600;
+  letter-spacing: -2px;
+background: #2974ed;
+background: linear-gradient(to right, #2974ed 0%, #a34ebe 20%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+padding: 30px 0 0px 60px;
+}
 .react-calendar__tile--active{
   background: #c0b6f5 !important;
   border-radius: 20px;
 }
 :root {
-  --lightPurple: #f1e7ff;
+  --lightPurple: #f4ecff;
+  --darkPurple: #72188e;
   --lightBlue: #f8faff;
   --babyBlue: #f3f7ff;
   --darkBlue: #4e7de3;
   --royalBlue: #1b53ac;
+}
+.vitalTitle{
+  font-weight: 600;
+  font-size: 20px;
+  color: var(--royalBlue);
+}
+.vitals-container{
+  display:inline-flex;
+  border-radius: 20px;
+  padding: 50px;
+  width: 70vw;
+  background-color: white;
+  margin-left: 2vw;
+}
+.profile-card{
+  border-radius: 20px;
+  width:20vw;
+  background-color:var(--darkPurple);
+  margin-left: 60px;
+  padding:20px 30px 20px 30px;
+}
+.profile-card *{
+  color: white;
 }
 .parallax{
   background: white;

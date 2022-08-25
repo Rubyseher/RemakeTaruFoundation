@@ -78,7 +78,13 @@ input[type="password"] {
   -ms-transition: all 0.3s;
   transition: all 0.3s;
 }
-
+.login-img{
+  position: absolute;
+  margin-right: 30px;
+  top: 25%;
+  width: 700px;
+  right:0;
+}
 input[type="submit"] {
   display: block;
   width: 100%;
@@ -86,10 +92,11 @@ input[type="submit"] {
   padding: 0.9rem;
   background-image: linear-gradient(
     to right,
-    #642b73 0%,
-    #c6426e 51%,
-    #642b73 100%
+    #1a5dc8 0%,
+    #72188e 51%,
+    #1a5dc8 100%
   );
+
   border: 1px solid rgb(212, 212, 212);
   font-family: sans-serif;
   font-weight: 600;
@@ -113,11 +120,11 @@ input[type="submit"]:focus,
 input[type="submit"]:visited {
   background-image: linear-gradient(
     to right,
-    #642b73 0%,
-    #c6426e 51%,
-    #642b73 100%
+    #1a5dc8 0%,
+    #72188e 51%,
+    #1a5dc8 100%
   );
-  margin: 10px;
+  margin: 30px 20px 30px 0px;
   padding: 15px 45px;
   text-align: center;
   text-transform: uppercase;
@@ -168,13 +175,13 @@ form > h3 {
 
 .brand {
   grid-area: centerLeft;
-  background-color: #da1c88;
+  /* background-color: #da1c88;
   background-image: linear-gradient(
     to right,
     #c33764 0%,
     #1d2671 51%,
     #c33764 100%
-  );
+  ); */
 }
 
 .btn-grad {
@@ -205,7 +212,7 @@ form > h3 {
     display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 50%;
+  width: 55%;
 }
 .brand > h3 {
     line-height: 60px;
@@ -215,6 +222,7 @@ form > h3 {
 
 .login {
   grid-area: centerRight;
+  width: 30%;
 }
 
 .login > form {
@@ -297,6 +305,7 @@ form > h3 {
   justify-content: center;
   -ms-align-items: center;
   align-items: center;
+  margin-bottom: 40px;
 }
 
 .social-sign a {
@@ -391,11 +400,11 @@ input[type="password"] {
 input[type="submit"] {
   background-image: linear-gradient(
     to right,
-    #642b73 0%,
-    #c6426e 51%,
-    #642b73 100%
+    #1a5dc8 0%,
+    #72188e 51%,
+    #1a5dc8 100%
   );
-  margin: 10px;
+  margin: 30px 20px 30px 0px;
   padding: 15px 45px;
   text-align: center;
   text-transform: uppercase;
@@ -419,9 +428,9 @@ input[type="submit"]:visited,
 input[type="submit"]:hover {
   background-image: linear-gradient(
     to right,
-    #642b73 0%,
-    #c6426e 51%,
-    #642b73 100%
+    #1a5dc8 0%,
+    #72188e 51%,
+    #1a5dc8 100%
   );
 }
 
@@ -432,6 +441,7 @@ input[type="submit"] {
 
 .text-center {
   text-align: center;
+  margin-bottom: 15px;
 }
 
 form > h3 {
@@ -454,7 +464,13 @@ form > h3 {
   grid-template-rows: auto;
   grid-template-areas: "centerLeft centerRight";
 }
-
+.cornerBg{
+  background-image:url("/public/img/cornerBlob9.svg");
+  background-size:cover;
+  height: 93vh;
+  margin-top: -20px;
+  background-repeat: no-repeat;
+}
 .sct {
   display: flex;
   align-items: center;
@@ -466,9 +482,9 @@ form > h3 {
   background-color: #2d2d2d;
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
-  background-color: #da1c88;
-  background-image: linear-gradient(60deg,     #1a5dc8 20%,
-  #72188e 90%);
+  /* background-color: #da1c88; */
+  /* background-image: linear-gradient(60deg,     #1a5dc8 20%,
+  #72188e 90%); */
 }
 
 .brand > h3 {
@@ -569,6 +585,7 @@ form > h3 {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  margin:0px 6px;
   font-size: 2rem;
 }
 

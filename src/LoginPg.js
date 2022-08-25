@@ -16,12 +16,9 @@ function LoginPg() {
     }
 
     return (
-        <div style={{ marginTop: '3rem' }}>
-            <div class="wrapper">
-                <div class="sct brand">
-                    <h3> Healthcare <br />For All </h3>
-                </div>
-                <div class="sct login">
+        <div className="cornerBg">
+            <div style={{padding:'110px 0 0 120px'}}>
+                <div style={{ borderRadius: 20, width: '28%' ,backgroundColor:'white',padding:'30px'}} className='shadow'>
                     <form onSubmit={handleSubmit}>
                         <img alt="" src="/img/logoGlow.png" class='centerlogo' />
                         <input type="text" name="email" placeholder="Username" value={name}
@@ -31,16 +28,17 @@ function LoginPg() {
                         <div class="forgot-remember">
                             <div class="forgot"> <a href="#">Forgot Password?</a> </div>
                         </div>
-                        <input type="submit" name="send" value="Send" />
+                        <input type="submit" name="send" value="SUBMIT" />
                         <p class="text-center">Sign up with<br /><i class="fa fa-hand-o-down" aria-hidden="true"></i></p>
                         <div class="social-sign">
-                            <a href="#"><FontAwesomeIcon icon={faGoogle} /></a>
-                            <a href="#"><FontAwesomeIcon icon={faTwitter} /></a>
-                            <a href="#"><FontAwesomeIcon icon={faFacebook} /></a>
+                            <a href="#"><FontAwesomeIcon icon={faGoogle} color='#e24033' /></a>
+                            <a href="#"><FontAwesomeIcon icon={faTwitter} color='#3396e9' /></a>
+                            <a href="#"><FontAwesomeIcon icon={faFacebook} color="#3358a3" /></a>
                         </div>
                     </form>
                 </div>
             </div>
+            <img src='/img/login.svg' className="login-img"/>
         </div>
     )
 }
