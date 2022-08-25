@@ -38,22 +38,27 @@ export const NavbarMain = () => {
         </Navbar>
     )
 }
-export const EachVital =()=>{
-    return(
-  <div style={{display:'flex',border:'2px solid blue',height:'fit-content'}}>
-            <span>
-                25<br/>
-                Jun 22 <br/>
+export const EachVital = () => {
+    return (
+        <div style={{ display: 'flex', height: 'fit-content' ,margin:'20px 0'}}>
+            <span className="prescription-date">
+                <h4>25</h4>
+                <h6>Jun 22</h6>
             </span>
-            <div style={{display:'inline-flex',border:'2px solid green'}}>
-                <div className="vitalTitle">Vials</div><br/>
-                BP:90/120
-                Weight:77kgs
-                <div className="vitalTitle">Prescription</div><br/>
-                20mg methyl daily morning for 10 days
-                5mg dolo night for 5 days
-            </div>
+            <div  className='shadow prescription'>
+                <div className="vitalTitle">Vials</div>
+                <div>
+                    BP:90/120
+                    Weight:77kgs
+                </div>
 
+                <div className="vitalTitle">Prescription</div>
+                <span>
+                    20mg methyl daily morning for 10 days
+                    5mg dolo night for 5 days
+                </span>
+
+            </div>
         </div>
     )
 }

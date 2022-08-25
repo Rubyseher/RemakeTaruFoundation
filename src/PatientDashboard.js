@@ -26,9 +26,13 @@ function PatientDashboard() {
           </span>
         </div>
 
-        <div className='vitals-container shadow'>
+        <div className='vitals-container shadow' style={{display:'inline-flex',flexDirection:'column'}}>
+          <EachVital/>
+          <EachVital/>
           <EachVital/>
         </div>
+        <img src='./img/profile.svg' height={500}/>
+
       </div>
 
     </div>

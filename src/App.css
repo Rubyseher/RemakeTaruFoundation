@@ -182,6 +182,21 @@ padding: 30px 0 0px 60px;
   --darkBlue: #4e7de3;
   --royalBlue: #1b53ac;
 }
+.prescription{
+  border-top-right-radius: 10px;
+  padding: 15px;
+  width: 50vw;
+  border-bottom-right-radius: 10px;
+  background-color:var(--babyBlue);
+  border-left:5px solid var(--royalBlue);
+}
+.prescription-date h4,.prescription-date h6{
+  color: var(--royalBlue);
+  text-align: center;
+  margin-right: 22px;
+  font-weight: bold;
+}
+
 .vitalTitle{
   font-weight: 600;
   font-size: 20px;
@@ -190,8 +205,9 @@ padding: 30px 0 0px 60px;
 .vitals-container{
   display:inline-flex;
   border-radius: 20px;
-  padding: 50px;
+  padding:22px 45px 22px 30px;
   width: 70vw;
+  margin-right: -260px;
   background-color: white;
   margin-left: 2vw;
 }
