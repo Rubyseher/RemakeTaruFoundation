@@ -4,17 +4,18 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import "./App.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCarrot, faBacterium, faCommentMedical, faLungs, faBrain, faBone, faTooth, faHeadSideCough, faHandDots, faBaby, faPersonPregnant, faHeartPulse } from '@fortawesome/free-solid-svg-icons'
+import { faCarrot, faBacterium, faCommentMedical,faWeightScale, faLungs, faBrain, faBone, faTooth, faHeadSideCough, faHandDots, faBaby, faPersonPregnant, faHeartPulse } from '@fortawesome/free-solid-svg-icons'
 import IconButton from '@mui/material/IconButton';
 import CancelRoundedIcon from '@mui/icons-material/CancelRounded';
 import MoreTimeIcon from '@mui/icons-material/MoreTime';
 import Button from '@mui/material/Button';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { Parallax } from 'react-parallax';
+import LoginIcon from '@mui/icons-material/Login';
 
 export const NavbarMain = () => {
     return (
-        <Navbar bg="light" variant="light" >
+        <Navbar bg="light" variant="light" className='shadow'>
             <Container>
                 <Navbar.Brand href="/" style={{ display: 'flex', alignItems: 'center' }}>
                     <img
@@ -32,31 +33,31 @@ export const NavbarMain = () => {
                     <Nav.Link href="#pricing">Pricing</Nav.Link>
                 </Nav>
             </Container>
-            <Button href="/login" variant="outlined" startIcon={<DeleteIcon />}>
-                LOGIN
+            <Button href="/login" variant="outlined" sx={{ color: '#1b53ac' }} startIcon={<LoginIcon />}>
+                <b>LOGIN</b>
             </Button>
         </Navbar>
     )
 }
 export const EachVital = () => {
     return (
-        <div style={{ display: 'flex', height: 'fit-content' ,margin:'20px 0'}}>
+        <div style={{ display: 'flex', height: 'fit-content', margin: '20px 0' }}>
             <span className="prescription-date">
                 <h4>25</h4>
                 <h6>Jun 22</h6>
             </span>
-            <div  className='shadow prescription'>
+            <div className='shadow prescription'>
                 <div className="vitalTitle">Vials</div>
-                <div>
-                    BP:90/120
-                    Weight:77kgs
-                </div>
+                <p>
+                    <FontAwesomeIcon icon={faHeartPulse} size='xl' color="#e24033" /> BP : 90/120
+                    <FontAwesomeIcon icon={faWeightScale} size='xl' color="#3e9c45"  style={{marginLeft:'100'}}/> Weight : 77kgs
+                </p>
 
                 <div className="vitalTitle">Prescription</div>
-                <span>
+                <p>
                     20mg methyl daily morning for 10 days
                     5mg dolo night for 5 days
-                </span>
+                </p>
 
             </div>
         </div>

@@ -22,19 +22,20 @@ function RmpDashboard() {
                     <div style={{ display: 'inline-flex', width: '900', flexFlow: 'wrap', overflow: 'scroll', height: '230px' }}>
                         {
                             Notification && Notification.map((d) => (
-                                <RmpNotification name={d.name} date={d.date} spec={d.specialization} time={d.time}/>
+                                <RmpNotification name={d.name} date={d.date} spec={d.specialization} time={d.time} />
                             ))
                         }
                     </div>
                 </div>
-                <img src='./img/doctor.gif' height='380px' style={{ float: 'right',marginTop:'-50px' }} />
+                <img src='./img/doctor.gif' height='380px' style={{ float: 'right', marginTop: '-50px' }} />
             </div>
-
-            <div style={{ display: 'flex' ,justifyContent:'center'}}>
-                <MultipurposeButton color={'#9879ce'} text={'Register musltiple users'}/>
-                <MultipurposeButton color={'#ee6173'} text={'Cancel All Appointments'}/>
-                <MultipurposeButton color={'#f5b343'} text={'Show Patient Details'}/>
-                <MultipurposeButton color={'#56c4ae'} text={'Book Appointments'}/>
+            <div style={{ backgroundColor: ' var(--lightPurple)' }}>
+                <div style={{ display: 'flex', justifyContent: 'center' }}>
+                    <MultipurposeButton color={'#6d45ae'} text={'Register musltiple users'} />
+                    <MultipurposeButton color={'#6d45ae'} text={'Cancel All Appointments'} />
+                    <MultipurposeButton color={'#6d45ae'} text={'Show Patient Details'} />
+                    <MultipurposeButton color={'#6d45ae'} text={'Book Appointments'} />
+                </div>
             </div>
 
         </div>

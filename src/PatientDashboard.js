@@ -26,7 +26,7 @@ function PatientDashboard() {
           </span>
         </div>
 
-        <div className='vitals-container shadow' style={{display:'inline-flex',flexDirection:'column'}}>
+        <div className='vitals-container shadow' style={{display:'inline-flex',flexDirection:'column', flexFlow: 'wrap', overflow: 'scroll', height: '530px' }}>
           <EachVital/>
           <EachVital/>
           <EachVital/>

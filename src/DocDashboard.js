@@ -62,10 +62,10 @@ function DocDashboard() {
                 <img src='./img/Hospital_wheelchair-2.gif' height='420' style={{ float: 'right', marginTop: '-70px' }} />
 
             </div>
-            <div style={{ display: 'flex', justifyContent: 'center', backgroundColor: '#fefaf2' }}>
-                <MultipurposeButton color={'#9879ce'} bg={'#eae1fa'} text={'Publish Free Slots'} />
-                <MultipurposeButton color={'#ee6173'} bg={'#fad7db'} text={'Cancel All Appointments'} />
-                <MultipurposeButton color={'#f5b343'} bg={'#fcefd9'} text={'Show Patient Details'} />
+            <div style={{ display: 'flex', justifyContent: 'center', backgroundColor: 'var(--lightPurple)' }}>
+                <MultipurposeButton color={'#6d45ae'} bg={'#eae1fa'} text={'Publish Free Slots'} />
+                <MultipurposeButton color={'#6d45ae'} bg={'#eae1fa'} text={'Cancel All Appointments'} />
+                <MultipurposeButton color={'#6d45ae'} bg={'#eae1fa'} text={'Show Patient Details'} />
             </div>
         </div>
     )

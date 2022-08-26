@@ -176,15 +176,21 @@ padding: 30px 0 0px 60px;
 }
 :root {
   --lightPurple: #f4ecff;
+  --lavender:#55289f;
+  --lightLavender:#6d45ae;
   --darkPurple: #72188e;
   --lightBlue: #f8faff;
   --babyBlue: #f3f7ff;
   --darkBlue: #4e7de3;
   --royalBlue: #1b53ac;
 }
+.css-3fvyzq-MuiButtonBase-root-MuiButton-root {
+  border: 1px solid #1b53ac;
+
+}
 .prescription{
   border-top-right-radius: 10px;
-  padding: 15px;
+  padding:10px 25px;
   width: 50vw;
   border-bottom-right-radius: 10px;
   background-color:var(--babyBlue);
@@ -196,10 +202,14 @@ padding: 30px 0 0px 60px;
   margin-right: 22px;
   font-weight: bold;
 }
-
+.prescription p{
+  font-weight: 600;
+  margin-bottom: 12px;
+}
 .vitalTitle{
   font-weight: 600;
   font-size: 20px;
+  margin-top: 10px;
   color: var(--royalBlue);
 }
 .vitals-container{
@@ -214,7 +224,7 @@ padding: 30px 0 0px 60px;
 .profile-card{
   border-radius: 20px;
   width:20vw;
-  background-color:var(--darkPurple);
+  background-color:var(--lavender);
   margin-left: 60px;
   padding:20px 30px 20px 30px;
 }
@@ -288,7 +298,7 @@ padding: 30px 0 0px 60px;
 /* RMP Dashboard */
 .rmpNotiBox {
   color: white;
-  background-color: palevioletred;
+  background-color:var(--darkBlue);
   width: 450px;
   padding: 18px 26px;
   font-weight: 600;
