@@ -26,10 +26,10 @@ function DocDashboard() {
         <div style={{backgroundColor: ' var(--lightBlue)'}}>
             <h2 className='title-main'> Schedule</h2>
 
-            <div style={{ display: 'flex', padding: '10px 0px 30px 60px'}}>
+            <div style={{ display: 'flex', padding: '10px 0px 30px 30px'}}>
                 <Calendar onChange={onChange} value={value} class='react-calendar' />
 
-                <div style={{ display: 'inline-flex', flexFlow: 'wrap', overflow: 'scroll', height: '330px' }}>
+                <div style={{ display: 'inline-flex', flexFlow: 'wrap', height: '330px',overflowY:'scroll',overflowX:'hidden'}}>
                     <label>
                         <input type="checkbox" />
                         <div class="card">
@@ -59,7 +59,7 @@ function DocDashboard() {
                         </div>
                     </label>
                 </div>
-                <img src='./img/Hospital_wheelchair-2.gif' height='420' style={{ float: 'right', marginTop: '-70px' }} />
+                <img src='./img/Hospital_wheelchair-2.gif' height='400' style={{ float: 'right', marginTop: '-70px' }} />
 
             </div>
             <div style={{ display: 'flex', justifyContent: 'center', backgroundColor: 'var(--lightPurple)' }}>

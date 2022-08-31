@@ -38,7 +38,7 @@ function LoginPg() {
                     </form>
                 </div>
             </div>
-            <img src='/img/login.svg' className="login-img"/>
+            <img src='/img/login2.svg' className="login-img"/>
         </div>
     )
 }

@@ -12,6 +12,7 @@ import Button from '@mui/material/Button';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { Parallax } from 'react-parallax';
 import LoginIcon from '@mui/icons-material/Login';
+import { useNavigate } from "react-router-dom";
 
 export const NavbarMain = () => {
     return (
@@ -115,17 +116,19 @@ export const Services = () => {
             icon: faCarrot
         }
     ];
-
+    let navigate = useNavigate(); 
+    const routeChange = () =>{ 
+      let path = `/booking`; 
+      navigate(path);
+    }
     return (
         servicesList.map(i =>
-            <div className="services-container">
+            <div className="services-container" onClick={routeChange}>
                 <span style={{ margin: '12px 0 0 25px' }}><b>{i.specialization}</b></span>
                 <div className='circle-services' style={{ backgroundColor: 'var(--babyBlue)' }}>
                     {/* <MoreTimeIcon sx={{ color:'var(--royalBlue)', fontSize: 25 }} /> */}
                     <FontAwesomeIcon icon={i.icon} size='xl' color="var(--darkBlue)" />
-
                 </div>
-
             </div>
         )
     )

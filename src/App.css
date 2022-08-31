@@ -51,7 +51,8 @@
 .react-calendar {
   border:none !important;
   border-radius: 10px;
-  height: 270px;
+  width: 1300px !important;
+  height: 300px;
   /* width: 650px  !important; */
   /* -webkit-box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.25);
   box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.25); */
@@ -173,6 +174,9 @@ padding: 30px 0 0px 60px;
 .react-calendar__tile--active{
   background: #c0b6f5 !important;
   border-radius: 20px;
+}
+.react-calendar__tile{
+padding: 12px 18px !important;
 }
 :root {
   --lightPurple: #f4ecff;
