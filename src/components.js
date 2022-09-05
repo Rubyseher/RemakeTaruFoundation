@@ -4,7 +4,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import "./App.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCarrot, faBacterium, faCommentMedical,faWeightScale, faLungs, faBrain, faBone, faTooth, faHeadSideCough, faHandDots, faBaby, faPersonPregnant, faHeartPulse } from '@fortawesome/free-solid-svg-icons'
+import { faCarrot, faBacterium, faCommentMedical, faWeightScale, faLungs, faBrain, faBone, faTooth, faHeadSideCough, faHandDots, faBaby, faPersonPregnant, faHeartPulse } from '@fortawesome/free-solid-svg-icons'
 import IconButton from '@mui/material/IconButton';
 import CancelRoundedIcon from '@mui/icons-material/CancelRounded';
 import MoreTimeIcon from '@mui/icons-material/MoreTime';
@@ -51,7 +51,7 @@ export const EachVital = () => {
                 <div className="vitalTitle">Vials</div>
                 <p>
                     <FontAwesomeIcon icon={faHeartPulse} size='xl' color="#e24033" /> BP : 90/120
-                    <FontAwesomeIcon icon={faWeightScale} size='xl' color="#3e9c45"  style={{marginLeft:'100'}}/> Weight : 77kgs
+                    <FontAwesomeIcon icon={faWeightScale} size='xl' color="#3e9c45" style={{ marginLeft: '100' }} /> Weight : 77kgs
                 </p>
 
                 <div className="vitalTitle">Prescription</div>
@@ -116,10 +116,10 @@ export const Services = () => {
             icon: faCarrot
         }
     ];
-    let navigate = useNavigate(); 
-    const routeChange = () =>{ 
-      let path = `/booking`; 
-      navigate(path);
+    let navigate = useNavigate();
+    const routeChange = () => {
+        let path = `/booking`;
+        navigate(path);
     }
     return (
         servicesList.map(i =>
@@ -150,9 +150,23 @@ export const ParallaxContainer = () => {
 export const RmpNotification = (props) => {
     return (
         <div className="rmpNotiBox shadow">
-            <span className="timeSlotBox shadow">{props.time}</span>
+            <span className="timeSlotBox shadow"style={{ letterSpacing: '0.5px', fontSize: 14, color: '#4e7de3' }}><b>{props.time}</b></span>
             {props.name}<br />
-            <span style={{ fontWeight: 400, fontSize: 14 }}>{props.spec}</span>
+            <span className="specialization">{props.spec}</span>
+        </div>
+    )
+}
+
+export const DoctorsAvaliable = (props) => {
+    return (
+        <div className="rmpNotiBox shadow">
+            <span className="timeSlotBox shadow" style={{ letterSpacing: '0.5px', fontSize: 14, color: '#4e7de3' }}><b>BOOK NOW</b></span>
+            <div style={{margin:'2px 0 6px 0'}}>{props.name}</div>
+            <div>
+
+            <span className="specialization">{props.spec} , {props.experience} yrs</span>
+            <span className="language" >{props.languages}</span>
+            </div>
         </div>
     )
 }

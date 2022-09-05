@@ -48,11 +48,20 @@
   color:rgb(255, 255, 255);
   background-color: red;
 }
+.booking-time-container{
+  display: inline-grid;
+  padding: 20px;
+  border-radius: 20px;
+  grid-template-columns: auto auto auto;
+}
 .react-calendar {
   border:none !important;
-  border-radius: 10px;
+  border-radius: 14px;
+  padding: 15px 18px;
   width: 1300px !important;
-  height: 300px;
+  -webkit-box-shadow: 0px 2px 5px 0px rgba(117, 117, 117, 0.25);
+  box-shadow: 0px 2px 5px 0px rgba(75, 75, 75, 0.25);
+  height: 325px;
   /* width: 650px  !important; */
   /* -webkit-box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.25);
   box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.25); */
@@ -192,6 +201,25 @@ padding: 12px 18px !important;
   border: 1px solid #1b53ac;
 
 }
+.bookingTime{
+  font-weight: bold;
+  color:white;
+  margin: 12px 35px;
+  padding: 12px 35px;
+  border-radius: 10px;
+  background-color:var(--lightLavender);
+}
+.language{
+  text-align: right;
+  font-weight: 400;
+  font-size: 14px;
+  margin-top: 6px;
+  float:right;
+}
+.specialization{
+  font-weight: 400;
+  font-size: 14px;
+}
 .prescription{
   border-top-right-radius: 10px;
   padding:10px 25px;
@@ -228,7 +256,7 @@ padding: 12px 18px !important;
 .profile-card{
   border-radius: 20px;
   width:20vw;
-  background-color:var(--lavender);
+  background-color:#6d45ae;
   margin-left: 60px;
   padding:20px 30px 20px 30px;
 }

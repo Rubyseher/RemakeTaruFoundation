@@ -18,7 +18,7 @@ function RmpDashboard() {
         <div>
             <div style={{ display: 'flex', backgroundColor: ' var(--lightBlue)', padding: '30px 30px 30px 60px' }}>
                 <div >
-                    <h3 >Notification</h3>
+                    <h3 style={{color:'var(--darkBlue)'}}>Notification</h3>
                     <div style={{ display: 'inline-flex', width: '900', flexFlow: 'wrap', overflow: 'scroll', height: '230px' }}>
                         {
                             Notification && Notification.map((d) => (
