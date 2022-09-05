@@ -188,10 +188,12 @@ padding: 30px 0 0px 60px;
 padding: 12px 18px !important;
 }
 :root {
-  --lightPurple: #f4ecff;
+  --babyPurple: #f8f3ff;
+  --lightPurple: #9241ce;
   --lavender:#55289f;
-  --lightLavender:#6d45ae;
-  --darkPurple: #72188e;
+  --lightLavender:#6b1bac;
+  --darkPurple: #6b1bacc6;
+
   --lightBlue: #f8faff;
   --babyBlue: #f3f7ff;
   --darkBlue: #4e7de3;
@@ -207,7 +209,7 @@ padding: 12px 18px !important;
   margin: 12px 35px;
   padding: 12px 35px;
   border-radius: 10px;
-  background-color:var(--lightLavender);
+  background-color:var(--darkPurple);
 }
 .language{
   text-align: right;
@@ -225,11 +227,11 @@ padding: 12px 18px !important;
   padding:10px 25px;
   width: 50vw;
   border-bottom-right-radius: 10px;
-  background-color:var(--babyBlue);
-  border-left:5px solid var(--royalBlue);
+  background-color:var(--babyPurple);
+  border-left:5px solid var(--lightLavender);
 }
 .prescription-date h4,.prescription-date h6{
-  color: var(--royalBlue);
+  color: var(--lightLavender);
   text-align: center;
   margin-right: 22px;
   font-weight: bold;
@@ -242,7 +244,7 @@ padding: 12px 18px !important;
   font-weight: 600;
   font-size: 20px;
   margin-top: 10px;
-  color: var(--royalBlue);
+  color: var(--lightLavender);
 }
 .vitals-container{
   display:inline-flex;
@@ -256,7 +258,7 @@ padding: 12px 18px !important;
 .profile-card{
   border-radius: 20px;
   width:20vw;
-  background-color:#6d45ae;
+  background-color:var(--lightLavender);
   margin-left: 60px;
   padding:20px 30px 20px 30px;
 }

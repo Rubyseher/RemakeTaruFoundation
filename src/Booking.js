@@ -25,9 +25,9 @@ function Booking() {
   }, [])
   return (
     <div>
-      <div style={{ display: 'flex', backgroundColor: ' var(--lightBlue)', padding: '30px 30px 30px 60px' }}>
+      <div style={{ display: 'flex', backgroundColor: ' var(--lightBlue)', padding: '50px 30px 25px 60px' }}>
         <div >
-          <h3 style={{ color: 'var(--darkBlue)' }}><b>Doctors Avaliable</b></h3>
+          <h3 style={{ color: 'var(--darkBlue)' }}><b>Select Doctors</b></h3>
           <div style={{ display: 'inline-flex', width: '900', flexFlow: 'wrap', height: '230px' }}>
             {
               Notification && Notification.map((d) => (
@@ -39,13 +39,14 @@ function Booking() {
         <img src='./img/BookingNow.svg' style={{ float: 'right', marginTop: '50px', height: 250 }} />
       </div>
 
-      <h3 style={{ color: 'var(--lightLavender)', padding: '30px 30px 10px 60px' }}><b>Select Time</b></h3>
+<div style={{backgroundColor: 'var(--babyPurple)', padding: '50px 30px 25px 60px'}}>
+      <h3 style={{ color: 'var(--lightLavender)'}}><b>Select Time</b></h3>
 
-      <div style={{ display: 'inline-flex', padding: '10px 190px 30px 190px' }}>
-        <div style={{ width: '20%',marginRight:50 }}>
+      <div style={{ display: 'inline-flex', padding: '10px 190px 30px 190px'}}>
+        <div style={{ width: '20%', marginRight: 50 }}>
           <Calendar onChange={onChange} value={value} class='react-calendar shadow' />
         </div>
-        <div style={{borderRadius: '20px' ,backgroundColor:'#f4ecff'}} className='shadow'>
+        <div style={{ borderRadius: '20px', backgroundColor: 'white'}}>
           <div className='booking-time-container'>
             <div className='bookingTime shadow'>9:00 AM</div>
             <div className='bookingTime shadow'>9:00 AM</div>
@@ -62,6 +63,14 @@ function Booking() {
           </div>
         </div>
       </div>
+      </div>
+
+      <div style={{ backgroundColor: ' var(--lightBlue)', padding: '45px 30px 25px 60px' }}>
+        <h3 style={{ color: 'var(--darkBlue)' }}><b>Confirm Booking</b></h3>
+        <DoctorsAvaliable name={'Mr.Sekhar Sha'} experience={"14yrs"} languages={"Hindi,Tamil"} spec={"Pediatritian"} time={'9:00 AM'} />
+
+      </div>
+
     </div>
   )
 }

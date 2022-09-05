@@ -29,7 +29,7 @@ function RmpDashboard() {
                 </div>
                 <img src='./img/doctor.gif' height='380px' style={{ float: 'right', marginTop: '-50px' }} />
             </div>
-            <div style={{ backgroundColor: ' var(--lightPurple)' }}>
+            <div style={{ backgroundColor: ' var(--babyPurple)' }}>
                 <div style={{ display: 'flex', justifyContent: 'center' }}>
                     <MultipurposeButton color={'#6d45ae'} text={'Register musltiple users'} />
                     <MultipurposeButton color={'#6d45ae'} text={'Cancel All Appointments'} />

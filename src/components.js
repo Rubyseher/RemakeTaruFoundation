@@ -159,8 +159,8 @@ export const RmpNotification = (props) => {
 
 export const DoctorsAvaliable = (props) => {
     return (
-        <div className="rmpNotiBox shadow">
-            <span className="timeSlotBox shadow" style={{ letterSpacing: '0.5px', fontSize: 14, color: '#4e7de3' }}><b>BOOK NOW</b></span>
+        <div className="rmpNotiBox shadow" >
+            <span className="timeSlotBox shadow" style={{ letterSpacing: '0.5px', fontSize: 14, color: '#4e7de3' }}><b>{props.time?props.time:'BOOK NOW'}</b></span>
             <div style={{margin:'2px 0 6px 0'}}>{props.name}</div>
             <div>
 
