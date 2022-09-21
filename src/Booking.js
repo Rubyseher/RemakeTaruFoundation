@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { DoctorsAvaliable } from './components'
+import { DoctorsAvaliable, ConfirmBooking } from './components'
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import axios from "./axios.js";
@@ -39,36 +39,35 @@ function Booking() {
         <img src='./img/BookingNow.svg' style={{ float: 'right', marginTop: '50px', height: 250 }} />
       </div>
 
-<div style={{backgroundColor: 'var(--babyPurple)', padding: '50px 30px 25px 60px'}}>
-      <h3 style={{ color: 'var(--lightLavender)'}}><b>Select Time</b></h3>
+      <div style={{ backgroundColor: 'var(--babyPurple)', padding: '50px 30px 25px 60px', overflowX: 'hidden' }}>
+        <h3 style={{ color: 'var(--lightLavender)' }}><b>Select Time</b></h3>
 
-      <div style={{ display: 'inline-flex', padding: '10px 190px 30px 190px'}}>
-        <div style={{ width: '20%', marginRight: 50 }}>
-          <Calendar onChange={onChange} value={value} class='react-calendar shadow' />
-        </div>
-        <div style={{ borderRadius: '20px', backgroundColor: 'white'}}>
-          <div className='booking-time-container'>
-            <div className='bookingTime shadow'>9:00 AM</div>
-            <div className='bookingTime shadow'>9:00 AM</div>
-            <div className='bookingTime shadow'>9:00 AM</div>
-            <div className='bookingTime shadow'>9:00 AM</div>
-            <div className='bookingTime shadow'>9:00 AM</div>
-            <div className='bookingTime shadow'>9:00 AM</div>
-            <div className='bookingTime shadow'>9:00 AM</div>
-            <div className='bookingTime shadow'>9:00 AM</div>
-            <div className='bookingTime shadow'>9:00 AM</div>
-            <div className='bookingTime shadow'>9:00 AM</div>
-            <div className='bookingTime shadow'>9:00 AM</div>
-            <div className='bookingTime shadow'>9:00 AM</div>
+        <div style={{ display: 'inline-flex', padding: '10px 90px 30px 120px' }}>
+          <div style={{ width: '20%', marginRight: 50 }}>
+            <Calendar onChange={onChange} value={value} class='react-calendar shadow' />
+          </div>
+          <div style={{ borderRadius: '20px', backgroundColor: 'white' }} className='shadow'>
+            <div className='booking-time-container'>
+              <div className='bookingTime shadow'>9:00 AM</div>
+              <div className='bookingTime shadow'>9:00 AM</div>
+              <div className='bookingTime shadow'>9:00 AM</div>
+              <div className='bookingTime shadow'>9:00 AM</div>
+              <div className='bookingTime shadow'>9:00 AM</div>
+              <div className='bookingTime shadow'>9:00 AM</div>
+              <div className='bookingTime shadow'>9:00 AM</div>
+              <div className='bookingTime shadow'>9:00 AM</div>
+              <div className='bookingTime shadow'>9:00 AM</div>
+              <div className='bookingTime shadow'>9:00 AM</div>
+              <div className='bookingTime shadow'>9:00 AM</div>
+              <div className='bookingTime shadow'>9:00 AM</div>
+            </div>
           </div>
         </div>
-      </div>
       </div>
 
       <div style={{ backgroundColor: ' var(--lightBlue)', padding: '45px 30px 25px 60px' }}>
         <h3 style={{ color: 'var(--darkBlue)' }}><b>Confirm Booking</b></h3>
-        <DoctorsAvaliable name={'Mr.Sekhar Sha'} experience={"14yrs"} languages={"Hindi,Tamil"} spec={"Pediatritian"} time={'9:00 AM'} />
-
+        <ConfirmBooking />
       </div>
 
     </div>

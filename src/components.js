@@ -6,6 +6,7 @@ import "./App.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCarrot, faBacterium, faCommentMedical, faWeightScale, faLungs, faBrain, faBone, faTooth, faHeadSideCough, faHandDots, faBaby, faPersonPregnant, faHeartPulse } from '@fortawesome/free-solid-svg-icons'
 import IconButton from '@mui/material/IconButton';
+import CalendarMonthOutlinedIcon from '@mui/icons-material/CalendarMonthOutlined';
 import CancelRoundedIcon from '@mui/icons-material/CancelRounded';
 import MoreTimeIcon from '@mui/icons-material/MoreTime';
 import Button from '@mui/material/Button';
@@ -51,7 +52,7 @@ export const EachVital = () => {
                 <div className="vitalTitle">Vials</div>
                 <p>
                     <FontAwesomeIcon icon={faHeartPulse} size='xl' color="#e24033" /> BP : 90/120
-                    <FontAwesomeIcon icon={faWeightScale} size='xl' color="#3e9c45" style={{ marginLeft: '100' }} /> Weight : 77kgs
+                    <FontAwesomeIcon icon={faWeightScale} size='xl' color="#4e7de3" style={{ marginLeft: '100' }} /> Weight : 77kgs
                 </p>
 
                 <div className="vitalTitle">Prescription</div>
@@ -61,6 +62,23 @@ export const EachVital = () => {
                 </p>
 
             </div>
+        </div>
+    )
+}
+
+export const ConfirmBooking = () => {
+    return (
+        <div className="booking-confirm-container shadow">
+            <div className='circle-multi' style={{ backgroundColor: 'var(--babyBlue)', width: '100px', height: '100px', borderRadius: '90px', marginBottom: '20px' }}>
+                <CalendarMonthOutlinedIcon sx={{ fontSize: '63px', color: "var(--darkBlue)" }} />
+            </div>
+            <div>Mr John,<br /> Waiting to confirm your appointment</div><br />
+            <div style={{ letterSpacing: 1 }}><b>3:00 PM
+                <span style={{ color: 'gray' }}> | </span>
+                Dr.Manjeet Singh</b>
+            </div>
+            <div style={{ color: 'gray', letterSpacing: 1, fontSize: 15, marginTop: 4 }}><b>FRIDAY, JANUARY 6, 2022</b></div><br />
+            <Button variant="contained" sx={{ color:'white',backgroundColor:'#4e7de3' ,width:'90%',borderRadius:'30px',padding:'10px 0px'}}><b>CONFIRM</b></Button>
         </div>
     )
 }
@@ -150,7 +168,7 @@ export const ParallaxContainer = () => {
 export const RmpNotification = (props) => {
     return (
         <div className="rmpNotiBox shadow">
-            <span className="timeSlotBox shadow"style={{ letterSpacing: '0.5px', fontSize: 14, color: '#4e7de3' }}><b>{props.time}</b></span>
+            <span className="timeSlotBox shadow" style={{ letterSpacing: '0.5px', fontSize: 14, color: '#4e7de3' }}><b>{props.time}</b></span>
             {props.name}<br />
             <span className="specialization">{props.spec}</span>
         </div>
@@ -160,12 +178,12 @@ export const RmpNotification = (props) => {
 export const DoctorsAvaliable = (props) => {
     return (
         <div className="rmpNotiBox shadow" >
-            <span className="timeSlotBox shadow" style={{ letterSpacing: '0.5px', fontSize: 14, color: '#4e7de3' }}><b>{props.time?props.time:'BOOK NOW'}</b></span>
-            <div style={{margin:'2px 0 6px 0'}}>{props.name}</div>
+            <span className="timeSlotBox shadow" style={{ letterSpacing: '0.5px', fontSize: 14, color: '#4e7de3' }}><b>{props.time ? props.time : 'BOOK NOW'}</b></span>
+            <div style={{ margin: '2px 0 6px 0' }}>{props.name}</div>
             <div>
 
-            <span className="specialization">{props.spec} , {props.experience} yrs</span>
-            <span className="language" >{props.languages}</span>
+                <span className="specialization">{props.spec} , {props.experience} yrs</span>
+                <span className="language" >{props.languages}</span>
             </div>
         </div>
     )
