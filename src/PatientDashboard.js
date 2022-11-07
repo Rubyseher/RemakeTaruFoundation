@@ -10,9 +10,8 @@ import {EachVital} from './components'
 
 function PatientDashboard() {
   return (
-    <div style={{ backgroundColor: 'white'}}>
-      <h3 style={{ color: 'var(--lightLavender)', padding: '45px 30px 25px 60px' }}><b>Welcome Ms.Priyanka</b></h3>
-
+    <div style={{ backgroundColor: 'var(--lightBlue)'}}>
+      <h3 style={{ color: 'var(--darkBlue)' , padding: '45px 30px 15px 60px' }}><b>Welcome Ms.Priyanka</b></h3>
       <div style={{display:'flex'}}>
 
         <div className='profile-card'>

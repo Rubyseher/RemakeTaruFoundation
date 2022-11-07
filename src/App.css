@@ -24,7 +24,7 @@
 }
 .patientTodayBox{
   color: white;
-  background-color: #4e7de3;
+  background-color: #3F37C9;
   width: 650px;
   padding: 18px 6px 18px 26px;
   font-weight: 600; 
@@ -37,8 +37,9 @@
 .patientTodayBack{
   padding: 18px 6px 18px 26px;
   font-weight: 600; 
-  background-color: #b3c9fa;
+  background-color: #3e37c997;
   margin: 0 auto;
+  color: white;
   /* margin: 12px 0 15px 30px; */
   border-radius: 10px;
   text-align: left;
@@ -163,7 +164,7 @@
   font-weight:600;
   letter-spacing: -2px;
 background: #2974ed;
-background: linear-gradient(to right, #2974ed 39%, #a34ebe 55%);
+background: linear-gradient(to right, #4361EE 39%, #7209B7 55%);
 -webkit-background-clip: text;
 -webkit-text-fill-color: transparent;
 text-align: center;
@@ -196,7 +197,7 @@ padding: 12px 18px !important;
 
   --lightBlue: #f8faff;
   --babyBlue: #f3f7ff;
-  --darkBlue: #4e7de3;
+  --darkBlue: #3e37c9d9;
   --royalBlue: #1b53ac;
 }
 .css-3fvyzq-MuiButtonBase-root-MuiButton-root {
@@ -234,27 +235,28 @@ padding: 12px 18px !important;
 }
 .prescription{
   border-top-right-radius: 10px;
-  padding:10px 25px;
+  padding:5px 25px;
   width: 50vw;
   border-bottom-right-radius: 10px;
-  background-color:var(--babyPurple);
-  border-left:5px solid var(--lightLavender);
+  background-color:var(--lightBlue);
+  border-left:5px solid var(--darkBlue);
 }
 .prescription-date h4,.prescription-date h6{
-  color: var(--lightLavender);
+  color: var(--darkBlue);
   text-align: center;
   margin-right: 22px;
   font-weight: bold;
 }
 .prescription p{
-  font-weight: 600;
+  /* font-weight: 500; */
+  /* letter-spacing: 1px; */
   margin-bottom: 12px;
 }
 .vitalTitle{
   font-weight: 600;
   font-size: 20px;
-  margin-top: 10px;
-  color: var(--lightLavender);
+  margin: 25px 0 4px 0;
+  color: var(--darkBlue);
 }
 .vitals-container{
   display:inline-flex;
@@ -268,7 +270,7 @@ padding: 12px 18px !important;
 .profile-card{
   border-radius: 20px;
   width:20vw;
-  background-color:var(--lightLavender);
+  background-color:#322cace0;
   margin-left: 60px;
   padding:20px 30px 20px 30px;
 }

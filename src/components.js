@@ -35,9 +35,8 @@ export const NavbarMain = () => {
                     <Nav.Link href="#pricing">Pricing</Nav.Link>
                 </Nav>
             </Container>
-            <Button href="/login" variant="outlined" sx={{ color: '#1b53ac' }} startIcon={<LoginIcon />}>
-                <b>LOGIN</b>
-            </Button>
+            <Button href="/login" variant="contained" sx={{ color:'white',backgroundColor:'#3e37c9d9' ,width:'8%',borderRadius:'16px',padding:'8px 0px',marginRight:'8px'}}><b>Login</b></Button>
+
         </Navbar>
     )
 }
@@ -51,14 +50,14 @@ export const EachVital = () => {
             <div className='shadow prescription'>
                 <div className="vitalTitle">Vials</div>
                 <p>
-                    <FontAwesomeIcon icon={faHeartPulse} size='xl' color="#e24033" /> BP : 90/120
-                    <FontAwesomeIcon icon={faWeightScale} size='xl' color="#4e7de3" style={{ marginLeft: '100' }} /> Weight : 77kgs
+                    <FontAwesomeIcon icon={faHeartPulse} size='xl' color="#7209B7" /> BP : 90/120
+                    <FontAwesomeIcon icon={faWeightScale} size='xl' color="#7209B7" style={{ marginLeft: '100' }} /> Weight : 77kgs
                 </p>
 
-                <div className="vitalTitle">Prescription</div>
+                <div className="vitalTitle"><b>Prescription</b></div>
                 <p>
-                    20mg methyl daily morning for 10 days
-                    5mg dolo night for 5 days
+                    20 mg methyl daily morning for 10 days<br/>
+                    5 mg dolo night for 5 days
                 </p>
 
             </div>
@@ -78,7 +77,7 @@ export const ConfirmBooking = () => {
                 Dr.Manjeet Singh</b>
             </div>
             <div style={{ color: 'gray', letterSpacing: 1, fontSize: 15, marginTop: 4 }}><b>FRIDAY, JANUARY 6, 2022</b></div><br />
-            <Button variant="contained" sx={{ color:'white',backgroundColor:'#4e7de3' ,width:'90%',borderRadius:'30px',padding:'10px 0px'}}><b>CONFIRM</b></Button>
+            <Button variant="contained" sx={{ color:'white',backgroundColor:'#3e37c9d9' ,width:'90%',borderRadius:'30px',padding:'10px 0px'}}><b>CONFIRM</b></Button>
         </div>
     )
 }
@@ -145,7 +144,7 @@ export const Services = () => {
                 <span style={{ margin: '12px 0 0 25px' }}><b>{i.specialization}</b></span>
                 <div className='circle-services' style={{ backgroundColor: 'var(--babyBlue)' }}>
                     {/* <MoreTimeIcon sx={{ color:'var(--royalBlue)', fontSize: 25 }} /> */}
-                    <FontAwesomeIcon icon={i.icon} size='xl' color="var(--darkBlue)" />
+                    <FontAwesomeIcon icon={i.icon} size='xl' color="#4361EE" />
                 </div>
             </div>
         )
@@ -168,7 +167,7 @@ export const ParallaxContainer = () => {
 export const RmpNotification = (props) => {
     return (
         <div className="rmpNotiBox shadow">
-            <span className="timeSlotBox shadow" style={{ letterSpacing: '0.5px', fontSize: 14, color: '#4e7de3' }}><b>{props.time}</b></span>
+            <span className="timeSlotBox shadow" style={{ letterSpacing: '0.5px', fontSize: 15, color: '#332ad9' }}><b>{props.time}</b></span>
             {props.name}<br />
             <span className="specialization">{props.spec}</span>
         </div>
@@ -178,7 +177,7 @@ export const RmpNotification = (props) => {
 export const DoctorsAvaliable = (props) => {
     return (
         <div className="rmpNotiBox shadow" >
-            <span className="timeSlotBox shadow" style={{ letterSpacing: '0.5px', fontSize: 14, color: '#4e7de3' }}><b>{props.time ? props.time : 'BOOK NOW'}</b></span>
+            <span className="timeSlotBox shadow" style={{ letterSpacing: '0.1px', fontSize: 14, color: '#3e37c9e3' }}><b>{props.time ? props.time : 'BOOK NOW'}</b></span>
             <div style={{ margin: '2px 0 6px 0' }}>{props.name}</div>
             <div>
 
@@ -195,7 +194,8 @@ export const PatientsToday = () => {
             <IconButton color="primary" aria-label="add to shopping cart" className='close_button'>
                 <CancelRoundedIcon sx={{ color: 'red', fontSize: 30, backgroundColor: 'white', borderRadius: '30px' }} />
             </IconButton>
-            <span className="timeSlotBox shadow">10:00 pm - 11:00 pm</span>
+            <span className="timeSlotBox shadow" style={{ letterSpacing: '0.5px', fontSize: 16, color: '#332ad9' }}><b>10:00 pm - 11:00 pm</b></span>
+
             <IconButton color="primary" className='meetLogo'>
                 <img src='/img/meet.png' width={50} />
             </IconButton>

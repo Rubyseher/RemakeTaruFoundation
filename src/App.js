@@ -14,7 +14,6 @@ function App() {
       <NavbarMain/>
       <Routes>
         <Route path="/" element={<MainPg />} />
-        <Route path="/about" element={<LoginPg />} />
         <Route path="/rmp" element={<RmpDashboard />} />
         <Route path="/doc" element={<DocDashboard />} />
         <Route path="/patient" element={<PatientDashboard />} />
