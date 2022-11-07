@@ -35,8 +35,9 @@ export const NavbarMain = () => {
                     <Nav.Link href="#pricing">Pricing</Nav.Link>
                 </Nav>
             </Container>
-            <Button href="/login" variant="contained" sx={{ color:'white',backgroundColor:'#3e37c9d9' ,width:'8%',borderRadius:'16px',padding:'8px 0px',marginRight:'8px'}}><b>Login</b></Button>
-
+            {/* <Button variant="contained" sx={{ color: 'white', backgroundColor: '#3e37c9d9', width: '8%', borderRadius: '16px', padding: '8px 0px', marginRight: '8px' }}><b>Login</b></Button> */}
+            <Button variant="contained" sx={{fontWeight:'bold',letterSpacing:'2px',width:'8%'}}>Login</Button>
+            {/* <Button href="/login" variant="primary">Primary</Button> */}
         </Navbar>
     )
 }
@@ -56,7 +57,7 @@ export const EachVital = () => {
 
                 <div className="vitalTitle"><b>Prescription</b></div>
                 <p>
-                    20 mg methyl daily morning for 10 days<br/>
+                    20 mg methyl daily morning for 10 days<br />
                     5 mg dolo night for 5 days
                 </p>
 
@@ -77,7 +78,7 @@ export const ConfirmBooking = () => {
                 Dr.Manjeet Singh</b>
             </div>
             <div style={{ color: 'gray', letterSpacing: 1, fontSize: 15, marginTop: 4 }}><b>FRIDAY, JANUARY 6, 2022</b></div><br />
-            <Button variant="contained" sx={{ color:'white',backgroundColor:'#3e37c9d9' ,width:'90%',borderRadius:'30px',padding:'10px 0px'}}><b>CONFIRM</b></Button>
+            <Button variant="contained" sx={{ color: 'white', backgroundColor: '#3e37c9d9', width: '90%', borderRadius: '30px', padding: '10px 0px' }}><b>CONFIRM</b></Button>
         </div>
     )
 }
@@ -152,12 +153,11 @@ export const Services = () => {
 }
 export const ParallaxContainer = () => {
     return (
-        <Parallax bgImage='./img/parallaxDoc2.webp' strength={500}
+        <Parallax bgImage='./img/main2.jpg' strength={500}
             bgImageStyle={{ width: '100%' }} style={{ height: '670px' }}>
             <div style={{ height: 500 }}>
                 <div className='parallax' style={{ background: 'transparent' }}>
-                    <img src="/img/healthcare.png" width={800} style={{ marginTop: '90px' }} />
-                    {/* <img src="/img/forAll.png" /> */}
+                    <h1 className="title-main" style={{ fontSize: '70px', paddingTop: 160 }}>Health Care For All</h1>
                 </div>
             </div>
         </Parallax>

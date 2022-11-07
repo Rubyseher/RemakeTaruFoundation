@@ -1,12 +1,6 @@
 import React from "react";
 import './App.css'
 import { ParallaxContainer, Services } from "./components.js"
-import ChildCareIcon from '@mui/icons-material/ChildCare';
-import FaceRetouchingNaturalIcon from '@mui/icons-material/FaceRetouchingNatural';
-import PregnantWomanIcon from '@mui/icons-material/PregnantWoman';
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import SickIcon from '@mui/icons-material/Sick';
-// import healthcare from './img/healthcare.svg'
 function MainPg() {
 
     return (
