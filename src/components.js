@@ -20,7 +20,7 @@ export const NavbarMain = () => {
         <Navbar bg="light" variant="light" className='shadow'>
             <Container>
                 <Navbar.Brand href="/" style={{ display: 'flex', alignItems: 'center' }}>
-                    <img 
+                    <img
                         alt=""
                         src="/img/logo.png"
                         width="50"
