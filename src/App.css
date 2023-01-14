@@ -196,6 +196,7 @@ padding: 12px 18px !important;
   --darkPurple: #6b1bacc6;
 
   --lightBlue: #f8faff;
+  --blue: #1665c0;
   --babyBlue: #f3f7ff;
   --darkBlue: #3e37c9d9;
   --royalBlue: #1b53ac;
@@ -344,7 +345,7 @@ padding: 12px 18px !important;
 /* RMP Dashboard */
 .rmpNotiBox {
   color: white;
-  background-color:var(--darkBlue);
+  background-color:var(--blue);
   width: 450px;
   padding: 18px 26px;
   font-weight: 600;

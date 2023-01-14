@@ -7,6 +7,7 @@ import axios from "./axios.js";
 function Booking() {
   const [Notification, setNotification] = React.useState([])
   const [value, onChange] = useState(new Date());
+  const [selectedDoc,setSelectedDoc]= useState("baa")
 
   useEffect(() => {
     async function fetchData() {
@@ -14,24 +15,26 @@ function Booking() {
 
       let newAr = db.data.filter((item, index) => {
         if (item.specialization == 'Pediatrician') {
-          console.log('item', item.name)
+          setSelectedDoc(item.name);
           return item.name
         }
       })
       setNotification((oldState) => newAr)
     }
     fetchData();
-
   }, [])
+
+
   return (
     <div>
       <div style={{ display: 'flex', backgroundColor: ' var(--lightBlue)', padding: '50px 30px 25px 60px' }}>
         <div >
-          <h3 style={{ color: 'var(--darkBlue)' }}><b>Select Doctors</b></h3>
+          <h3 style={{ color: 'var(--blue)' }}><b>Select Doctors</b></h3>
           <div style={{ display: 'inline-flex', width: '900', flexFlow: 'wrap', height: '230px' }}>
             {
               Notification && Notification.map((d) => (
-                <DoctorsAvaliable name={d.name} experience={d.experience} languages={d.languages} spec={d.specialization} />
+                <DoctorsAvaliable name={d.name} experience={d.experience} languages={d.languages} spec={d.specialization} 
+                onClick={()=>setSelectedDoc(d.name)}/>
               ))
             }
           </div>
@@ -40,7 +43,7 @@ function Booking() {
       </div>
 
       <div style={{ backgroundColor: 'var(--babyPurple)', padding: '50px 30px 25px 60px', overflowX: 'hidden' }}>
-        <h3 style={{ color: 'var(--lightLavender)' }}><b>Select Time</b></h3>
+        <h3 style={{ color: 'var(--lightLavender)' }}><b>Select Time With {selectedDoc}</b></h3>
 
         <div style={{ display: 'inline-flex', padding: '10px 90px 30px 120px' }}>
           <div style={{ width: '20%', marginRight: 50 }}>
@@ -66,7 +69,7 @@ function Booking() {
       </div>
 
       <div style={{ backgroundColor: ' var(--lightBlue)', padding: '45px 30px 25px 60px' }}>
-        <h3 style={{ color: 'var(--darkBlue)' }}><b>Confirm Booking</b></h3>
+        <h3 style={{ color: 'var(--blue)' }}><b>Confirm Booking</b></h3>
         <ConfirmBooking />
       </div>
 

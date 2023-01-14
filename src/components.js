@@ -36,7 +36,7 @@ export const NavbarMain = () => {
                 </Nav>
             </Container>
             {/* <Button variant="contained" sx={{ color: 'white', backgroundColor: '#3e37c9d9', width: '8%', borderRadius: '16px', padding: '8px 0px', marginRight: '8px' }}><b>Login</b></Button> */}
-            <Button variant="contained" sx={{fontWeight:'bold',letterSpacing:'2px',width:'8%'}}>Login</Button>
+            <Button variant="contained" sx={{fontWeight:'bold',letterSpacing:'2px',width:'8%',borderRadius:'12px',backgroundColor:'var(--blue)',marginRight:'20px',padding:'7px 50px'}}>Login</Button>
             {/* <Button href="/login" variant="primary">Primary</Button> */}
         </Navbar>
     )
@@ -70,7 +70,7 @@ export const ConfirmBooking = () => {
     return (
         <div className="booking-confirm-container shadow">
             <div className='circle-multi' style={{ backgroundColor: 'var(--babyBlue)', width: '100px', height: '100px', borderRadius: '90px', marginBottom: '20px' }}>
-                <CalendarMonthOutlinedIcon sx={{ fontSize: '63px', color: "var(--darkBlue)" }} />
+                <CalendarMonthOutlinedIcon sx={{ fontSize: '63px', color: "var(--blue)" }} />
             </div>
             <div>Mr John,<br /> Waiting to confirm your appointment</div><br />
             <div style={{ letterSpacing: 1 }}><b>3:00 PM
@@ -78,7 +78,7 @@ export const ConfirmBooking = () => {
                 Dr.Manjeet Singh</b>
             </div>
             <div style={{ color: 'gray', letterSpacing: 1, fontSize: 15, marginTop: 4 }}><b>FRIDAY, JANUARY 6, 2022</b></div><br />
-            <Button variant="contained" sx={{ color: 'white', backgroundColor: '#3e37c9d9', width: '90%', borderRadius: '30px', padding: '10px 0px' }}><b>CONFIRM</b></Button>
+            <Button variant="contained" sx={{ color: 'white', width: '90%', borderRadius: '30px', padding: '10px 0px',backgroundColor:'var(--blue)' }}><b>CONFIRM</b></Button>
         </div>
     )
 }
@@ -110,7 +110,7 @@ export const Services = () => {
             icon: faTooth
         }
         , {
-            specialization: "Orthopaedic ",
+            specialization: "Orthopaedic",
             icon: faBone
         },
         {
@@ -176,8 +176,8 @@ export const RmpNotification = (props) => {
 
 export const DoctorsAvaliable = (props) => {
     return (
-        <div className="rmpNotiBox shadow" >
-            <span className="timeSlotBox shadow" style={{ letterSpacing: '0.1px', fontSize: 14, color: '#3e37c9e3' }}><b>{props.time ? props.time : 'BOOK NOW'}</b></span>
+        <div className="rmpNotiBox shadow" onClick={props.onClick}>
+            <span className="timeSlotBox shadow" style={{ letterSpacing: '0.1px', fontSize: 14, color: '#1665c0' }}><b>{props.time ? props.time : 'BOOK NOW'}</b></span>
             <div style={{ margin: '2px 0 6px 0' }}>{props.name}</div>
             <div>
 
