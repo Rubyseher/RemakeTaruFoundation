@@ -3,19 +3,23 @@ import { DoctorsAvaliable, ConfirmBooking } from './components'
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import axios from "./axios.js";
+import { useLocation } from "react-router-dom";
 
-function Booking() {
+
+function Booking(props) {
   const [Notification, setNotification] = React.useState([])
   const [value, onChange] = useState(new Date());
   const [selectedDoc,setSelectedDoc]= useState("baa")
   const [timeSlot,setTimeSlot]= useState([])
 
+  const {state} = useLocation();
+  const { id, color } = state;
   useEffect(() => {
     async function fetchData() {
       const db = await axios.get('/booking')
 
       let newAr = db.data.filter((item, index) => {
-        if (item.specialization == 'Pediatrician') {
+        if (item.specialization == state.specialization) {
           setSelectedDoc(item.name);
           setTimeSlot(item.time);
           return item.name

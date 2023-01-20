@@ -134,17 +134,20 @@ export const Services = () => {
             icon: faCarrot
         }
     ];
-    let navigate = useNavigate();
-    const routeChange = () => {
+    const navigate = useNavigate();
+    const routeChange = (s) => {
         let path = `/booking`;
-        navigate(path);
+        navigate(path,{
+            state:{
+                specialization:s
+            }
+        });
     }
     return (
         servicesList.map(i =>
-            <div className="services-container" onClick={routeChange}>
+            <div className="services-container" onClick={()=>routeChange(i.specialization)}>
                 <span style={{ margin: '12px 0 0 25px' }}><b>{i.specialization}</b></span>
                 <div className='circle-services' style={{ backgroundColor: 'var(--babyBlue)' }}>
-                    {/* <MoreTimeIcon sx={{ color:'var(--royalBlue)', fontSize: 25 }} /> */}
                     <FontAwesomeIcon icon={i.icon} size='xl' color="#4361EE" />
                 </div>
             </div>
