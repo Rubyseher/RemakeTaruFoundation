@@ -8,6 +8,7 @@ function Booking() {
   const [Notification, setNotification] = React.useState([])
   const [value, onChange] = useState(new Date());
   const [selectedDoc,setSelectedDoc]= useState("baa")
+  const [timeSlot,setTimeSlot]= useState([])
 
   useEffect(() => {
     async function fetchData() {
@@ -16,12 +17,14 @@ function Booking() {
       let newAr = db.data.filter((item, index) => {
         if (item.specialization == 'Pediatrician') {
           setSelectedDoc(item.name);
+          setTimeSlot(item.time);
           return item.name
         }
       })
       setNotification((oldState) => newAr)
     }
     fetchData();
+    console.log(Notification);
   }, [])
 
 
@@ -51,18 +54,11 @@ function Booking() {
           </div>
           <div style={{ borderRadius: '20px', backgroundColor: 'white' }} className='shadow'>
             <div className='booking-time-container'>
-              <div className='bookingTime shadow'>9:00 AM</div>
-              <div className='bookingTime shadow'>9:00 AM</div>
-              <div className='bookingTime shadow'>9:00 AM</div>
-              <div className='bookingTime shadow'>9:00 AM</div>
-              <div className='bookingTime shadow'>9:00 AM</div>
-              <div className='bookingTime shadow'>9:00 AM</div>
-              <div className='bookingTime shadow'>9:00 AM</div>
-              <div className='bookingTime shadow'>9:00 AM</div>
-              <div className='bookingTime shadow'>9:00 AM</div>
-              <div className='bookingTime shadow'>9:00 AM</div>
-              <div className='bookingTime shadow'>9:00 AM</div>
-              <div className='bookingTime shadow'>9:00 AM</div>
+              {
+                timeSlot && timeSlot.map((i)=>(
+                  <div className='bookingTime shadow'>{i}</div>
+                ))
+              }
             </div>
           </div>
         </div>
