@@ -72,7 +72,7 @@ export const ConfirmBooking = () => {
             <div className='circle-multi' style={{ backgroundColor: 'var(--babyBlue)', width: '100px', height: '100px', borderRadius: '90px', marginBottom: '20px' }}>
                 <CalendarMonthOutlinedIcon sx={{ fontSize: '63px', color: "var(--blue)" }} />
             </div>
-            <div>Mr John,<br /> Waiting to confirm your appointment</div><br />
+            <div>Confirm<br />your appointment</div><br />
             <div style={{ letterSpacing: 1 }}><b>3:00 PM
                 <span style={{ color: 'gray' }}> | </span>
                 Dr.Manjeet Singh</b>

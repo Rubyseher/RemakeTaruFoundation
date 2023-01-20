@@ -37,11 +37,11 @@ function Booking(props) {
       <div style={{ display: 'flex', backgroundColor: ' var(--lightBlue)', padding: '50px 30px 25px 60px' }}>
         <div >
           <h3 style={{ color: 'var(--blue)' }}><b>Select Doctors</b></h3>
-          <div style={{ display: 'inline-flex', width: '900', flexFlow: 'wrap', height: '230px' }}>
+          <div style={{ display: 'inline-flex', width: '900', flexFlow: 'wrap', maxHeight: '230px' }}>
             {
               Notification && Notification.map((d) => (
                 <DoctorsAvaliable name={d.name} experience={d.experience} languages={d.languages} spec={d.specialization} 
-                onClick={()=>setSelectedDoc(d.name)}/>
+                onClick={()=>{setSelectedDoc(d.name);setTimeSlot(d.time)}}/>
               ))
             }
           </div>
