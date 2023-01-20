@@ -21,7 +21,7 @@ function LoginPg() {
                 <div style={{ borderRadius: 20, width: '28%' ,backgroundColor:'white',padding:'30px'}} className='shadow'>
                     <form onSubmit={handleSubmit}>
                         <img alt="" src="/img/logoGlow.png" class='centerlogo' />
-                        <input type="text" name="email" placeholder="Username" value={name}
+                        <input type="text" name="email" placeholder="Phone Number" value={name}
                             onChange={(e) => setName(e.target.value)} />
                         <input type="password" name="password" placeholder="Password" value={password}
                             onChange={(e) => setPassword(e.target.value)} />
@@ -29,12 +29,15 @@ function LoginPg() {
                             <div class="forgot"> <a href="#">Forgot Password?</a> </div>
                         </div>
                         <input type="submit" name="send" value="SUBMIT" />
-                        <p class="text-center">Sign up with<br /><i class="fa fa-hand-o-down" aria-hidden="true"></i></p>
-                        <div class="social-sign">
+                        <div class="createAcc" style={{textAlign:'center'}}>
+                            <div class="createAcc"> <a href="#">Dont have an Account?<br/>Create one Now</a> </div>
+                        </div>
+                        {/* <p class="text-center">Sign up with<br /><i class="fa fa-hand-o-down" aria-hidden="true"></i></p> */}
+                        {/* <div class="social-sign">
                             <a href="#"><FontAwesomeIcon icon={faGoogle} color='#e24033' /></a>
                             <a href="#"><FontAwesomeIcon icon={faTwitter} color='#3396e9' /></a>
                             <a href="#"><FontAwesomeIcon icon={faFacebook} color="#3358a3" /></a>
-                        </div>
+                        </div> */}
                     </form>
                 </div>
             </div>

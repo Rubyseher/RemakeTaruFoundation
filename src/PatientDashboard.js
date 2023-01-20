@@ -11,18 +11,18 @@ import {EachVital} from './components'
 function PatientDashboard() {
   return (
     <div style={{ backgroundColor: 'var(--lightBlue)'}}>
-      <h3 style={{ color: 'var(--darkBlue)' , padding: '45px 30px 15px 60px' }}><b>Welcome Ms.Priyanka</b></h3>
+      <h3 style={{ color: 'var(--blue)' , padding: '45px 30px 15px 60px' }}><b>Welcome Ms.Priyanka</b></h3>
       <div style={{display:'flex'}}>
 
         <div className='profile-card'>
           <AccountCircleIcon style={{ fontSize: '9.0vw', marginLeft: '22%', marginBottom: 10 }} />
           <h4 style={{ marginBottom: 40 }}><b>Mr. Singh</b></h4>
           <span style={{ fontSize: '1.1vw', lineHeight: '50px', fontWeight: '600' }} >
-            <ContactPageIcon style={{ fontSize: '1.8vw', marginRight: '15px' }} />27<br />
+            <ContactPageIcon style={{ fontSize: '1.8vw', marginRight: '15px' }} />27 years<br />
             <CalendarMonthIcon style={{ fontSize: '1.8vw', marginRight: '15px' }} />22/03/2000<br />
             <LocalPhoneIcon style={{ fontSize: '1.8vw', marginRight: '15px' }} />5984303810<br />
             <BloodtypeIcon style={{ fontSize: '1.8vw', marginRight: '15px' }} />A+<br />
-            <HomeIcon style={{ fontSize: '1.8vw', marginRight: '15px' }} />#44, BTM 8th stage, Bangalore<br />
+            <HomeIcon style={{ fontSize: '1.8vw', marginRight: '15px' }} />#44, BTM 8th stage<br />
           </span>
         </div>
 

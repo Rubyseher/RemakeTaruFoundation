@@ -10,6 +10,7 @@ function Booking(props) {
   const [Notification, setNotification] = React.useState([])
   const [value, onChange] = useState(new Date());
   const [selectedDoc,setSelectedDoc]= useState("baa")
+  const [selectedTime,setSelectedTime]= useState("00:00")
   const [timeSlot,setTimeSlot]= useState([])
 
   const {state} = useLocation();
@@ -60,7 +61,7 @@ function Booking(props) {
             <div className='booking-time-container'>
               {
                 timeSlot && timeSlot.map((i)=>(
-                  <div className='bookingTime shadow'>{i}</div>
+                  <div className='bookingTime shadow' onClick={()=>setSelectedTime(i)}>{i}</div>
                 ))
               }
             </div>
@@ -70,7 +71,7 @@ function Booking(props) {
 
       <div style={{ backgroundColor: ' var(--lightBlue)', padding: '45px 30px 25px 60px' }}>
         <h3 style={{ color: 'var(--blue)' }}><b>Confirm Booking</b></h3>
-        <ConfirmBooking />
+        <ConfirmBooking time={selectedTime} doc={selectedDoc}/>
       </div>
 
     </div>

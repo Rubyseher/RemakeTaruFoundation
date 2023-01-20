@@ -20,28 +20,30 @@
 }
 .meetLogo{
   float: right;
-  margin: -5px 5px 0 0;
+  /* margin: -100px 5px 0 0; */
+  position: relative;
+  top: -15px;
 }
 .patientTodayBox{
-  color: white;
-  background-color: #3F37C9;
+  background-color: white;
   width: 650px;
   padding: 18px 6px 18px 26px;
   font-weight: 600; 
   margin: 0 auto;
-  /* margin: 12px 0 15px 30px; */
-  border-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
   text-align: left;
+  border-left:7px solid var(--blue);
+
   font-size: 18px;
 }
 .patientTodayBack{
   padding: 18px 6px 18px 26px;
   font-weight: 600; 
-  background-color: #3e37c997;
+  border-left:7px solid #d9381e;
+  background-color: white;
   margin: 0 auto;
-  color: white;
-  /* margin: 12px 0 15px 30px; */
-  border-radius: 10px;
+  /* border-radius: 10px; */
   text-align: left;
   font-size: 18px;
 }
@@ -242,10 +244,10 @@ padding: 12px 18px !important;
   width: 50vw;
   border-bottom-right-radius: 10px;
   background-color:var(--lightBlue);
-  border-left:5px solid var(--darkBlue);
+  border-left:5px solid var(--blue);
 }
 .prescription-date h4,.prescription-date h6{
-  color: var(--darkBlue);
+  color: var(--blue);
   text-align: center;
   margin-right: 22px;
   font-weight: bold;
@@ -259,7 +261,7 @@ padding: 12px 18px !important;
   font-weight: 600;
   font-size: 20px;
   margin: 25px 0 4px 0;
-  color: var(--darkBlue);
+  color: var(--blue);
 }
 .vitals-container{
   display:inline-flex;
@@ -273,7 +275,8 @@ padding: 12px 18px !important;
 .profile-card{
   border-radius: 20px;
   width:20vw;
-  background-color:#322cace0;
+  background-color:var(--blue);
+  /* background-color:#322cace0; */
   margin-left: 60px;
   padding:20px 30px 20px 30px;
 }
@@ -293,10 +296,10 @@ padding: 12px 18px !important;
   box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.25);
 }
 .timeSlotBox{
-  background-color: white;
+  background-color:var(--blue);
   border-radius: 10px;
   padding: 7px 14px;
-  color: black;
+  color: rgb(255, 255, 255);
   float:right;
   right: -30px;
   font-weight: 500;
@@ -346,13 +349,16 @@ padding: 12px 18px !important;
 }
 /* RMP Dashboard */
 .rmpNotiBox {
-  color: white;
-  background-color:var(--blue);
+  /* color: white; */
+  background-color:white;
   width: 450px;
   padding: 18px 26px;
   font-weight: 600;
   margin: 10px;
-  border-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-left:7px solid var(--blue);
+
   text-align: left;
   font-size: 18px;
 }

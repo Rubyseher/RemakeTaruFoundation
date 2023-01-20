@@ -36,7 +36,7 @@ export const NavbarMain = () => {
                 </Nav>
             </Container>
             {/* <Button variant="contained" sx={{ color: 'white', backgroundColor: '#3e37c9d9', width: '8%', borderRadius: '16px', padding: '8px 0px', marginRight: '8px' }}><b>Login</b></Button> */}
-            <Button variant="contained" sx={{fontWeight:'bold',letterSpacing:'2px',width:'8%',borderRadius:'12px',backgroundColor:'var(--blue)',marginRight:'20px',padding:'7px 50px'}}>Login</Button>
+            <Button href="/login" variant="contained" sx={{ fontWeight: 'bold', letterSpacing: '2px', width: '8%', borderRadius: '12px', backgroundColor: 'var(--blue)', marginRight: '20px', padding: '7px 50px' }}>Login</Button>
             {/* <Button href="/login" variant="primary">Primary</Button> */}
         </Navbar>
     )
@@ -51,8 +51,8 @@ export const EachVital = () => {
             <div className='shadow prescription'>
                 <div className="vitalTitle">Vials</div>
                 <p>
-                    <FontAwesomeIcon icon={faHeartPulse} size='xl' color="#7209B7" /> BP : 90/120
-                    <FontAwesomeIcon icon={faWeightScale} size='xl' color="#7209B7" style={{ marginLeft: '100' }} /> Weight : 77kgs
+                    <FontAwesomeIcon icon={faHeartPulse} size='xl' color="var(--blue)" /> BP : 90/120
+                    <FontAwesomeIcon icon={faWeightScale} size='xl' color="var(--blue)" style={{ marginLeft: '100' }} /> Weight : 77kgs
                 </p>
 
                 <div className="vitalTitle"><b>Prescription</b></div>
@@ -66,19 +66,19 @@ export const EachVital = () => {
     )
 }
 
-export const ConfirmBooking = () => {
+export const ConfirmBooking = (props) => {
     return (
         <div className="booking-confirm-container shadow">
             <div className='circle-multi' style={{ backgroundColor: 'var(--babyBlue)', width: '100px', height: '100px', borderRadius: '90px', marginBottom: '20px' }}>
                 <CalendarMonthOutlinedIcon sx={{ fontSize: '63px', color: "var(--blue)" }} />
             </div>
             <div>Confirm<br />your appointment</div><br />
-            <div style={{ letterSpacing: 1 }}><b>3:00 PM
+            <div style={{ letterSpacing: 1 }}><b>{props.time}
                 <span style={{ color: 'gray' }}> | </span>
-                Dr.Manjeet Singh</b>
+                {props.doc}</b>
             </div>
             <div style={{ color: 'gray', letterSpacing: 1, fontSize: 15, marginTop: 4 }}><b>FRIDAY, JANUARY 6, 2022</b></div><br />
-            <Button variant="contained" sx={{ color: 'white', width: '90%', borderRadius: '30px', padding: '10px 0px',backgroundColor:'var(--blue)' }}><b>CONFIRM</b></Button>
+            <Button variant="contained" sx={{ color: 'white', width: '90%', borderRadius: '30px', padding: '10px 0px', backgroundColor: 'var(--blue)' }}><b>CONFIRM</b></Button>
         </div>
     )
 }
@@ -137,15 +137,15 @@ export const Services = () => {
     const navigate = useNavigate();
     const routeChange = (s) => {
         let path = `/booking`;
-        navigate(path,{
-            state:{
-                specialization:s
+        navigate(path, {
+            state: {
+                specialization: s
             }
         });
     }
     return (
         servicesList.map(i =>
-            <div className="services-container" onClick={()=>routeChange(i.specialization)}>
+            <div className="services-container" onClick={() => routeChange(i.specialization)}>
                 <span style={{ margin: '12px 0 0 25px' }}><b>{i.specialization}</b></span>
                 <div className='circle-services' style={{ backgroundColor: 'var(--babyBlue)' }}>
                     <FontAwesomeIcon icon={i.icon} size='xl' color="#4361EE" />
@@ -170,7 +170,7 @@ export const ParallaxContainer = () => {
 export const RmpNotification = (props) => {
     return (
         <div className="rmpNotiBox shadow">
-            <span className="timeSlotBox shadow" style={{ letterSpacing: '0.5px', fontSize: 15, color: '#332ad9' }}><b>{props.time}</b></span>
+            <span className="timeSlotBox shadow" style={{ letterSpacing: '0.5px', fontSize: 15}}><b>{props.time}</b></span>
             {props.name}<br />
             <span className="specialization">{props.spec}</span>
         </div>
@@ -180,7 +180,7 @@ export const RmpNotification = (props) => {
 export const DoctorsAvaliable = (props) => {
     return (
         <div className="rmpNotiBox shadow" onClick={props.onClick}>
-            <span className="timeSlotBox shadow" style={{ letterSpacing: '0.1px', fontSize: 14, color: '#1665c0' }}><b>{props.time ? props.time : 'BOOK NOW'}</b></span>
+            <span className="timeSlotBox shadow" style={{ letterSpacing: '0.1px', fontSize: 14}}><b>BOOK NOW</b></span>
             <div style={{ margin: '2px 0 6px 0' }}>{props.name}</div>
             <div>
 
@@ -194,16 +194,19 @@ export const DoctorsAvaliable = (props) => {
 export const PatientsToday = () => {
     return (
         <div className="patientTodayBox shadow" >
-            <IconButton color="primary" aria-label="add to shopping cart" className='close_button'>
-                <CancelRoundedIcon sx={{ color: 'red', fontSize: 30, backgroundColor: 'white', borderRadius: '30px' }} />
+            <IconButton color="primary" className='close_button'>
+                <CancelRoundedIcon sx={{ color: '#d9381e', fontSize: 30, backgroundColor: 'white', borderRadius: '30px' }} />
             </IconButton>
-            <span className="timeSlotBox shadow" style={{ letterSpacing: '0.5px', fontSize: 16, color: '#332ad9' }}><b>10:00 pm - 11:00 pm</b></span>
+            <div style={{justifyContent:'right',paddingRight:'40px'}}>
+                <span className="timeSlotBox shadow" style={{ letterSpacing: '0.5px', fontSize: 16, color: 'white', backgroundColor: 'var(--blue)' }}><b>10:00 pm - 11:00 pm</b></span>
+                <IconButton color="primary" className='meetLogo'>
+                    <img src='/img/meet.png' width={50} />
+                </IconButton>
+            </div>
 
-            <IconButton color="primary" className='meetLogo'>
-                <img src='/img/meet.png' width={50} />
-            </IconButton>
-
-            Mr.Singh singh<br />
+            <div style={{ color: 'var(--blue)' }}>
+                Mr.Singh singh
+            </div> <br />
             <span style={{ fontWeight: 400, fontSize: 14 }}>44 yrs</span>
         </div>
 

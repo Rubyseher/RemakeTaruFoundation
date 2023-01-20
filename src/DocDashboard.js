@@ -26,7 +26,7 @@ function DocDashboard() {
         <div style={{backgroundColor: ' var(--lightBlue)'}}>
             <h2 className='title-main'> Schedule</h2>
 
-            <div style={{ display: 'flex', padding: '0px 0px 30px 30px'}}>
+            <div style={{ display: 'flex', padding: '0px 0px 30px 30px',marginTop:'-30px'}}>
                 <Calendar onChange={onChange} value={value} class='react-calendar' />
 
                 <div style={{ display: 'inline-flex', flexFlow: 'wrap', height: '330px',overflowY:'scroll',overflowX:'hidden'}}>
