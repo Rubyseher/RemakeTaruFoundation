@@ -77,7 +77,7 @@ export const ConfirmBooking = (props) => {
                 <span style={{ color: 'gray' }}> | </span>
                 {props.doc}</b>
             </div>
-            <div style={{ color: 'gray', letterSpacing: 1, fontSize: 15, marginTop: 4 }}><b>FRIDAY, JANUARY 6, 2022</b></div><br />
+            <div style={{ color: 'gray', letterSpacing: 1, fontSize: 15, marginTop: 4 }}><b>{props.date}</b></div><br />
             <Button variant="contained" sx={{ color: 'white', width: '90%', borderRadius: '30px', padding: '10px 0px', backgroundColor: 'var(--blue)' }}><b>CONFIRM</b></Button>
         </div>
     )

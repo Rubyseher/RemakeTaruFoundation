@@ -11,6 +11,7 @@ function Booking(props) {
   const [value, onChange] = useState(new Date());
   const [selectedDoc,setSelectedDoc]= useState("baa")
   const [selectedTime,setSelectedTime]= useState("00:00")
+  const [selectedDate,setSelectedDate]= useState("nil")
   const [timeSlot,setTimeSlot]= useState([])
 
   const {state} = useLocation();
@@ -29,7 +30,6 @@ function Booking(props) {
       setNotification((oldState) => newAr)
     }
     fetchData();
-    console.log(Notification);
   }, [])
 
 
@@ -55,7 +55,9 @@ function Booking(props) {
 
         <div style={{ display: 'inline-flex', padding: '10px 90px 30px 120px' }}>
           <div style={{ width: '20%', marginRight: 50 }}>
-            <Calendar onChange={onChange} value={value} class='react-calendar shadow' />
+            <Calendar onChange = {onChange} value={value} class='react-calendar shadow' 
+            onClickDay={()=>setSelectedDate(new Intl.DateTimeFormat('en-GB', { dateStyle: 'full'}).format(value).toUpperCase())}
+            />
           </div>
           <div style={{ borderRadius: '20px', backgroundColor: 'white' }} className='shadow'>
             <div className='booking-time-container'>
@@ -71,7 +73,7 @@ function Booking(props) {
 
       <div style={{ backgroundColor: ' var(--lightBlue)', padding: '45px 30px 25px 60px' }}>
         <h3 style={{ color: 'var(--blue)' }}><b>Confirm Booking</b></h3>
-        <ConfirmBooking time={selectedTime} doc={selectedDoc}/>
+        <ConfirmBooking time={selectedTime} doc={selectedDoc} date={selectedDate}/>
       </div>
 
     </div>
