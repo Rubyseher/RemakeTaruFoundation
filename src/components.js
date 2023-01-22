@@ -191,23 +191,25 @@ export const DoctorsAvaliable = (props) => {
     )
 }
 
-export const PatientsToday = () => {
+export const PatientsToday = (props) => {
     return (
         <div className="patientTodayBox shadow" >
             <IconButton color="primary" className='close_button'>
                 <CancelRoundedIcon sx={{ color: '#d9381e', fontSize: 30, backgroundColor: 'white', borderRadius: '30px' }} />
             </IconButton>
             <div style={{justifyContent:'right',paddingRight:'40px'}}>
-                <span className="timeSlotBox shadow" style={{ letterSpacing: '0.5px', fontSize: 16, color: 'white', backgroundColor: 'var(--blue)' }}><b>10:00 pm - 11:00 pm</b></span>
+                <span className="timeSlotBox shadow" style={{ letterSpacing: '0.5px', fontSize: 16, color: 'white', backgroundColor: 'var(--blue)' }}>
+                    <b>{props.time}</b>
+                </span>
                 <IconButton color="primary" className='meetLogo'>
                     <img src='/img/meet.png' width={50} />
                 </IconButton>
             </div>
 
             <div style={{ color: 'var(--blue)' }}>
-                Mr.Singh singh
+               {props.name}
             </div> <br />
-            <span style={{ fontWeight: 400, fontSize: 14 }}>44 yrs</span>
+            <span style={{ fontWeight: 500, fontSize: 14 ,color:'grey'}}>{props.age}</span>
         </div>
 
     )

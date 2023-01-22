@@ -23,41 +23,25 @@ function DocDashboard() {
     }, [])
 
     return (
-        <div style={{backgroundColor: ' var(--lightBlue)'}}>
+        <div style={{ backgroundColor: ' var(--lightBlue)' }}>
             <h2 className='title-main'> Schedule</h2>
 
-            <div style={{ display: 'flex', padding: '0px 0px 30px 30px',marginTop:'-30px'}}>
+            <div style={{ display: 'flex', padding: '0px 0px 30px 30px', marginTop: '-30px' }}>
                 <Calendar onChange={onChange} value={value} class='react-calendar' />
 
-                <div style={{ display: 'inline-flex', flexFlow: 'wrap', height: '330px',overflowY:'scroll',overflowX:'hidden'}}>
-                    <label>
-                        <input type="checkbox" />
-                        <div class="card">
-                            <div class="front"> <PatientsToday /></div>
-                            <div class="back"> <PatientsTodayBack /></div>
-                        </div>
-                    </label>
-                    <label>
-                        <input type="checkbox" />
-                        <div class="card">
-                            <div class="front"> <PatientsToday /></div>
-                            <div class="back"> <PatientsTodayBack /></div>
-                        </div>
-                    </label>
-                    <label>
-                        <input type="checkbox" />
-                        <div class="card">
-                            <div class="front"> <PatientsToday /></div>
-                            <div class="back"> <PatientsTodayBack /></div>
-                        </div>
-                    </label>
-                    <label>
-                        <input type="checkbox" />
-                        <div class="card">
-                            <div class="front"> <PatientsToday /></div>
-                            <div class="back"> <PatientsTodayBack /></div>
-                        </div>
-                    </label>
+                <div style={{ display: 'inline-flex', flexFlow: 'wrap', height: '330px', overflowY: 'scroll', overflowX: 'hidden' }}>
+                    {
+                        PatientsList && PatientsList.map((d) => (
+                            <label>
+                                <input type="checkbox" />
+                                <div class="card">
+                                    <div class="front"> <PatientsToday time={d.time} age={d.age} name={d.name}/></div>
+                                    <div class="back"> <PatientsTodayBack /></div>
+                                </div>
+                            </label>
+                        ))
+                    }
+
                 </div>
                 <img src='./img/Hospital_wheelchair-2.gif' height='400' style={{ float: 'right', marginTop: '-70px' }} />
 
