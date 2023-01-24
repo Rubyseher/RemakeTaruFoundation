@@ -32,10 +32,13 @@ function LoginPg() {
         const res = await axios.post('/login', {
             phone,
             password,
-        }).then(function (response) {
-            routeChange()
-        }).catch(function (error) {
-            console.log(error);
+        }).then( (res)=>res.json())
+                routeChange()
+        .then((data)=>{
+            console.log(data);
+            if(data.status=="ok"){
+                routeChange()
+            }
         });
     }
     async function handleSignUp(event) {
