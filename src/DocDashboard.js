@@ -5,10 +5,12 @@ import "./App.css";
 import EventBusyIcon from '@mui/icons-material/EventBusy';
 import { PatientsToday, PatientsTodayBack, MultipurposeButton } from "./components"
 import './FlipBox.css'
+import Footer from './Footer';
 import axios from './axios.js';
 
 function DocDashboard() {
     const [value, onChange] = useState(new Date());
+    const [shortDate, setShortDate] = useState(value);
 
     const [PatientsList, setPatientsList] = React.useState([])
     const [post, setPost] = React.useState()
@@ -17,7 +19,7 @@ function DocDashboard() {
         async function fetchData() {
             const db = await axios.get('/doc')
             console.log(db.data);
-
+                console.log(shortDate);
             setPatientsList((oldState) => db.data)
         }
         fetchData();
@@ -39,11 +41,14 @@ function DocDashboard() {
             <h2 className='title-main'> Schedule</h2>
 
             <div style={{ display: 'flex', padding: '0px 0px 30px 30px', marginTop: '-30px' }}>
-                <Calendar onChange={onChange} value={value} class='react-calendar' />
+                <Calendar onChange={onChange} value={value} class='react-calendar' 
+                onClickDay={()=>setShortDate(new Intl.DateTimeFormat('en-GB', { dateStyle: 'full'}).format(value).toUpperCase().toString())}
+                />
 
                 <div style={{ display: 'inline-flex', flexFlow: 'wrap', height: '330px', overflowY: 'scroll', overflowX: 'hidden' }}>
                     {
                         PatientsList && PatientsList.map((d) => (
+                            d.date.localeCompare(shortDate)?
                             <label>
                                 <input type="checkbox" />
                                 <div class="card">
@@ -51,6 +56,7 @@ function DocDashboard() {
                                     <div class="back"> <PatientsTodayBack onClick={() => handleClick(d._id)} /></div>
                                 </div>
                             </label>
+                            :<br/>
                         ))
                     }
 
@@ -63,6 +69,7 @@ function DocDashboard() {
                 <MultipurposeButton color={'#6d45ae'} bg={'#eae1fa'} text={'Cancel All Appointments'} />
                 <MultipurposeButton color={'#6d45ae'} bg={'#eae1fa'} text={'Show Patient Details'} />
             </div>
+            <Footer />
         </div>
     )
 }
