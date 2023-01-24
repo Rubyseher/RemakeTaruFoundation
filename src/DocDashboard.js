@@ -11,6 +11,7 @@ function DocDashboard() {
     const [value, onChange] = useState(new Date());
 
     const [PatientsList, setPatientsList] = React.useState([])
+    const [post, setPost] = React.useState()
 
     useEffect(() => {
         async function fetchData() {
@@ -21,6 +22,17 @@ function DocDashboard() {
         }
         fetchData();
     }, [])
+
+    async function handleClick(itemId) {
+        console.log("itemId ",itemId);
+        const res = await axios.delete(`/doc/${itemId}`)
+        .then((r)=>{
+            console.log("deleted ",r);
+        })
+        .catch((e)=> {
+            console.log(e);
+        })
+    }
 
     return (
         <div style={{ backgroundColor: ' var(--lightBlue)' }}>
@@ -35,8 +47,8 @@ function DocDashboard() {
                             <label>
                                 <input type="checkbox" />
                                 <div class="card">
-                                    <div class="front"> <PatientsToday time={d.time} age={d.age} name={d.name}/></div>
-                                    <div class="back"> <PatientsTodayBack /></div>
+                                    <div class="front"> <PatientsToday time={d.time} age={d.age} name={d.name} /></div>
+                                    <div class="back"> <PatientsTodayBack onClick={() => handleClick(d._id)} /></div>
                                 </div>
                             </label>
                         ))

@@ -194,9 +194,7 @@ export const DoctorsAvaliable = (props) => {
 export const PatientsToday = (props) => {
     return (
         <div className="patientTodayBox shadow" >
-            <IconButton color="primary" className='close_button'>
-                <CancelRoundedIcon sx={{ color: '#d9381e', fontSize: 30, backgroundColor: 'white', borderRadius: '30px' }} />
-            </IconButton>
+                <CancelRoundedIcon className='close_button' sx={{ color: '#d9381e', fontSize: 30, backgroundColor: 'white', borderRadius: '30px' }} />
             <div style={{justifyContent:'right',paddingRight:'40px'}}>
                 <span className="timeSlotBox shadow" style={{ letterSpacing: '0.5px', fontSize: 16, color: 'white', backgroundColor: 'var(--blue)' }}>
                     <b>{props.time}</b>
@@ -215,11 +213,11 @@ export const PatientsToday = (props) => {
     )
 }
 
-export const PatientsTodayBack = () => {
+export const PatientsTodayBack = (props) => {
     return (
         <div className="patientTodayBack">
             Cancel the appointment?<br />
-            <Button variant="outlined" startIcon={<DeleteIcon />} color="error"
+            <Button onClick={props.onClick} variant="outlined" startIcon={<DeleteIcon />} color="error"
                 sx={{ fontWeight: 'bold', borderRadius: '10px', width: '150px', marginTop: '4px', backgroundColor: 'white' }}>
                 Yes
             </Button>
