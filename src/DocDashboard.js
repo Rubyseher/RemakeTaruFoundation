@@ -10,7 +10,7 @@ import axios from './axios.js';
 
 function DocDashboard() {
     const [value, onChange] = useState(new Date());
-    const [shortDate, setShortDate] = useState(value);
+    const [shortDate, setShortDate] = useState((new Intl.DateTimeFormat('en-GB', { dateStyle: 'full'}).format(value).toUpperCase().toString()));
 
     const [PatientsList, setPatientsList] = React.useState([])
     const [post, setPost] = React.useState()
@@ -19,21 +19,21 @@ function DocDashboard() {
         async function fetchData() {
             const db = await axios.get('/doc')
             console.log(db.data);
-                console.log(shortDate);
+            console.log(shortDate);
             setPatientsList((oldState) => db.data)
         }
         fetchData();
     }, [])
 
     async function handleClick(itemId) {
-        console.log("itemId ",itemId);
+        console.log("itemId ", itemId);
         const res = await axios.delete(`/doc/${itemId}`)
-        .then((r)=>{
-            console.log("deleted ",r);
-        })
-        .catch((e)=> {
-            console.log(e);
-        })
+            .then((r) => {
+                console.log("deleted ", r);
+            })
+            .catch((e) => {
+                console.log(e);
+            })
     }
 
     return (
@@ -41,22 +41,22 @@ function DocDashboard() {
             <h2 className='title-main'> Schedule</h2>
 
             <div style={{ display: 'flex', padding: '0px 0px 30px 30px', marginTop: '-30px' }}>
-                <Calendar onChange={onChange} value={value} class='react-calendar' 
-                onClickDay={()=>setShortDate(new Intl.DateTimeFormat('en-GB', { dateStyle: 'full'}).format(value).toUpperCase().toString())}
+                <Calendar onChange={onChange} value={value} class='react-calendar'
+                    onClickDay={() => setShortDate(new Intl.DateTimeFormat('en-GB', { dateStyle: 'full'}).format(value).toUpperCase().toString())}
                 />
 
-                <div style={{ display: 'inline-flex', flexFlow: 'wrap', height: '330px', overflowY: 'scroll', overflowX: 'hidden' }}>
+                <div style={{ display: 'inline-flex', flexFlow: 'wrap', height: '430px',minWidth:'609px', overflowY: 'scroll', overflowX: 'hidden' }}>
                     {
                         PatientsList && PatientsList.map((d) => (
-                            d.date.localeCompare(shortDate)?
-                            <label>
-                                <input type="checkbox" />
-                                <div class="card">
-                                    <div class="front"> <PatientsToday time={d.time} age={d.age} name={d.name} /></div>
-                                    <div class="back"> <PatientsTodayBack onClick={() => handleClick(d._id)} /></div>
-                                </div>
-                            </label>
-                            :<br/>
+                            shortDate && d.date==shortDate ?
+                                <label>
+                                    <input type="checkbox" />
+                                    <div class="card">
+                                        <div class="front"> <PatientsToday time={d.time} age={d.age} name={d.name} /></div>
+                                        <div class="back"> <PatientsTodayBack onClick={() => handleClick(d._id)} /></div>
+                                    </div>
+                                </label>
+                                : <br />
                         ))
                     }
 
@@ -64,11 +64,11 @@ function DocDashboard() {
                 <img src='./img/Hospital_wheelchair-2.gif' height='400' style={{ float: 'right', marginTop: '-70px' }} />
 
             </div>
-            <div style={{ display: 'flex', justifyContent: 'center', backgroundColor: 'var(--babyPurple)' }}>
+            {/* <div style={{ display: 'flex', justifyContent: 'center', backgroundColor: 'var(--babyPurple)' }}>
                 <MultipurposeButton color={'#6d45ae'} bg={'#eae1fa'} text={'Publish Free Slots'} />
                 <MultipurposeButton color={'#6d45ae'} bg={'#eae1fa'} text={'Cancel All Appointments'} />
                 <MultipurposeButton color={'#6d45ae'} bg={'#eae1fa'} text={'Show Patient Details'} />
-            </div>
+            </div> */}
             <Footer />
         </div>
     )
