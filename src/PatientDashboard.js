@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import ContactPageIcon from '@mui/icons-material/ContactPage';
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
@@ -6,13 +6,31 @@ import BloodtypeIcon from '@mui/icons-material/Bloodtype';
 import HomeIcon from '@mui/icons-material/Home';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import './App.css'
-import {EachVital} from './components'
+import { EachVital } from './components'
+import axios from './axios.js';
+
 
 function PatientDashboard() {
+  useEffect(() => {
+    async function handleLogin() {
+      const res = await axios.post('/patient',{ token: window.localStorage.getItem("token") }
+      ).then(function (response) {
+        console.log(response.data, "user data");
+      })
+        .catch(function (error) {
+          console.log(error);
+        });
+    }
+    handleLogin()
+  }
+    , [])
+
+
+
   return (
-    <div style={{ backgroundColor: 'var(--lightBlue)'}}>
-      <h3 style={{ color: 'var(--blue)' , padding: '45px 30px 15px 60px' }}><b>Welcome Ms.Priyanka</b></h3>
-      <div style={{display:'flex'}}>
+    <div style={{ backgroundColor: 'var(--lightBlue)' }}>
+      <h3 style={{ color: 'var(--blue)', padding: '45px 30px 15px 60px' }}><b>Welcome Ms.Priyanka</b></h3>
+      <div style={{ display: 'flex' }}>
 
         <div className='profile-card'>
           <AccountCircleIcon style={{ fontSize: '9.0vw', marginLeft: '22%', marginBottom: 10 }} />
@@ -26,12 +44,12 @@ function PatientDashboard() {
           </span>
         </div>
 
-        <div className='vitals-container shadow' style={{display:'inline-flex',flexDirection:'column', flexFlow: 'wrap', overflow: 'scroll', height: '530px' }}>
-          <EachVital/>
-          <EachVital/>
-          <EachVital/>
+        <div className='vitals-container shadow' style={{ display: 'inline-flex', flexDirection: 'column', flexFlow: 'wrap', overflow: 'scroll', height: '530px' }}>
+          <EachVital />
+          <EachVital />
+          <EachVital />
         </div>
-        <img src='./img/profile.svg' height={500}/>
+        <img src='./img/profile.svg' height={500} />
 
       </div>
 

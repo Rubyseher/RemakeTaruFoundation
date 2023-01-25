@@ -30,15 +30,18 @@ function LoginPg() {
         event.preventDefault();
         console.log(phone, password)
         const res = await axios.post('/login', {
-            phone,
             password,
-        }).then( (res)=>res.json())
+        phone,
+        }).then(function (response) {
+            console.log(response.data,"user registered");
+            if(response.data.status=="ok"){
+                window.localStorage.setItem("token",response.data.data)
                 routeChange()
-        .then((data)=>{
-            console.log(data);
-            if(data.status=="ok"){
-                routeChange()
+                // window.location.href='./patient'
             }
+        })
+        .catch(function (error) {
+            console.log(error);
         });
     }
     async function handleSignUp(event) {
