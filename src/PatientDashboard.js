@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import ContactPageIcon from '@mui/icons-material/ContactPage';
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
@@ -11,21 +11,22 @@ import axios from './axios.js';
 
 
 function PatientDashboard() {
+  const [userData, setUserData] = useState([])
+
   useEffect(() => {
     async function handleLogin() {
-      const res = await axios.post('/patient',{ token: window.localStorage.getItem("token") }
+      const res = await axios.post('/patient', { token: window.localStorage.getItem("token") }
       ).then(function (response) {
-        console.log(response.data, "user data");
-      })
-        .catch(function (error) {
-          console.log(error);
-        });
+        console.log(response.data.data, "user data");
+        setUserData(response.data.data)
+      }).catch(function (error) {
+        console.log(error);
+      });
     }
+
     handleLogin()
-  }
-    , [])
 
-
+  }, [])
 
   return (
     <div style={{ backgroundColor: 'var(--lightBlue)' }}>
@@ -34,20 +35,28 @@ function PatientDashboard() {
 
         <div className='profile-card'>
           <AccountCircleIcon style={{ fontSize: '9.0vw', marginLeft: '22%', marginBottom: 10 }} />
-          <h4 style={{ marginBottom: 40 }}><b>Mr. Singh</b></h4>
+          <h4 style={{ marginBottom: 40 }}><b>{userData.fullName}</b></h4>
           <span style={{ fontSize: '1.1vw', lineHeight: '50px', fontWeight: '600' }} >
-            <ContactPageIcon style={{ fontSize: '1.8vw', marginRight: '15px' }} />27 years<br />
-            <CalendarMonthIcon style={{ fontSize: '1.8vw', marginRight: '15px' }} />22/03/2000<br />
-            <LocalPhoneIcon style={{ fontSize: '1.8vw', marginRight: '15px' }} />5984303810<br />
-            <BloodtypeIcon style={{ fontSize: '1.8vw', marginRight: '15px' }} />A+<br />
-            <HomeIcon style={{ fontSize: '1.8vw', marginRight: '15px' }} />#44, BTM 8th stage<br />
+            <ContactPageIcon style={{ fontSize: '1.8vw', marginRight: '15px' }} />{userData.age} years<br />
+            <LocalPhoneIcon style={{ fontSize: '1.8vw', marginRight: '15px' }} />{userData.phone}<br />
+            <BloodtypeIcon style={{ fontSize: '1.8vw', marginRight: '15px' }} />{userData.bloodGroup}<br />
+            <HomeIcon style={{ fontSize: '1.8vw', marginRight: '15px' }} />{userData.address}<br />
           </span>
         </div>
 
         <div className='vitals-container shadow' style={{ display: 'inline-flex', flexDirection: 'column', flexFlow: 'wrap', overflow: 'scroll', height: '530px' }}>
-          <EachVital />
-          <EachVital />
-          <EachVital />
+          {
+             Array.isArray(userData.vitals) && userData.vitals.length? 
+             userData.vitals.map((d) => (
+                <EachVital bp={d.bp} weight={d.weight} date={d.date} prescription={d.prescription} />
+              ))
+              :
+              <h5 style={{display:'flex',alignItems:'center',margin:'0 auto',textAlign:'center',fontWeight:700}}>
+                Sorry,<br/>No vitals entered yet.
+                <br/>
+                Please contact the Admin
+              </h5>
+          }
         </div>
         <img src='./img/profile.svg' height={500} />
 

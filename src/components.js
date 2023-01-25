@@ -41,24 +41,23 @@ export const NavbarMain = () => {
         </Navbar>
     )
 }
-export const EachVital = () => {
+export const EachVital = (props) => {
     return (
         <div style={{ display: 'flex', height: 'fit-content', margin: '20px 0' }}>
             <span className="prescription-date">
-                <h4>25</h4>
-                <h6>Jun 22</h6>
+                <h4>{props.date.split(' ')[0]}</h4>
+                <h6>{props.date.slice( props.date.indexOf(' ') + 1)}</h6>
             </span>
             <div className='shadow prescription'>
                 <div className="vitalTitle">Vials</div>
                 <p>
-                    <FontAwesomeIcon icon={faHeartPulse} size='xl' color="var(--blue)" /> BP : 90/120
-                    <FontAwesomeIcon icon={faWeightScale} size='xl' color="var(--blue)" style={{ marginLeft: '100' }} /> Weight : 77kgs
+                    <FontAwesomeIcon icon={faHeartPulse} size='xl' color="var(--blue)" /> BP :{props.bp}
+                    <FontAwesomeIcon icon={faWeightScale} size='xl' color="var(--blue)" style={{ marginLeft: '100' }} /> Weight : {props.weight}
                 </p>
 
                 <div className="vitalTitle"><b>Prescription</b></div>
                 <p>
-                    20 mg methyl daily morning for 10 days<br />
-                    5 mg dolo night for 5 days
+                {props.prescription}
                 </p>
 
             </div>
