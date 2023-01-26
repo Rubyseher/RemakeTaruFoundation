@@ -66,6 +66,18 @@ export const EachVital = (props) => {
 }
 
 export const ConfirmBooking = (props) => {
+    const navigate = useNavigate();
+
+    const handleClick = () => {
+        console.log(window.localStorage.getItem('signedIN'));
+
+        if(JSON.parse(window.localStorage.getItem('signedIn')))
+            navigate(`/doc`);
+        else
+        navigate(`/login`);
+        
+    }
+
     return (
         <div className="booking-confirm-container shadow">
             <div className='circle-multi' style={{ backgroundColor: 'var(--babyBlue)', width: '100px', height: '100px', borderRadius: '90px', marginBottom: '20px' }}>
@@ -77,7 +89,7 @@ export const ConfirmBooking = (props) => {
                 {props.doc}</b>
             </div>
             <div style={{ color: 'gray', letterSpacing: 1, fontSize: 15, marginTop: 4 }}><b>{props.date}</b></div><br />
-            <Button variant="contained" sx={{ color: 'white', width: '90%', borderRadius: '30px', padding: '10px 0px', backgroundColor: 'var(--blue)' }}><b>CONFIRM</b></Button>
+            <Button variant="contained" onClick={()=>handleClick()} sx={{ color: 'white', width: '90%', borderRadius: '30px', padding: '10px 0px', backgroundColor: 'var(--blue)' }}><b>CONFIRM</b></Button>
         </div>
     )
 }

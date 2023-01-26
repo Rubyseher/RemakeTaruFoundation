@@ -30,6 +30,7 @@ function Booking(props) {
       setNotification((oldState) => newAr)
     }
     fetchData();
+    console.log(window.localStorage.getItem("token") );
   }, [])
 
 

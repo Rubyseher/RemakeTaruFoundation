@@ -277,11 +277,12 @@ margin:5px;
 }
 .profile-card{
   border-radius: 20px;
-  width:20vw;
+  width:450px;
+  height: fit-content;
   background-color:var(--blue);
   /* background-color:#322cace0; */
   margin-left: 60px;
-  padding:20px 30px 20px 30px;
+  padding:40px 30px 40px 30px;
 }
 .profile-card *{
   color: white;

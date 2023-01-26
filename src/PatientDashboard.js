@@ -18,6 +18,7 @@ function PatientDashboard() {
       const res = await axios.post('/patient', { token: window.localStorage.getItem("token") }
       ).then(function (response) {
         console.log(response.data.data, "user data");
+        window.localStorage.setItem('signedIN',"true")
         setUserData(response.data.data)
       }).catch(function (error) {
         console.log(error);
@@ -25,7 +26,6 @@ function PatientDashboard() {
     }
 
     handleLogin()
-
   }, [])
 
   return (
@@ -44,20 +44,37 @@ function PatientDashboard() {
           </span>
         </div>
 
-        <div className='vitals-container shadow' style={{ display: 'inline-flex', flexDirection: 'column', flexFlow: 'wrap', overflow: 'scroll', height: '530px' }}>
-          {
-             Array.isArray(userData.vitals) && userData.vitals.length? 
-             userData.vitals.map((d) => (
-                <EachVital bp={d.bp} weight={d.weight} date={d.date} prescription={d.prescription} />
-              ))
-              :
-              <h5 style={{display:'flex',alignItems:'center',margin:'0 auto',textAlign:'center',fontWeight:700}}>
-                Sorry,<br/>No vitals entered yet.
-                <br/>
-                Please contact the Admin
-              </h5>
-          }
+        <div style={{ width: '860 px' }}>
+          <div className='vitals-container shadow' style={{ display: 'inline-flex', flexDirection: 'column', flexFlow: 'wrap', overflow: 'scroll', width: '850px', marginBottom: '20px' }}>
+            {
+              Array.isArray(userData.vitals) && userData.vitals.length ?
+                userData.vitals.map((d) => (
+                  <EachVital bp={d.bp} weight={d.weight} date={d.date} prescription={d.prescription} />
+                ))
+                :
+                <h5 style={{ display: 'flex', alignItems: 'center', margin: '0 auto', textAlign: 'center', fontWeight: 700 }}>
+                  Sorry,<br />No vitals entered yet.
+                  <br />
+                  Please contact the Admin
+                </h5>
+            }
+          </div>
+          <div className='vitals-container shadow' style={{ display: 'inline-flex', flexDirection: 'column', flexFlow: 'wrap', overflow: 'scroll', width: '850px', height: '530px' }}>
+            {
+              Array.isArray(userData.vitals) && userData.vitals.length ?
+                userData.vitals.map((d) => (
+                  <EachVital bp={d.bp} weight={d.weight} date={d.date} prescription={d.prescription} />
+                ))
+                :
+                <h5 style={{ display: 'flex', alignItems: 'center', margin: '0 auto', textAlign: 'center', fontWeight: 700 }}>
+                  Sorry,<br />No vitals entered yet.
+                  <br />
+                  Please contact the Admin
+                </h5>
+            }
+          </div>
         </div>
+
         <img src='./img/profile.svg' height={500} />
 
       </div>
