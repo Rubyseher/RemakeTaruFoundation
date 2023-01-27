@@ -7,6 +7,7 @@ import { PatientsToday, PatientsTodayBack, MultipurposeButton } from "./componen
 import './FlipBox.css'
 import Footer from './Footer';
 import axios from './axios.js';
+import { useLocation } from 'react-router-dom';
 
 function DocDashboard() {
     const [value, onChange] = useState(new Date());
@@ -15,6 +16,9 @@ function DocDashboard() {
     const [PatientsList, setPatientsList] = React.useState([])
     const [post, setPost] = React.useState()
 
+    const data  = useLocation();
+    console.log(data.state.data.fullName);
+
     useEffect(() => {
         async function fetchData() {
             const db = await axios.get('/doc')
@@ -22,6 +26,7 @@ function DocDashboard() {
             console.log(shortDate);
             setPatientsList((oldState) => db.data)
         }
+
         fetchData();
     }, [])
 
@@ -48,7 +53,7 @@ function DocDashboard() {
                 <div style={{ display: 'inline-flex', flexFlow: 'wrap', height: '430px',minWidth:'609px', overflowY: 'scroll', overflowX: 'hidden' }}>
                     {
                         PatientsList && PatientsList.map((d) => (
-                            shortDate && d.date==shortDate ?
+                            shortDate && d.date==shortDate && d.doc==data.state.data.fullName?
                                 <label>
                                     <input type="checkbox" />
                                     <div class="card">

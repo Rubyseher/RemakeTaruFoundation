@@ -8,18 +8,25 @@ import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import './App.css'
 import { EachVital, EachAppointment } from './components'
 import Footer from './Footer';
-
+import { useNavigate } from "react-router-dom";
 import axios from './axios.js';
 
 
 function PatientDashboard() {
   const [userData, setUserData] = useState([])
+  const navigate = useNavigate()
 
   useEffect(() => {
     async function handleLogin() {
       const res = await axios.post('/patient', { token: window.localStorage.getItem("token") }
       ).then(function (response) {
-        console.log(response.data.data, "user data");
+        if(response.data.data.type=='Doctor')
+            navigate(`/doc`, {
+                state: {
+                    data: response.data.data
+                }
+            });
+        console.log(response.data.data.type, "user data");
         window.localStorage.setItem('signedIN', "true")
         setUserData(response.data.data)
       }).catch(function (error) {

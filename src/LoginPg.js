@@ -18,32 +18,42 @@ function LoginPg() {
     const [signIn, setSignIn] = React.useState(true)
 
     const navigate = useNavigate();
-    const routeChange = () => {
-        let path = `/patient`;
-        navigate(path, {
-            state: {
-                specialization: "hi"
-            }
-        });
-    }
 
     async function handleSignIn(event) {
         event.preventDefault();
         console.log(phone, password)
         const res = await axios.post('/login', {
             password,
-        phone,
+            phone,
         }).then(function (response) {
-            console.log(response.data,"user registered");
-            if(response.data.status=="ok"){
-                window.localStorage.setItem("token",response.data.data)
-                routeChange()
+            console.log(response.data, "user registered");
+            if (response.data.status == "ok") {
+                window.localStorage.setItem("token", response.data.data)
+                const res = axios.post('/patient', { token:  response.data.data}
+                ).then(function (response) {
+                    if (response.data.data.type == 'Doctor')
+                        navigate(`/doc`, {
+                            state: {
+                                data: response.data.data
+                            }
+                        });
+                    else if (response.data.data.type == 'patient'){
+                        navigate(`/patient`, {
+                            state: {
+                                data: response.data.data
+                            }
+                        });
+                    }
+                    window.localStorage.setItem('signedIN', "true")
+                }).catch(function (error) {
+                    console.log(error);
+                });
                 // window.location.href='./patient'
             }
         })
-        .catch(function (error) {
-            console.log(error);
-        });
+            .catch(function (error) {
+                console.log(error);
+            });
     }
 
     async function handleSignUp(event) {
@@ -123,7 +133,7 @@ function LoginPg() {
                 </div>
             </div>
             <img src='/img/login2.svg' className="login-img" />
-            <Footer/>
+            <Footer />
         </div>
     )
 }
