@@ -1,6 +1,8 @@
 import React from "react";
 import './App.css'
 import { ParallaxContainer, Services } from "./components.js"
+import Footer from './Footer';
+
 function MainPg() {
 
     return (
@@ -30,6 +32,7 @@ function MainPg() {
                     </p>
                 </div>
             </div>
+            <Footer/>
         </div>
 
     )

@@ -30,7 +30,7 @@ function PatientDashboard() {
 
   return (
     <div style={{ backgroundColor: 'var(--lightBlue)' }}>
-      <h3 style={{ color: 'var(--blue)', padding: '45px 30px 15px 60px' }}><b>Welcome Ms.Priyanka</b></h3>
+      <h3 style={{ color: 'var(--blue)', padding: '45px 30px 15px 60px' }}><b>Welcome {userData.fullName}</b></h3>
       <div style={{ display: 'flex' }}>
 
         <div className='profile-card'>
@@ -69,7 +69,8 @@ function PatientDashboard() {
                   <EachVital bp={d.bp} weight={d.weight} date={d.date} prescription={d.prescription} />
                 ))
                 :
-                <h5 style={{ display: 'flex', alignItems: 'center', margin: '0 auto', textAlign: 'center', fontWeight: 700 }}>
+                <h5 style={{ display: 'flex',
+                alignItems: 'center',margin: '0 auto',marginLeft:'15%', textAlign: 'center', fontWeight: 700 }}>
                   Sorry,<br />No vitals entered yet.
                   <br />
                   Please contact the Admin

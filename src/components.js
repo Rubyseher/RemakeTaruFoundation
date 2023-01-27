@@ -126,6 +126,8 @@ export const ConfirmBooking = (props) => {
             link = "https://meet.google.com/rgm-izwq-yij"
         else if (doc === "Dr.Lilly Singh")
             link = "https://meet.google.com/cfs-wpzs-gxh"
+            else if (doc === "Dr.Priya K")
+            link = "https://meet.google.com/zon-vnwd-prb"
 
     }
 
