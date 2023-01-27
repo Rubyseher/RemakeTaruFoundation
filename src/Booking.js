@@ -74,7 +74,7 @@ function Booking(props) {
 
       <div style={{ backgroundColor: ' var(--lightBlue)', padding: '45px 30px 25px 60px' }}>
         <h3 style={{ color: 'var(--blue)' }}><b>Confirm Booking</b></h3>
-        <ConfirmBooking time={selectedTime} doc={selectedDoc} date={selectedDate}/>
+        <ConfirmBooking specialization={state.specialization} time={selectedTime} doc={selectedDoc} date={selectedDate}/>
       </div>
 
     </div>

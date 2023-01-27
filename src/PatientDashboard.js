@@ -6,7 +6,7 @@ import BloodtypeIcon from '@mui/icons-material/Bloodtype';
 import HomeIcon from '@mui/icons-material/Home';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import './App.css'
-import { EachVital } from './components'
+import { EachVital ,EachAppointment} from './components'
 import axios from './axios.js';
 
 
@@ -18,7 +18,7 @@ function PatientDashboard() {
       const res = await axios.post('/patient', { token: window.localStorage.getItem("token") }
       ).then(function (response) {
         console.log(response.data.data, "user data");
-        window.localStorage.setItem('signedIN',"true")
+        window.localStorage.setItem('signedIN', "true")
         setUserData(response.data.data)
       }).catch(function (error) {
         console.log(error);
@@ -45,11 +45,12 @@ function PatientDashboard() {
         </div>
 
         <div style={{ width: '860 px' }}>
-          <div className='vitals-container shadow' style={{ display: 'inline-flex', flexDirection: 'column', flexFlow: 'wrap', overflow: 'scroll', width: '850px', marginBottom: '20px' }}>
+          <div className='vitals-container shadow' style={{ display: 'inline-flex', flexDirection: 'column', flexFlow: 'wrap', overflow: 'scroll', width: '850px',height:'350px', marginBottom: '40px' }}>
+            <h4 style={{ color: 'var(--blue)', padding:'15px 30px 0px 70px' }}><b>Upcoming Appointment</b></h4>
             {
-              Array.isArray(userData.vitals) && userData.vitals.length ?
-                userData.vitals.map((d) => (
-                  <EachVital bp={d.bp} weight={d.weight} date={d.date} prescription={d.prescription} />
+              Array.isArray(userData.appointments) && userData.appointments.length ?
+                userData.appointments.map((d) => (
+                  <EachAppointment doc={d.doc} meet={d.meet} date={d.date} time={d.time} specialization={d.specialization} />
                 ))
                 :
                 <h5 style={{ display: 'flex', alignItems: 'center', margin: '0 auto', textAlign: 'center', fontWeight: 700 }}>
@@ -59,7 +60,9 @@ function PatientDashboard() {
                 </h5>
             }
           </div>
-          <div className='vitals-container shadow' style={{ display: 'inline-flex', flexDirection: 'column', flexFlow: 'wrap', overflow: 'scroll', width: '850px', height: '530px' }}>
+          <div className='vitals-container shadow' style={{ display: 'inline-flex', flexDirection: 'column', flexFlow: 'wrap', overflow: 'scroll', width: '850px', height: '490px' }}>
+            <h4 style={{ color: 'var(--blue)', padding:'15px 30px 0px 70px' }}><b>Vitals</b></h4>
+
             {
               Array.isArray(userData.vitals) && userData.vitals.length ?
                 userData.vitals.map((d) => (
