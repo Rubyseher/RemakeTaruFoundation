@@ -3,6 +3,7 @@ import Form from 'react-bootstrap/Form'
 import './Login.css'
 import axios from './axios.js';
 import { useNavigate } from "react-router-dom";
+import Footer from './Footer';
 
 
 function LoginPg() {
@@ -112,7 +113,7 @@ function LoginPg() {
                                 <input type="text" name="address" placeholder="Address" value={address}
                                     onChange={(e) => setAddress(e.target.value)} />
 
-                                <input type="date" name="dob" placeholder="Date of Birth" value={dob}
+                                <input type="text" name="dob" placeholder="Date of Birth" value={dob}
                                     onChange={(e) => setDob(e.target.value)} />
 
                                 <input type="submit" name="send" value="SIGN UP" />
@@ -122,6 +123,7 @@ function LoginPg() {
                 </div>
             </div>
             <img src='/img/login2.svg' className="login-img" />
+            <Footer/>
         </div>
     )
 }

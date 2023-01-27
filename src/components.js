@@ -47,15 +47,15 @@ export const EachVital = (props) => {
     return (
         <div style={{ display: 'flex', height: 'fit-content', margin: '20px 0' }}>
             <span className="prescription-date">
-                <h4>{props.date.split(' ')[1]}</h4>
-                <h6>{props.date.split(' ')[2].substring(0, 3)}</h6>
-                <h6>{props.date.split(' ')[3]}</h6>
+                <h4>{props.date.split(' ')[0]}</h4>
+                <h6>{props.date.split(' ')[1].substring(0, 3).toUpperCase()}</h6>
+                <h6>{props.date.split(' ')[2]}</h6>
             </span>
             <div className='shadow prescription'>
                 <div className="vitalTitle">Vials</div>
                 <p>
-                    <FontAwesomeIcon icon={faHeartPulse} size='xl' color="var(--blue)" /> BP :{props.bp}
-                    <FontAwesomeIcon icon={faWeightScale} size='xl' color="var(--blue)" style={{ marginLeft: '100' }} /> Weight : {props.weight}
+                    <FontAwesomeIcon icon={faHeartPulse} size='xl' style={{ margin: '10px 7px 0 7px' }} color="var(--blue)" /><b>BP :</b> {props.bp}
+                    <FontAwesomeIcon icon={faWeightScale} size='xl' style={{ margin: '10px 7px 0 200px' }} color="var(--blue)"/><b> Weight : </b>{props.weight}
                 </p>
 
                 <div className="vitalTitle"><b>Prescription</b></div>
@@ -84,9 +84,9 @@ export const EachAppointment = (props) => {
                 </a>
                 <div className="vitalTitle">Details</div>
                 <p>
-                    <FontAwesomeIcon icon={faUserDoctor} size='xl' style={{ margin: '10px 7px 0 7px' }} color="var(--blue)" /> Doctor : {props.doc}<br />
-                    <FontAwesomeIcon icon={faBriefcaseMedical} size='xl' style={{ margin: '18px 7px 0 7px' }} color="var(--blue)" /> Specialization : {props.specialization}<br />
-                    <FontAwesomeIcon icon={faClock} size='xl' style={{ margin: '18px 7px 0 7px' }} color="var(--blue)" /> Time : {props.time}
+                    <FontAwesomeIcon icon={faUserDoctor} size='xl' style={{ margin: '10px 7px 0 7px' }} color="var(--blue)" /><b> Doctor : </b>{props.doc}<br />
+                    <FontAwesomeIcon icon={faBriefcaseMedical} size='xl' style={{ margin: '18px 7px 0 7px' }} color="var(--blue)" /> <b>Specialization : </b>{props.specialization}<br />
+                    <FontAwesomeIcon icon={faClock} size='xl' style={{ margin: '18px 7px 0 7px' }} color="var(--blue)" /> <b>Time : </b>{props.time}
                     {/* <FontAwesomeIcon icon={faCalendarCheck} size='xl' style={{margin:'7px'}} color="var(--blue)"  /> Day : {props.date.split(' ')[0]} */}
                 </p>
             </div>

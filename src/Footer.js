@@ -10,7 +10,7 @@ import {
 
 const Footer = () => {
   return (
-    <Box>
+    <Box style={{marginTop:'40px'}}>
 
       <Container>
         <Row>

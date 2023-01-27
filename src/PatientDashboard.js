@@ -6,7 +6,9 @@ import BloodtypeIcon from '@mui/icons-material/Bloodtype';
 import HomeIcon from '@mui/icons-material/Home';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import './App.css'
-import { EachVital ,EachAppointment} from './components'
+import { EachVital, EachAppointment } from './components'
+import Footer from './Footer';
+
 import axios from './axios.js';
 
 
@@ -45,23 +47,27 @@ function PatientDashboard() {
         </div>
 
         <div style={{ width: '860 px' }}>
-          <div className='vitals-container shadow' style={{ display: 'inline-flex', flexDirection: 'column', flexFlow: 'wrap', overflow: 'scroll', width: '850px',height:'350px', marginBottom: '40px' }}>
-            <h4 style={{ color: 'var(--blue)', padding:'15px 30px 0px 70px' }}><b>Upcoming Appointment</b></h4>
-            {
-              Array.isArray(userData.appointments) && userData.appointments.length ?
-                userData.appointments.map((d) => (
-                  <EachAppointment doc={d.doc} meet={d.meet} date={d.date} time={d.time} specialization={d.specialization} />
-                ))
-                :
-                <h5 style={{ display: 'flex', alignItems: 'center', margin: '0 auto', textAlign: 'center', fontWeight: 700 }}>
-                  Sorry,<br />No vitals entered yet.
-                  <br />
-                  Please contact the Admin
-                </h5>
-            }
-          </div>
+          {
+            Array.isArray(userData.appointments) && userData.appointments.length ?
+              <div className='vitals-container shadow' style={{ display: 'inline-flex', flexDirection: 'column', flexFlow: 'wrap', overflow: 'scroll', width: '850px', height: '350px', marginBottom: '40px' }}>
+                <h4 style={{ color: 'var(--blue)', padding: '15px 30px 0px 70px' }}><b>Upcoming Appointment</b></h4>
+                {
+                  Array.isArray(userData.appointments) && userData.appointments.length ?
+                    userData.appointments.map((d) => (
+                      <EachAppointment doc={d.doc} meet={d.meet} date={d.date} time={d.time} specialization={d.specialization} />
+                    ))
+                    :
+                    <h5 style={{ display: 'flex', alignItems: 'center', margin: '0 auto', textAlign: 'center', fontWeight: 700 }}>
+                      Sorry,<br />No vitals entered yet.
+                      <br />
+                      Please contact the Admin
+                    </h5>
+                }
+              </div> :
+              <br />
+          }
           <div className='vitals-container shadow' style={{ display: 'inline-flex', flexDirection: 'column', flexFlow: 'wrap', overflow: 'scroll', width: '850px', height: '490px' }}>
-            <h4 style={{ color: 'var(--blue)', padding:'15px 30px 0px 70px' }}><b>Vitals</b></h4>
+            <h4 style={{ color: 'var(--blue)', padding: '15px 30px 0px 70px' }}><b>Vitals</b></h4>
 
             {
               Array.isArray(userData.vitals) && userData.vitals.length ?
@@ -69,8 +75,10 @@ function PatientDashboard() {
                   <EachVital bp={d.bp} weight={d.weight} date={d.date} prescription={d.prescription} />
                 ))
                 :
-                <h5 style={{ display: 'flex',
-                alignItems: 'center',margin: '0 auto',marginLeft:'15%', textAlign: 'center', fontWeight: 700 }}>
+                <h5 style={{
+                  display: 'flex',
+                  alignItems: 'center', margin: '0 auto', marginLeft: '15%', textAlign: 'center', fontWeight: 700
+                }}>
                   Sorry,<br />No vitals entered yet.
                   <br />
                   Please contact the Admin
@@ -82,7 +90,7 @@ function PatientDashboard() {
         <img src='./img/profile.svg' height={500} />
 
       </div>
-
+      <Footer />
     </div>
   )
 }
