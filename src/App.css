@@ -51,7 +51,9 @@
   color:rgb(255, 255, 255);
   background-color: red;
 }
-
+.cSdDRL{
+padding: 50px 60px;
+}
 .container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl{
   margin-left: 0;
   padding-left: 2rem;

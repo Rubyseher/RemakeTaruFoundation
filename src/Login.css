@@ -80,7 +80,7 @@ input[type="password"] {
 }
 .login-img{
   position: absolute;
-  margin-right: 30px;
+  margin-right:8vw;
   top: 25%;
   width: 720px;
   right:0;
@@ -467,7 +467,7 @@ form > h3 {
 .cornerBg{
   background-image:url("/public/img/cornerBlob9.svg");
   background-size:cover;
-  height: 93vh;
+  height: 98vh;
   margin-top: -20px;
   background-repeat: no-repeat;
 }

@@ -20,12 +20,12 @@ function PatientDashboard() {
     async function handleLogin() {
       const res = await axios.post('/patient', { token: window.localStorage.getItem("token") }
       ).then(function (response) {
-        if(response.data.data.type=='Doctor')
-            navigate(`/doc`, {
-                state: {
-                    data: response.data.data
-                }
-            });
+        if (response.data.data.type == 'Doctor')
+          navigate(`/doc`, {
+            state: {
+              data: response.data.data
+            }
+          });
         console.log(response.data.data.type, "user data");
         window.localStorage.setItem('signedIN', "true")
         setUserData(response.data.data)
@@ -38,9 +38,10 @@ function PatientDashboard() {
   }, [])
 
   return (
-    <div style={{ backgroundColor: 'var(--lightBlue)' }}>
+    <div style={{ backgroundColor: 'var(--lightBlue)',margin:'0 auto' }}>
       <h3 style={{ color: 'var(--blue)', padding: '45px 30px 15px 60px' }}><b>Welcome {userData.fullName}</b></h3>
-      <div style={{ display: 'flex' }}>
+
+      <div style={{ display: 'flex' ,margin:'0 auto'}}>
 
         <div className='profile-card'>
           <AccountCircleIcon style={{ fontSize: '9.0vw', marginLeft: '22%', marginBottom: 10 }} />
@@ -53,7 +54,7 @@ function PatientDashboard() {
           </span>
         </div>
 
-        <div style={{ width: '860 px' }}>
+        <div style={{ width: '90rem' }}>
           {
             Array.isArray(userData.appointments) && userData.appointments.length ?
               <div className='vitals-container shadow' style={{ display: 'inline-flex', flexDirection: 'column', flexFlow: 'wrap', overflow: 'scroll', width: '850px', height: '350px', marginBottom: '40px' }}>

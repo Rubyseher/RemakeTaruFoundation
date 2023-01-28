@@ -29,7 +29,7 @@ function LoginPg() {
             console.log(response.data, "user registered");
             if (response.data.status == "ok") {
                 window.localStorage.setItem("token", response.data.data)
-                const res = axios.post('/patient', { token:  response.data.data}
+                const res = axios.post('/patient', { token: response.data.data }
                 ).then(function (response) {
                     if (response.data.data.type == 'Doctor')
                         navigate(`/doc`, {
@@ -37,7 +37,7 @@ function LoginPg() {
                                 data: response.data.data
                             }
                         });
-                    else if (response.data.data.type == 'patient'){
+                    else if (response.data.data.type == 'patient') {
                         navigate(`/patient`, {
                             state: {
                                 data: response.data.data
@@ -76,8 +76,8 @@ function LoginPg() {
 
     return (
         <div className="cornerBg">
-            <div style={{ padding: '110px 0 0 120px' }}>
-                <div style={{ borderRadius: 20, width: '28%', backgroundColor: 'white', padding: '30px' }} className='shadow'>
+            <div style={{ padding: ' 8vw 10vw' }}>
+                <div style={{ borderRadius: 20, width: '25rem', backgroundColor: 'white', padding: '30px' }} className='shadow'>
                     {
                         signIn == true ?
                             <form onSubmit={handleSignIn}>
@@ -99,7 +99,6 @@ function LoginPg() {
                                     <div class="createAcc" onClick={() => setSignIn(false)}> <a href="#">Dont have an Account?<br />Create one Now</a> </div>
                                 </div>
                             </form>
-
                             :
                             <form onSubmit={handleSignUp}>
                                 <img alt="" src="/img/logoGlow.png" class='centerlogo' />
@@ -129,7 +128,6 @@ function LoginPg() {
                                 <input type="submit" name="send" value="SIGN UP" />
                             </form>
                     }
-
                 </div>
             </div>
             <img src='/img/login2.svg' className="login-img" />
