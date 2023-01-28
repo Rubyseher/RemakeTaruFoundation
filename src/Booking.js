@@ -4,7 +4,7 @@ import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import axios from "./axios.js";
 import { useLocation } from "react-router-dom";
-
+import Footer from './Footer';
 function Booking(props) {
   const [Notification, setNotification] = React.useState([])
   const [value, onChange] = useState(new Date());
@@ -36,9 +36,10 @@ function Booking(props) {
   return (
     <div>
       <div style={{ display: 'flex', backgroundColor: ' var(--lightBlue)', padding: '50px 30px 25px 60px' }}>
-        <div style={{margin:'0 auto'}} >
-          <h3 style={{ color: 'var(--blue)' }}><b>Select Doctors</b></h3>
-          <div style={{ display: 'inline-flex', width: '60rem', flexFlow: 'wrap', maxHeight: '230px'}}>
+        
+        <div >
+          <h3 style={{ color: 'var(--blue)',marginBottom:'2rem',marginTop:'0.5rem' }}><b>Select Doctors</b></h3>
+          <div style={{ display: 'flex', flexFlow: 'wrap', maxHeight: '230px',margin:'0 auto'}}>
             {
               Notification && Notification.map((d) => (
                 <DoctorsAvaliable name={d.name} experience={d.experience} languages={d.languages} spec={d.specialization} 
@@ -48,18 +49,20 @@ function Booking(props) {
           </div>
         </div>
 
-        <img src='./img/BookingNow.svg' style={{ float: 'right', marginTop: '50px', height: 250 }} />
+        <img src='./img/BookingNow.svg' style={{ float: 'right', marginTop: '50px', height: 250 ,marginLeft:'3rem'}} />
       </div>
 
-      <div style={{ backgroundColor: 'var(--babyPurple)', padding: '50px 30px 25px 60px', overflowX: 'hidden' }}>
-        <h3 style={{ color: 'var(--lightLavender)' }}><b>Select Time With {selectedDoc}</b></h3>
+      <div style={{ backgroundColor: 'var(--babyPurple)', padding: '50px 30px 25px 60px', overflowX: 'hidden',margin:'0 auto' }}>
+        <h3 style={{ color: 'var(--lightLavender)' ,marginBottom:'2rem',marginTop:'0.5rem'}}><b>Select Time With {selectedDoc}</b></h3>
 
-        <div style={{ display: 'inline-flex', padding: '10px 90px 30px 120px' }}>
-          <div style={{ width: '20%', marginRight: 50 }}>
+        <div style={{ display: 'flex',width:'70rem',margin:'0 auto'  }}>
+          
+          <div style={{ width: '25rem', marginRight: 50 }}>
             <Calendar onChange = {onChange} value={value} class='react-calendar shadow' 
             onClickDay={()=>setSelectedDate(new Intl.DateTimeFormat('en-GB', { dateStyle: 'full'}).format(value).toUpperCase())}
             />
           </div>
+
           <div style={{ borderRadius: '20px', backgroundColor: 'white' }} className='shadow'>
             <div className='booking-time-container'>
               {
@@ -69,14 +72,15 @@ function Booking(props) {
               }
             </div>
           </div>
+
         </div>
       </div>
 
-      <div style={{ backgroundColor: ' var(--lightBlue)', padding: '45px 30px 25px 60px' }}>
-        <h3 style={{ color: 'var(--blue)' }}><b>Confirm Booking</b></h3>
+      <div style={{ backgroundColor: ' var(--lightBlue)', padding: '45px 30px 55px 60px'}}>
+        <h3 style={{ color: 'var(--blue)' ,marginBottom:'2rem',marginTop:'0.5rem' }}><b>Confirm Booking</b></h3>
         <ConfirmBooking specialization={state.specialization} time={selectedTime} doc={selectedDoc} date={selectedDate}/>
       </div>
-
+<Footer/>
     </div>
   )
 }
