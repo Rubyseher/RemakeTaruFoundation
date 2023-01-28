@@ -44,12 +44,15 @@ function DocDashboard() {
         <div style={{ backgroundColor: ' var(--lightBlue)' }}>
             <h2 className='title-main'> Schedule</h2>
 
-            <div style={{ display: 'flex', padding: '0px 0px 30px 30px', marginTop: '-30px' }}>
-                <Calendar onChange={onChange} value={value} class='react-calendar'
-                    onClickDay={() => setShortDate(new Intl.DateTimeFormat('en-GB', { dateStyle: 'full' }).format(value).toUpperCase().toString())}
-                />
+            <div style={{ display: 'flex', margin: '0 auto',width:'88rem' }}>
 
-                <div style={{ display: 'inline-flex', flexFlow: 'wrap', height: '430px', minWidth: '609px', overflowY: 'scroll', overflowX: 'hidden' }}>
+                <div style={{ width: '25rem',margin:'0 auto' }}>
+                    <Calendar onChange={onChange} value={value} class='react-calendar'
+                        onClickDay={() => setShortDate(new Intl.DateTimeFormat('en-GB', { dateStyle: 'full' }).format(value).toUpperCase().toString())}
+                    />
+                </div>
+
+                <div style={{ marginLeft:'2rem',display: 'inline-flex', flexFlow: 'wrap', height: '430px', width: '37rem', overflowY: 'scroll', overflowX: 'hidden' }}>
                     {
                         PatientsList && PatientsList.map((d) => (
                             shortDate && d.date == shortDate && d.doc == data.state.data.fullName ?
@@ -65,7 +68,7 @@ function DocDashboard() {
                     }
 
                 </div>
-                <img src='./img/Hospital_wheelchair-2.gif' height='400' style={{ float: 'right', marginTop: '-70px' }} />
+                <img src='./img/Hospital_wheelchair-2.gif' height='350' style={{ float: 'right', marginTop: '-70px' }} />
 
             </div>
             {/* <div style={{ display: 'flex', justifyContent: 'center', backgroundColor: 'var(--babyPurple)' }}>
