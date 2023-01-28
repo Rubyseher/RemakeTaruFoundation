@@ -45,7 +45,7 @@ function DocDashboard() {
             <h2 className='title-main'> Schedule</h2>
 
             <div style={{ display: 'flex', margin: '0 auto',width:'88rem' }}>
-
+                
                 <div style={{ width: '25rem',margin:'0 auto' }}>
                     <Calendar onChange={onChange} value={value} class='react-calendar'
                         onClickDay={() => setShortDate(new Intl.DateTimeFormat('en-GB', { dateStyle: 'full' }).format(value).toUpperCase().toString())}
@@ -69,7 +69,6 @@ function DocDashboard() {
 
                 </div>
                 <img src='./img/Hospital_wheelchair-2.gif' height='350' style={{ float: 'right', marginTop: '-70px' }} />
-
             </div>
             {/* <div style={{ display: 'flex', justifyContent: 'center', backgroundColor: 'var(--babyPurple)' }}>
                 <MultipurposeButton color={'#6d45ae'} bg={'#eae1fa'} text={'Publish Free Slots'} />

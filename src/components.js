@@ -42,13 +42,13 @@ export const NavbarMain = () => {
 }
 export const EachVital = (props) => {
     return (
-        <div style={{ display: 'flex', height: 'fit-content', margin: '20px 0' }}>
+        <div style={{ display: 'flex', height: 'fit-content', margin: '20px 0',overflowX:'hidden' }}>
             <span className="prescription-date">
                 <h4>{props.date.split(' ')[0]}</h4>
                 <h6>{props.date.split(' ')[1].substring(0, 3).toUpperCase()}</h6>
                 <h6>{props.date.split(' ')[2]}</h6>
             </span>
-            <div className='shadow prescription'>
+            <div className=' prescription shadow'>
                 <div className="vitalTitle">Vials</div>
                 <p>
                     <FontAwesomeIcon icon={faHeartPulse} size='xl' style={{ margin: '10px 7px 0 7px' }} color="var(--blue)" /><b>BP :</b> {props.bp}
@@ -67,7 +67,7 @@ export const EachVital = (props) => {
 
 export const EachAppointment = (props) => {
     return (
-        <div style={{ display: 'flex', height: 'fit-content', margin: '20px 0' }}>
+        <div style={{ display: 'flex', height: 'fit-content', margin: '20px 0',overflowX:'hidden' }}>
             <span className="prescription-date">
                 <h4>{props.date.split(' ')[1]}</h4>
                 <h6>{props.date.split(' ')[2].substring(0, 3)}</h6>

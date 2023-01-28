@@ -32,7 +32,6 @@ function Booking(props) {
     console.log(window.localStorage.getItem("token") );
   }, [])
 
-
   return (
     <div>
       <div style={{ display: 'flex', backgroundColor: ' var(--lightBlue)', padding: '50px 30px 25px 60px' }}>

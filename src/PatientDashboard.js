@@ -11,7 +11,6 @@ import Footer from './Footer';
 import { useNavigate } from "react-router-dom";
 import axios from './axios.js';
 
-
 function PatientDashboard() {
   const [userData, setUserData] = useState([])
   const navigate = useNavigate()
@@ -41,23 +40,23 @@ function PatientDashboard() {
     <div style={{ backgroundColor: 'var(--lightBlue)',margin:'0 auto' }}>
       <h3 style={{ color: 'var(--blue)', padding: '45px 30px 15px 60px' }}><b>Welcome {userData.fullName}</b></h3>
 
-      <div style={{ display: 'flex' ,margin:'0 auto'}}>
+      <div style={{ display: 'flex' ,margin:'0 auto' ,width:'92rem'}}>
 
         <div className='profile-card'>
-          <AccountCircleIcon style={{ fontSize: '9.0vw', marginLeft: '22%', marginBottom: 10 }} />
-          <h4 style={{ marginBottom: 40 }}><b>{userData.fullName}</b></h4>
-          <span style={{ fontSize: '1.1vw', lineHeight: '50px', fontWeight: '600' }} >
-            <ContactPageIcon style={{ fontSize: '1.8vw', marginRight: '15px' }} />{userData.age} years<br />
-            <LocalPhoneIcon style={{ fontSize: '1.8vw', marginRight: '15px' }} />{userData.phone}<br />
-            <BloodtypeIcon style={{ fontSize: '1.8vw', marginRight: '15px' }} />{userData.bloodGroup}<br />
-            <HomeIcon style={{ fontSize: '1.8vw', marginRight: '15px' }} />{userData.address}<br />
+          <AccountCircleIcon style={{ fontSize: '7rem'}} />
+          <h4 style={{ margin:'1rem 0 1rem 0',fontSize: '1.5rem' }}><b>{userData.fullName}</b></h4>
+          <span style={{ fontSize: '1rem', lineHeight: '50px', fontWeight: '600' }} >
+            <ContactPageIcon style={{ fontSize: '1.7rem', marginRight: '15px' }} />{userData.age} years<br />
+            <LocalPhoneIcon style={{ fontSize: '1.7rem', marginRight: '15px' }} />{userData.phone}<br />
+            <BloodtypeIcon style={{ fontSize: '1.7rem', marginRight: '15px' }} />{userData.bloodGroup}<br />
+            <HomeIcon style={{ fontSize: '1.7rem', marginRight: '15px' }} />{userData.address}<br />
           </span>
         </div>
 
         <div style={{ width: '90rem' }}>
           {
             Array.isArray(userData.appointments) && userData.appointments.length ?
-              <div className='vitals-container shadow' style={{ display: 'inline-flex', flexDirection: 'column', flexFlow: 'wrap', overflow: 'scroll', width: '850px', height: '350px', marginBottom: '40px' }}>
+              <div className='vitals-container shadow' style={{ display: 'inline-flex', flexDirection: 'column', flexFlow: 'wrap', overflow: 'scroll', width: '53rem', height: '22rem', marginBottom: '40px' }}>
                 <h4 style={{ color: 'var(--blue)', padding: '15px 30px 0px 70px' }}><b>Upcoming Appointment</b></h4>
                 {
                   Array.isArray(userData.appointments) && userData.appointments.length ?
