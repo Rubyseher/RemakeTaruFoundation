@@ -10,11 +10,13 @@ function MainPg() {
             <ParallaxContainer />
             {/* this gloating pmg will have our motive topic beside it  */}
             {/* ur services comes next  */}
-            <div style={{ background: 'var(--babyBlue)', margin: '0 auto'  }}>
+            <div style={{ background: 'var(--babyBlue)', margin: '0 auto' }}>
 
                 <h1 className="title-main">Our Services</h1>
-                <div style={{ display: 'inline-flex', width: '60rem', flexFlow: 'wrap', margin: '0 auto' }}>
+                <div style={{ display: 'inline-flex',  width: '100%',flexFlow: 'wrap',justifyContent:'center' }}>
+                    <div style={{display: 'inline-flex',width:'60%', minWidth:'60rem', flexFlow: 'wrap'}}>
                     <Services />
+                    </div>
                 </div>
             </div>
 

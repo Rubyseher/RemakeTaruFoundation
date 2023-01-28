@@ -36,7 +36,9 @@ export const NavbarMain = () => {
                     <Nav.Link href="#pricing">Pricing</Nav.Link>
                 </Nav>
             </Container>
-            <Button href="/login" variant="contained" sx={{ fontWeight: 'bold', letterSpacing: '2px', width: '9rem', borderRadius: '12px', backgroundColor: 'var(--blue)', marginRight: '20px', padding: '7px 50px' ,color:'white'}}>Login</Button>
+            <div className="login-button">
+            <Button href="/login"  variant="contained" sx={{ fontWeight: 'bold', letterSpacing: '2px', width: '9rem', borderRadius: '12px', backgroundColor: 'var(--blue)', marginRight: '20px', padding: '7px 50px' ,color:'white'}}>Login</Button>
+            </div>
         </Navbar>
     )
 }
@@ -66,6 +68,7 @@ export const EachVital = (props) => {
 }
 
 export const EachAppointment = (props) => {
+    console.log(props);
     return (
         <div style={{ display: 'flex', height: 'fit-content', margin: '20px 0',overflowX:'hidden' }}>
             <span className="prescription-date">
@@ -74,7 +77,7 @@ export const EachAppointment = (props) => {
                 <h6>{props.date.split(' ')[3]}</h6>
             </span>
             <div className='shadow prescription'>
-                <a href={props.meet} target="_blank">
+                <a href={props.meet} target="_blank" style={{zIndex:1000}}>
                     <span className="timeSlotBox shadow" style={{ letterSpacing: '0.1px', fontSize: 14, margin: ' 18px 0px 0 0' }}>
                         <b >JOIN NOW</b>
                     </span>

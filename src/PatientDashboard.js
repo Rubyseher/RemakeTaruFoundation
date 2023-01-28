@@ -37,14 +37,14 @@ function PatientDashboard() {
   }, [])
 
   return (
-    <div style={{ backgroundColor: 'var(--lightBlue)',margin:'0 auto' }}>
+    <div style={{ backgroundColor: 'var(--lightBlue)', margin: '0 auto' }}>
       <h3 style={{ color: 'var(--blue)', padding: '45px 30px 15px 60px' }}><b>Welcome {userData.fullName}</b></h3>
 
-      <div style={{ display: 'flex' ,margin:'0 auto' ,width:'92rem'}}>
+      <div style={{ display: 'flex', margin: '0 auto', width: '92rem', position: 'relative' }}>
 
-        <div className='profile-card'>
-          <AccountCircleIcon style={{ fontSize: '7rem'}} />
-          <h4 style={{ margin:'1rem 0 1rem 0',fontSize: '1.5rem' }}><b>{userData.fullName}</b></h4>
+        <div className='profile-card' style={{ display: 'flex', flexDirection: 'column' }}>
+          <AccountCircleIcon style={{ fontSize: '7rem', alignSelf: 'center' }} />
+          <h4 style={{ margin: '1rem 0 1rem 0', fontSize: '1.5rem' }}><b>{userData.fullName}</b></h4>
           <span style={{ fontSize: '1rem', lineHeight: '50px', fontWeight: '600' }} >
             <ContactPageIcon style={{ fontSize: '1.7rem', marginRight: '15px' }} />{userData.age} years<br />
             <LocalPhoneIcon style={{ fontSize: '1.7rem', marginRight: '15px' }} />{userData.phone}<br />
@@ -53,10 +53,13 @@ function PatientDashboard() {
           </span>
         </div>
 
-        <div style={{ width: '90rem' }}>
+        <div style={{ position: 'absolute', right: -200, zIndex: 1 }} >
+          <img src='./img/profile.svg' height={500} />
+        </div>
+        <div style={{ width: '90rem', zIndex: 1000 }}>
           {
             Array.isArray(userData.appointments) && userData.appointments.length ?
-              <div className='vitals-container shadow' style={{ display: 'inline-flex', flexDirection: 'column', flexFlow: 'wrap', overflow: 'scroll', width: '53rem', height: '22rem', marginBottom: '40px' }}>
+              <div className='vitals-container shadow' style={{ display: 'inline-flex', flexDirection: 'column', flexFlow: 'wrap', overflow: 'scroll', width: '53rem', height: '22rem', marginBottom: '40px', zIndex: 1000 }}>
                 <h4 style={{ color: 'var(--blue)', padding: '15px 30px 0px 70px' }}><b>Upcoming Appointment</b></h4>
                 {
                   Array.isArray(userData.appointments) && userData.appointments.length ?
@@ -73,7 +76,7 @@ function PatientDashboard() {
               </div> :
               <br />
           }
-          <div className='vitals-container shadow' style={{ display: 'inline-flex', flexDirection: 'column', flexFlow: 'wrap', overflow: 'scroll', width: '850px', height: '490px' }}>
+          <div className='vitals-container shadow' style={{ display: 'inline-flex', flexDirection: 'column', flexFlow: 'wrap', overflow: 'scroll', width: '850px', height: '490px', zIndex: 1000 }}>
             <h4 style={{ color: 'var(--blue)', padding: '15px 30px 0px 70px' }}><b>Vitals</b></h4>
 
             {
@@ -93,8 +96,6 @@ function PatientDashboard() {
             }
           </div>
         </div>
-
-        <img src='./img/profile.svg' height={500} />
 
       </div>
       <Footer />

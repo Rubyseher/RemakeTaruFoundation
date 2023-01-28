@@ -377,3 +377,7 @@ margin:5px;
   text-align: left;
   font-size: 18px;
 }
+
+.login-button a:hover{
+color:white;
+}
