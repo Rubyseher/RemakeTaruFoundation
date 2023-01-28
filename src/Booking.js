@@ -5,7 +5,6 @@ import 'react-calendar/dist/Calendar.css';
 import axios from "./axios.js";
 import { useLocation } from "react-router-dom";
 
-
 function Booking(props) {
   const [Notification, setNotification] = React.useState([])
   const [value, onChange] = useState(new Date());
@@ -37,9 +36,9 @@ function Booking(props) {
   return (
     <div>
       <div style={{ display: 'flex', backgroundColor: ' var(--lightBlue)', padding: '50px 30px 25px 60px' }}>
-        <div >
+        <div style={{margin:'0 auto'}} >
           <h3 style={{ color: 'var(--blue)' }}><b>Select Doctors</b></h3>
-          <div style={{ display: 'inline-flex', width: '900', flexFlow: 'wrap', maxHeight: '230px' }}>
+          <div style={{ display: 'inline-flex', width: '60rem', flexFlow: 'wrap', maxHeight: '230px'}}>
             {
               Notification && Notification.map((d) => (
                 <DoctorsAvaliable name={d.name} experience={d.experience} languages={d.languages} spec={d.specialization} 
@@ -48,6 +47,7 @@ function Booking(props) {
             }
           </div>
         </div>
+
         <img src='./img/BookingNow.svg' style={{ float: 'right', marginTop: '50px', height: 250 }} />
       </div>
 

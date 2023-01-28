@@ -127,16 +127,20 @@
 
 }
 .mission{
+  margin-top: 5rem;
   text-align: center;
-  line-height: 30px;
-  padding-right: 90px;
+  line-height: 2rem;
+  width: 60rem;
   font-size: 17px;
 }
 .mission h4{
   padding: 20px 0 10px 0;
+  text-align: center;
+
 }
 #whoAreWe{
-  margin: 70px 0 10px 0;
+  /* margin: 30px 0 10px 0; */
+  margin-top: 3rem;
 }
 .hover-underline-animation {
   display: inline-block;
