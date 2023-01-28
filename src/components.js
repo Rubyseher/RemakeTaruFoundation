@@ -16,7 +16,6 @@ import LoginIcon from '@mui/icons-material/Login';
 import { useNavigate } from "react-router-dom";
 import axios from './axios.js';
 
-
 export const NavbarMain = () => {
     return (
         <Navbar bg="light" variant="light" className='shadow'>
@@ -37,9 +36,7 @@ export const NavbarMain = () => {
                     <Nav.Link href="#pricing">Pricing</Nav.Link>
                 </Nav>
             </Container>
-            {/* <Button variant="contained" sx={{ color: 'white', backgroundColor: '#3e37c9d9', width: '8%', borderRadius: '16px', padding: '8px 0px', marginRight: '8px' }}><b>Login</b></Button> */}
-            <Button href="/login" variant="contained" sx={{ fontWeight: 'bold', letterSpacing: '2px', width: '8%', borderRadius: '12px', backgroundColor: 'var(--blue)', marginRight: '20px', padding: '7px 50px' }}>Login</Button>
-            {/* <Button href="/login" variant="primary">Primary</Button> */}
+            <Button href="/login" variant="contained" sx={{ fontWeight: 'bold', letterSpacing: '2px', width: '9rem', borderRadius: '12px', backgroundColor: 'var(--blue)', marginRight: '20px', padding: '7px 50px' ,color:'white'}}>Login</Button>
         </Navbar>
     )
 }

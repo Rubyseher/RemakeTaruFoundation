@@ -51,6 +51,11 @@
   color:rgb(255, 255, 255);
   background-color: red;
 }
+
+.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl{
+  margin-left: 0;
+  padding-left: 2rem;
+}
 .booking-time-container{
   display: inline-grid;
   padding: 20px;
