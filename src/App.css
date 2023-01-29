@@ -1,6 +1,5 @@
 
 
-/* General */
 
 .floating-img{
 	transform: translatey(0px);
@@ -20,7 +19,6 @@
 }
 .meetLogo{
   float: right;
-  /* margin: -100px 5px 0 0; */
   position: relative;
   top: -15px;
 }
@@ -43,7 +41,6 @@
   border-left:7px solid #d9381e;
   background-color: white;
   margin: 0 auto;
-  /* border-radius: 10px; */
   text-align: left;
   font-size: 18px;
 }
@@ -72,9 +69,6 @@ padding: 50px 60px;
   -webkit-box-shadow: 0px 2px 5px 0px rgba(117, 117, 117, 0.25);
   box-shadow: 0px 2px 5px 0px rgba(75, 75, 75, 0.25);
   height: 325px;
-  /* width: 650px  !important; */
-  /* -webkit-box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.25);
-  box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.25); */
 }
 .close_button{
    position:absolute;
@@ -100,9 +94,7 @@ padding: 50px 60px;
   justify-content: center;
   align-items: center;
   border-radius: 30px;
-  /* margin-left: 80px; */
   margin: 0 auto;
-  /* margin: 10px 0px 20px 0px; */
 }
 .react-calendar__tile--now {
   background: #4e7de3 !important;
@@ -146,13 +138,11 @@ padding: 50px 60px;
 
 }
 #whoAreWe{
-  /* margin: 30px 0 10px 0; */
   margin-top: 3rem;
 }
 .hover-underline-animation {
   display: inline-block;
   position: relative;
-  /* width: 100%; */
 }
 
 .hover-underline-animation:after {
@@ -183,7 +173,6 @@ background: linear-gradient(to right, #4361EE 39%, #7209B7 55%);
 -webkit-background-clip: text;
 -webkit-text-fill-color: transparent;
 text-align: center;
-/* margin:60px 0 40px 0; */
 padding:60px 0 40px 0;
 }
 .welcome{
@@ -264,8 +253,6 @@ padding: 12px 18px !important;
   font-weight: bold;
 }
 .prescription p{
-  /* font-weight: 500; */
-  /* letter-spacing: 1px; */
   margin-bottom: 12px;
 }
 .vitalTitle{
@@ -291,7 +278,6 @@ margin:5px;
   width:32rem;
   height: fit-content;
   background-color:var(--blue);
-  /* background-color:#322cace0; */
   margin-left: 60px;
   padding:40px 30px 40px 30px;
 }
@@ -358,13 +344,11 @@ margin:5px;
   height: 165px;
 }
 .wave{
-  background-position: center; /* Center the image */
+  background-position: center; 
   background-repeat: no-repeat;
   background-image: url('./img/wave-9.svg');
 }
-/* RMP Dashboard */
 .rmpNotiBox {
-  /* color: white; */
   background-color:white;
   width: 450px;
   padding: 18px 26px;
