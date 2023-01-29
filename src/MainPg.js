@@ -8,8 +8,6 @@ function MainPg() {
     return (
         <div >
             <ParallaxContainer />
-            {/* this gloating pmg will have our motive topic beside it  */}
-            {/* ur services comes next  */}
             <div style={{ background: 'var(--babyBlue)', margin: '0 auto' }}>
 
                 <h1 className="title-main">Our Services</h1>
