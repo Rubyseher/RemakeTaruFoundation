@@ -29,7 +29,7 @@ function Booking(props) {
       setNotification((oldState) => newAr)
     }
     fetchData();
-    console.log(window.localStorage.getItem("token") );
+    // console.log(window.localStorage.getItem("token") );
   }, [])
 
   return (
