@@ -273,6 +273,9 @@ margin:5px;
   background-color: white;
   margin-left: 2vw;
 }
+html {
+  scroll-behavior: smooth;
+}
 .profile-card{
   border-radius: 20px;
   width:32rem;

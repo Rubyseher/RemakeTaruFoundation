@@ -10,8 +10,8 @@ function MainPg() {
             <ParallaxContainer />
             <div style={{ background: 'var(--babyBlue)', margin: '0 auto' }}>
 
-                <h1 className="title-main">Our Services</h1>
-                <div style={{ display: 'inline-flex',  width: '100%',flexFlow: 'wrap',justifyContent:'center' }}>
+                <h1 id="services" className="title-main" >Our Services</h1>
+                <div  style={{ display: 'inline-flex',  width: '100%',flexFlow: 'wrap',justifyContent:'center' }}>
                     <div style={{display: 'inline-flex',width:'60%', minWidth:'60rem', flexFlow: 'wrap'}}>
                     <Services />
                     </div>
@@ -19,12 +19,12 @@ function MainPg() {
             </div>
 
             <div style={{ background: 'white', width: '75rem', margin: '0 auto' }}>
-                <h1 className="title-main" style={{ padding: '60px 0 -40px 0' }} >Our Mission</h1>
+                <h1  className="title-main" style={{ padding: '60px 0 -40px 0' }} >Our Mission</h1>
                 <div style={{ display: 'flex' }}>
                     <img src="/img/front2.png" height={707} width={500} style={{ display: 'inline-flex' ,margin:'0 5rem 0 0'}} className='floating-img' />
 
                     <p className='mission'>
-                        <h4 className="hover-underline-animation">About Us</h4><br />
+                        <h4  id="about" className="hover-underline-animation">About Us</h4><br />
                         Our mission is to work for the Creation, Protection And Nurturing of poverty free,
                         educated, skilled, women empowered, prosperous and healthy society through
                         philanthropic thinking, high governance and best practices across the globe.
@@ -36,7 +36,7 @@ function MainPg() {
                     </p>
                 </div>
             </div>
-            <Footer />
+            <Footer  />
         </div>
 
     )
