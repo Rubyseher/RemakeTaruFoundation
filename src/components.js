@@ -37,14 +37,14 @@ export const NavbarMain = () => {
                 </Nav>
             </Container>
             <div className="login-button">
-            <Button href="/login"  variant="contained" sx={{ fontWeight: 'bold', letterSpacing: '2px', width: '9rem', borderRadius: '12px', backgroundColor: 'var(--blue)', marginRight: '20px', padding: '7px 50px' ,color:'white'}}>Login</Button>
+                <Button href="/login" variant="contained" sx={{ fontWeight: 'bold', letterSpacing: '2px', width: '9rem', borderRadius: '12px', backgroundColor: 'var(--blue)', marginRight: '20px', padding: '7px 50px', color: 'white' }}>Login</Button>
             </div>
         </Navbar>
     )
 }
 export const EachVital = (props) => {
     return (
-        <div style={{ display: 'flex', height: 'fit-content', margin: '20px 0',overflowX:'hidden' }}>
+        <div style={{ display: 'flex', height: 'fit-content', margin: '20px 0', overflowX: 'hidden' }}>
             <span className="prescription-date">
                 <h4>{props.date.split(' ')[0]}</h4>
                 <h6>{props.date.split(' ')[1].substring(0, 3).toUpperCase()}</h6>
@@ -54,7 +54,7 @@ export const EachVital = (props) => {
                 <div className="vitalTitle">Vials</div>
                 <p>
                     <FontAwesomeIcon icon={faHeartPulse} size='xl' style={{ margin: '10px 7px 0 7px' }} color="var(--blue)" /><b>BP :</b> {props.bp}
-                    <FontAwesomeIcon icon={faWeightScale} size='xl' style={{ margin: '10px 7px 0 200px' }} color="var(--blue)"/><b> Weight : </b>{props.weight}
+                    <FontAwesomeIcon icon={faWeightScale} size='xl' style={{ margin: '10px 7px 0 200px' }} color="var(--blue)" /><b> Weight : </b>{props.weight}
                 </p>
 
                 <div className="vitalTitle"><b>Prescription</b></div>
@@ -70,14 +70,14 @@ export const EachVital = (props) => {
 export const EachAppointment = (props) => {
     console.log(props);
     return (
-        <div style={{ display: 'flex', height: 'fit-content', margin: '20px 0',overflowX:'hidden' }}>
+        <div style={{ display: 'flex', height: 'fit-content', margin: '20px 0', overflowX: 'hidden' }}>
             <span className="prescription-date">
                 <h4>{props.date.split(' ')[1]}</h4>
                 <h6>{props.date.split(' ')[2].substring(0, 3)}</h6>
                 <h6>{props.date.split(' ')[3]}</h6>
             </span>
             <div className='shadow prescription'>
-                <a href={props.meet} target="_blank" style={{zIndex:1000}}>
+                <a href={props.meet} target="_blank" style={{ zIndex: 1000 }}>
                     <span className="timeSlotBox shadow" style={{ letterSpacing: '0.1px', fontSize: 14, margin: ' 18px 0px 0 0' }}>
                         <b >JOIN NOW</b>
                     </span>
@@ -99,16 +99,19 @@ export const ConfirmBooking = (props) => {
     var link = "";
 
     async function handleLogin() {
-        meetLink()
-        const res = await axios.post('/booking', {
-            token: window.localStorage.getItem("token"),
-            doc: props.doc, time: props.time, date: props.date, mlink: link, specialization: props.specialization
-        })
-            .then(function (response) {
+        if (window.localStorage.getItem('signedIN'))
+            navigate('/login')
+        else {
+            meetLink()
+            const res = await axios.post('/booking', {
+                token: window.localStorage.getItem("token"),
+                doc: props.doc, time: props.time, date: props.date, mlink: link, specialization: props.specialization
+            }).then(function (response) {
                 navigate('/patient')
             }).catch(function (error) {
                 console.log(error);
             });
+        }
     }
 
 
@@ -126,7 +129,7 @@ export const ConfirmBooking = (props) => {
             link = "https://meet.google.com/rgm-izwq-yij"
         else if (doc === "Dr.Lilly Singh")
             link = "https://meet.google.com/cfs-wpzs-gxh"
-            else if (doc === "Dr.Priya K")
+        else if (doc === "Dr.Priya K")
             link = "https://meet.google.com/zon-vnwd-prb"
 
     }
