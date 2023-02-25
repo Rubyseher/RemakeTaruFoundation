@@ -99,7 +99,7 @@ export const ConfirmBooking = (props) => {
     var link = "";
 
     async function handleLogin() {
-        if (window.localStorage.getItem('signedIN'))
+        if (window.localStorage.getItem('signedIN')===null)
             navigate('/login')
         else {
             meetLink()
