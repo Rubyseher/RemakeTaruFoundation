@@ -55,7 +55,7 @@ function LoginPg() {
                 console.log(error);
             });
     }
-
+ 
     async function handleSignUp(event) {
         event.preventDefault();
         console.log(phone, password, fullName, age, bloodGroup)
