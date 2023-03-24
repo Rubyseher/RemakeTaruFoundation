@@ -8,12 +8,12 @@ import Footer from './Footer';
 function Booking(props) {
   const [Notification, setNotification] = React.useState([])
   const [value, onChange] = useState(new Date());
-  const [selectedDoc,setSelectedDoc]= useState("baa")
+  const [selectedDoc,setSelectedDoc]= useState("")
   const [selectedTime,setSelectedTime]= useState("00:00")
   const [selectedDate,setSelectedDate]= useState("nil")
   const [timeSlot,setTimeSlot]= useState([])
 
-  const {state} = useLocation();
+  const {state} = useLocation(); 
   const { id, color } = state;
   useEffect(() => {
     async function fetchData() {

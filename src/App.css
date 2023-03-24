@@ -168,8 +168,17 @@ margin-bottom: 0;
   font-size:3.3vw;
   font-weight:600;
   letter-spacing: -2px;
-background: #2974ed;
-background: linear-gradient(to right, #4361EE 39%, #7209B7 55%);
+  background-image: linear-gradient(60deg, #0846da, #5ff2fc);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+text-align: center;
+padding:60px 0 40px 0;
+}
+.subTitle-main{
+  font-size:3.3vw;
+  font-weight:600;
+  letter-spacing: -2px;
+  background-image: linear-gradient(60deg, #0846da, #5ff2fc);
 -webkit-background-clip: text;
 -webkit-text-fill-color: transparent;
 text-align: center;
@@ -197,18 +206,18 @@ padding: 12px 18px !important;
   --lightPurple: #9241ce;
   --lavender:#55289f;
   --lightLavender:#6b1bac;
-  --darkPurple: #6b1bacc6;
 
   --lightBlue: #f8faff;
   --blue: #1665c0;
   --babyBlue: #f3f7ff;
   --darkBlue: #3e37c9d9;
-  --royalBlue: #1b53ac;
 }
 .css-3fvyzq-MuiButtonBase-root-MuiButton-root {
   border: 1px solid #1b53ac;
 }
-
+.bg-light {
+  background-color: white!important;
+  }
 .booking-confirm-container{
   background-color: rgb(255, 255, 255);
   text-align: center;

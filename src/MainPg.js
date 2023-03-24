@@ -8,6 +8,7 @@ function MainPg() {
     return (
         <div >
             <ParallaxContainer />
+
             <div style={{ background: 'var(--babyBlue)', margin: '0 auto' }}>
 
                 <h1 id="services" className="title-main" >Our Services</h1>

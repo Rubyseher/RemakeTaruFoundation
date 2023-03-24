@@ -7,6 +7,7 @@ import DocDashboard from './DocDashboard';
 import RmpDashboard from './RmpDashboard'
 import PatientDashboard from './PatientDashboard'
 import Login from "./LoginPg"
+import Login2 from "./LoginPg2"
 import Booking from "./Booking"
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/doc" element={<DocDashboard />} />
         <Route path="/patient" element={<PatientDashboard />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/login2" element={<Login2/>} />
         <Route path="/booking" element={<Booking />} />
       </Routes>
     </div>

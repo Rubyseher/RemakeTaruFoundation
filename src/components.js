@@ -15,20 +15,20 @@ import { Parallax } from 'react-parallax';
 import LoginIcon from '@mui/icons-material/Login';
 import { useNavigate } from "react-router-dom";
 import axios from './axios.js';
+import Typist from 'react-typist-component';
 
 export const NavbarMain = () => {
     return (
-        <Navbar bg="light" variant="light" className='shadow'>
+        <Navbar bg="light" variant="light" className='shadow' >
             <Container>
                 <Navbar.Brand href="/" style={{ display: 'flex', alignItems: 'center' }}>
                     <img
                         alt=""
-                        src="/img/logo.png"
-                        width="50"
-                        height="50"
+                        src="/img/healthfocus.svg"
+                        width="7%"
                         className="d-inline-block align-top"
                     />{' '}
-                    &nbsp; &nbsp; Taru Foundations
+                    &nbsp;Health Focus
                 </Navbar.Brand>
                 <Nav className="me-auto">
                     <Nav.Link href="/">Home</Nav.Link>
@@ -99,7 +99,7 @@ export const ConfirmBooking = (props) => {
     var link = "";
 
     async function handleLogin() {
-        if (window.localStorage.getItem('signedIN')===null)
+        if (window.localStorage.getItem('signedIN') === null)
             navigate('/login')
         else {
             meetLink()
@@ -227,10 +227,13 @@ export const ParallaxContainer = () => {
             bgImageStyle={{ width: '100%' }} style={{ height: '670px' }}>
             <div style={{ height: 500 }}>
                 <div className='parallax' style={{ background: 'transparent' }}>
-                    <h1 className="title-main" style={{ fontSize: '70px', paddingTop: 160 }}>Health Care For All</h1>
+                    <Typist>
+                        <h1 className="title-main" style={{ fontSize: '70px', paddingTop: 160 }}>Health Care For All</h1>
+                    </Typist>
                 </div>
             </div>
         </Parallax>
+
     )
 }
 
