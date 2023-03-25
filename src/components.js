@@ -19,26 +19,62 @@ import Typist from 'react-typist-component';
 
 export const NavbarMain = () => {
     return (
-        <Navbar bg="light" variant="light" className='shadow' >
+        // <Navbar bg="light" variant="light" className='shadow' >
+        //     <Container>
+        //         <Navbar.Brand href="/" style={{ display: 'flex', alignItems: 'center', width: '15%', fontWeight: 'bold', color: 'var(--blue)' }}>
+        //             <img
+        //                 alt=""
+        //                 src="/img/healthfocus.svg"
+        //                 width="40px"
+        //                 className="d-inline-block align-top"
+        //             />{' '}
+        //             &nbsp;Health Focus
+        //         </Navbar.Brand>
+        //         <Navbar.Collapse id="responsive-navbar-nav">
+        //             <Nav
+        //                 className="me-auto my-2 my-lg-0"
+        //                 style={{ maxHeight: '100px', fontWeight: 'bold' }}
+        //                 navbarScroll
+        //             >
+        //                 <Nav.Link href="/" style={{ paddingLeft: '20px' }} >Home</Nav.Link>
+        //                 <Nav.Link href="/#services" style={{ paddingLeft: '30px' }}>Services</Nav.Link>
+        //                 <Nav.Link href="/#about" style={{ paddingLeft: '30px' }}>About</Nav.Link>
+        //             </Nav>
+
+        //         </Navbar.Collapse>
+        //         <div className="login-button">
+        //             <Button href="/login" variant="contained" sx={{ fontWeight: 'bold', letterSpacing: '2px', width: '9rem', borderRadius: '12px', backgroundColor: 'var(--blue)', marginRight: '20px', padding: '7px 50px', color: 'white' }}>Login</Button>
+        //         </div>
+        //     </Container>
+
+        // </Navbar>
+        <Navbar collapseOnSelect expand="lg" bg="light" variant="light" className='shadow'>
             <Container>
-                <Navbar.Brand href="/" style={{ display: 'flex', alignItems: 'center',width:'15%' ,fontWeight:'bold',color:'var(--blue)'}}>
+                <Navbar.Brand href="/" style={{ display: 'flex', alignItems: 'center', fontWeight: 'bold', color: 'var(--blue)' }}>
                     <img
                         alt=""
                         src="/img/healthfocus.svg"
-                        width="40px"
+                        width="40"
+                        height="40"
+                        style={{ marginTop: '-7px' }}
                         className="d-inline-block align-top"
                     />{' '}
                     &nbsp;Health Focus
                 </Navbar.Brand>
-                <Nav className="me-auto" style={{fontWeight:'bold'}}>
-                    <Nav.Link href="/" style={{paddingLeft:'20px'}} >Home</Nav.Link>
-                    <Nav.Link href="/#services" style={{paddingLeft:'30px'}}>Services</Nav.Link>
-                    <Nav.Link href="/#about" style={{paddingLeft:'30px'}}>About</Nav.Link>
-                </Nav>
+                <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                <Navbar.Collapse id="responsive-navbar-nav">
+                    <Nav className="me-auto" style={{ fontWeight: 'bold' }}>
+                        <Nav.Link href="/" style={{ marginLeft: 20 }}  >Home</Nav.Link>
+                        <Nav.Link href="/#services" style={{ marginLeft: 20 }}>Services</Nav.Link>
+                        <Nav.Link href="/#about" style={{ marginLeft: 20 }}>About</Nav.Link>
+                        <Nav.Link href="/login" style={{ marginLeft: 20 }}>Login</Nav.Link>
+                    </Nav>
+                    {/* <div className="login-button">
+                        <Button href="/login" variant="contained" sx={{ fontWeight: 'bold', letterSpacing: '2px', width: '9rem', borderRadius: '12px', backgroundColor: 'var(--blue)', padding: '7px 50px', color: 'white' }}>Login</Button>
+                    </div> */}
+                </Navbar.Collapse>
+
             </Container>
-            <div className="login-button">
-                <Button href="/login" variant="contained" sx={{ fontWeight: 'bold', letterSpacing: '2px', width: '9rem', borderRadius: '12px', backgroundColor: 'var(--blue)', marginRight: '20px', padding: '7px 50px', color: 'white' }}>Login</Button>
-            </div>
         </Navbar>
     )
 }
@@ -224,7 +260,7 @@ export const Services = () => {
 export const ParallaxContainer = () => {
     return (
         <Parallax bgImage='./img/main2.jpg' strength={500}
-            bgImageStyle={{ width: '100%'}} style={{ height: '670px' }}>
+            bgImageStyle={{ width: '100%' }} style={{ height: '670px' }}>
             <div style={{ height: 500 }}>
                 <div className='parallax' style={{ background: 'transparent' }}>
                     <Typist>
