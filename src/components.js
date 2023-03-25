@@ -19,38 +19,9 @@ import Typist from 'react-typist-component';
 
 export const NavbarMain = () => {
     return (
-        // <Navbar bg="light" variant="light" className='shadow' >
-        //     <Container>
-        //         <Navbar.Brand href="/" style={{ display: 'flex', alignItems: 'center', width: '15%', fontWeight: 'bold', color: 'var(--blue)' }}>
-        //             <img
-        //                 alt=""
-        //                 src="/img/healthfocus.svg"
-        //                 width="40px"
-        //                 className="d-inline-block align-top"
-        //             />{' '}
-        //             &nbsp;Health Focus
-        //         </Navbar.Brand>
-        //         <Navbar.Collapse id="responsive-navbar-nav">
-        //             <Nav
-        //                 className="me-auto my-2 my-lg-0"
-        //                 style={{ maxHeight: '100px', fontWeight: 'bold' }}
-        //                 navbarScroll
-        //             >
-        //                 <Nav.Link href="/" style={{ paddingLeft: '20px' }} >Home</Nav.Link>
-        //                 <Nav.Link href="/#services" style={{ paddingLeft: '30px' }}>Services</Nav.Link>
-        //                 <Nav.Link href="/#about" style={{ paddingLeft: '30px' }}>About</Nav.Link>
-        //             </Nav>
-
-        //         </Navbar.Collapse>
-        //         <div className="login-button">
-        //             <Button href="/login" variant="contained" sx={{ fontWeight: 'bold', letterSpacing: '2px', width: '9rem', borderRadius: '12px', backgroundColor: 'var(--blue)', marginRight: '20px', padding: '7px 50px', color: 'white' }}>Login</Button>
-        //         </div>
-        //     </Container>
-
-        // </Navbar>
         <Navbar collapseOnSelect expand="lg" bg="light" variant="light" className='shadow'>
             <Container>
-                <Navbar.Brand href="/" style={{ display: 'flex', alignItems: 'center', fontWeight: 'bold', color: 'var(--blue)' }}>
+                <Navbar.Brand href="/" style={{ display: 'flex', alignItems: 'center', fontWeight: 'bold', color: 'var(--blue)'}}>
                     <img
                         alt=""
                         src="/img/healthfocus.svg"
@@ -260,13 +231,11 @@ export const Services = () => {
 export const ParallaxContainer = () => {
     return (
         <Parallax bgImage='./img/main2.jpg' strength={500}
-            bgImageStyle={{ width: '100%' }} style={{ height: '670px' }}>
-            <div style={{ height: 500 }}>
-                <div className='parallax' style={{ background: 'transparent' }}>
-                    <Typist>
-                        <h1 className="title-main" style={{ fontSize: '70px', paddingTop: 160 }}>Health Care For All</h1>
-                    </Typist>
-                </div>
+            bgImageStyle={{ width: '100%', height: 'auto' }} style={{ height: '46vw' }}>
+            <div className='parallax' style={{ background: 'transparent' }}>
+                <Typist>
+                    <h1 className="title-main">Health Care For All</h1>
+                </Typist>
             </div>
         </Parallax>
 

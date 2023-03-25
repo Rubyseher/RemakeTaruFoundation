@@ -1,68 +1,71 @@
-
-
-
-.floating-img{
-	transform: translatey(0px);
-	animation: float 6s ease-in-out infinite;
+.floating-img {
+  transform: translatey(0px);
+  animation: float 6s ease-in-out infinite;
 }
 
 @keyframes float {
-	0% {
-		transform: translatey(0px);
-	}
-	50% {
-		transform: translatey(-10px);
-	}
-	100% {
-		transform: translatey(0px);
-	}
+  0% {
+    transform: translatey(0px);
+  }
+  50% {
+    transform: translatey(-10px);
+  }
+  100% {
+    transform: translatey(0px);
+  }
 }
-.meetLogo{
+.meetLogo {
   float: right;
   position: relative;
   top: -15px;
 }
-.patientTodayBox{
+.patientTodayBox {
   background-color: white;
   width: 650px;
   padding: 18px 6px 18px 26px;
-  font-weight: 600; 
+  font-weight: 600;
   margin: 0 auto;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
   text-align: left;
-  border-left:7px solid var(--blue);
+  border-left: 7px solid var(--blue);
 
   font-size: 18px;
 }
-.patientTodayBack{
+.patientTodayBack {
   padding: 18px 6px 18px 26px;
-  font-weight: 600; 
-  border-left:7px solid #d9381e;
+  font-weight: 600;
+  border-left: 7px solid #d9381e;
   background-color: white;
   margin: 0 auto;
   text-align: left;
   font-size: 18px;
 }
-.patientTodayBack Button:hover{
-  color:rgb(255, 255, 255);
+.patientTodayBack Button:hover {
+  color: rgb(255, 255, 255);
   background-color: red;
 }
-.cSdDRL{
-padding: 50px 60px;
+.cSdDRL {
+  padding: 50px 60px;
 }
-.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl{
+.container,
+.container-fluid,
+.container-lg,
+.container-md,
+.container-sm,
+.container-xl,
+.container-xxl {
   margin-left: 0;
   padding-left: 2rem;
 }
-.booking-time-container{
+.booking-time-container {
   display: inline-grid;
   padding: 20px;
   border-radius: 20px;
   grid-template-columns: auto auto auto;
 }
 .react-calendar {
-  border:none !important;
+  border: none !important;
   border-radius: 14px;
   padding: 5px 10px;
   width: 1300px !important;
@@ -70,13 +73,13 @@ padding: 50px 60px;
   box-shadow: 0px 2px 5px 0px rgba(75, 75, 75, 0.25);
   height: 325px;
 }
-.close_button{
-   position:absolute;
-   float: right;
-   right:-10px;
-   top: -14px;
+.close_button {
+  position: absolute;
+  float: right;
+  right: -10px;
+  top: -14px;
 }
-.circle-services{
+.circle-services {
   position: absolute;
   top: 12px;
   right: 20px;
@@ -87,7 +90,7 @@ padding: 50px 60px;
   align-items: center;
   border-radius: 30px;
 }
-.circle-multi{
+.circle-multi {
   width: 60px;
   height: 60px;
   display: flex;
@@ -98,46 +101,56 @@ padding: 50px 60px;
 }
 .react-calendar__tile--now {
   background: #4e7de3 !important;
-  color:white;
+  color: white;
   border-radius: 20px;
 }
-.services-container{
+.services-container {
   background-color: white;
   height: 65px;
   line-height: 42px;
   border-radius: 15px;
   width: 270px;
-  margin:0 auto;
-  margin-bottom:45px;
+  margin: 0 auto;
+  margin-bottom: 45px;
   display: flex;
   -webkit-box-shadow: 0px 2px 7px 0px rgba(162, 162, 162, 0.25);
   box-shadow: 0px 2px 7px 0px rgba(162, 162, 162, 0.25);
-  transition: box-shadow .2s ease-in;
+  transition: box-shadow 0.2s ease-in;
 
-
-    position: relative;
-    top: 0;
-    transition: top ease 0.5s;
+  position: relative;
+  top: 0;
+  transition: top ease 0.5s;
 }
+.servicesOuterBox{
+  display: inline-flex;
+  width: 100vw;
+  flex-flow: wrap;
+  justify-content:center;
+}
+
 .services-container:hover {
   -webkit-box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.25);
   box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.25);
   top: -5px;
-
 }
-.mission{
+.servicesInnerBox{
+  display:inline-flex;
+  width:20vw;
+  min-width:60rem;
+  flex-flow: wrap;
+}
+.mission {
   margin-top: 5rem;
   text-align: center;
   line-height: 2rem;
   width: 60rem;
   font-size: 17px;
 }
-.mission h4{
+.mission h4 {
   padding: 20px 0 10px 0;
   text-align: center;
-
 }
-#whoAreWe{
+#whoAreWe {
   margin-top: 3rem;
 }
 .hover-underline-animation {
@@ -146,7 +159,7 @@ padding: 50px 60px;
 }
 
 .hover-underline-animation:after {
-  content: '';
+  content: "";
   position: absolute;
   width: 100%;
   transform: scaleX(0);
@@ -157,56 +170,83 @@ padding: 50px 60px;
   transform-origin: bottom right;
   transition: transform 0.25s ease-out;
 }
-.react-calendar__navigation{
-margin-bottom: 0;
+.react-calendar__navigation {
+  margin-bottom: 0;
 }
 .hover-underline-animation:hover:after {
   transform: scaleX(1);
   transform-origin: bottom left;
 }
-.title-main{
-  font-size:3.3vw;
-  font-weight:600;
-  letter-spacing: -2px;
-  background-image: linear-gradient(60deg, #0846da, #5ff2fc);
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
-text-align: center;
-padding:60px 0 40px 0;
+.container,
+.container-fluid,
+.container-lg,
+.container-md,
+.container-sm,
+.container-xl,
+.container-xxl {
+  padding-left: 1rem;
 }
-.subTitle-main{
-  font-size:3.3vw;
-  font-weight:600;
+.title-main {
+  font-size: 5vw;
+  font-weight: 600;
   letter-spacing: -2px;
   background-image: linear-gradient(60deg, #0846da, #5ff2fc);
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
-text-align: center;
-padding:60px 0 40px 0;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  padding: 60px 0 40px 0;
+}
+.subTitle-main {
+  font-size: 3vw;
+  font-weight: 600;
+  background-image: linear-gradient(60deg, #0846da, #5ff2fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  padding: 60px 0 40px 0;
+}
+@media screen and (max-width: 600px) {
+  .title-main {
+    font-size: 6.5vw;
+  }
+  .subTitle-main {
+    font-size: 6vw;
+  }
+  .servicesOuterBox{
+    width: 100vw;
+    align-items: center;
+  }
+  .servicesInnerBox{
+    width:40vw;
+    flex-direction: column;
+  }
+  .services-container {
+    font-size: 3.7vw;
+  }
 }
 
-.welcome{
-  font-size:3.0vw;
-  font-weight:600;
+.welcome {
+  font-size: 3vw;
+  font-weight: 600;
   letter-spacing: -2px;
-background: #2974ed;
-background: linear-gradient(to right, #2974ed 0%, #a34ebe 20%);
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
-padding: 30px 0 0px 60px;
+  background: #2974ed;
+  background: linear-gradient(to right, #2974ed 0%, #a34ebe 20%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding: 30px 0 0px 60px;
 }
-.react-calendar__tile--active{
+.react-calendar__tile--active {
   background: #c0b6f5 !important;
   border-radius: 20px;
 }
-.react-calendar__tile{
-padding: 12px 18px !important;
+.react-calendar__tile {
+  padding: 12px 18px !important;
 }
 :root {
   --babyPurple: #f8f3ff;
   --lightPurple: #9241ce;
-  --lavender:#55289f;
-  --lightLavender:#6b1bac;
+  --lavender: #55289f;
+  --lightLavender: #6b1bac;
 
   --lightBlue: #f8faff;
   --blue: #1665c0;
@@ -217,9 +257,9 @@ padding: 12px 18px !important;
   border: 1px solid #1b53ac;
 }
 .bg-light {
-  background-color: white!important;
-  }
-.booking-confirm-container{
+  background-color: white !important;
+}
+.booking-confirm-container {
   background-color: rgb(255, 255, 255);
   text-align: center;
   width: fit-content;
@@ -229,55 +269,56 @@ padding: 12px 18px !important;
   padding: 40px;
 }
 
-.bookingTime{
+.bookingTime {
   font-weight: bold;
-  color:white;
+  color: white;
   margin: 12px 35px;
   padding: 12px 35px;
   border-radius: 10px;
-  background-color:var(--lightLavender);
+  background-color: var(--lightLavender);
 }
-.language{
+.language {
   text-align: right;
   font-weight: 400;
   font-size: 14px;
   margin-top: 6px;
-  float:right;
+  float: right;
 }
-.specialization{
+.specialization {
   font-weight: 400;
   font-size: 14px;
 }
-.prescription{
+.prescription {
   border-top-right-radius: 10px;
-  padding:5px 25px;
+  padding: 5px 25px;
   width: 45rem;
   border-bottom-right-radius: 10px;
-  background-color:var(--lightBlue);
-  border-left:5px solid var(--blue);
+  background-color: var(--lightBlue);
+  border-left: 5px solid var(--blue);
 }
-.prescription-date h4,.prescription-date h6{
+.prescription-date h4,
+.prescription-date h6 {
   color: var(--blue);
   text-align: center;
   margin-right: 22px;
   font-weight: bold;
 }
-.prescription p{
+.prescription p {
   margin-bottom: 12px;
 }
-.vitalTitle{
+.vitalTitle {
   font-weight: 600;
   font-size: 20px;
   margin: 25px 0 4px 0;
   color: var(--blue);
 }
-.css-1kuq5xv-MuiButtonBase-root-MuiIconButton-root{
-margin:5px;
+.css-1kuq5xv-MuiButtonBase-root-MuiIconButton-root {
+  margin: 5px;
 }
-.vitals-container{
-  display:inline-flex;
+.vitals-container {
+  display: inline-flex;
   border-radius: 20px;
-  padding:22px 45px 22px 30px;
+  padding: 22px 45px 22px 30px;
   width: 70vw;
   margin-right: -260px;
   background-color: white;
@@ -286,39 +327,39 @@ margin:5px;
 html {
   scroll-behavior: smooth;
 }
-.profile-card{
+.profile-card {
   border-radius: 20px;
-  width:32rem;
+  width: 32rem;
   height: fit-content;
-  background-color:var(--blue);
+  background-color: var(--blue);
   margin-left: 60px;
-  padding:40px 30px 40px 30px;
+  padding: 40px 30px 40px 30px;
 }
-.profile-card *{
+.profile-card * {
   color: white;
 }
-.parallax{
+.parallax {
   background: white;
   padding: 20;
   position: absolute;
-  top: 50%;
+  margin-top: 20%;
   left: 50%;
-  transform:translate(-50%,-50%);
+  transform: translate(-50%, -50%);
 }
 .shadow {
   -webkit-box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.25);
   box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.25);
 }
-.timeSlotBox{
-  background-color:var(--blue);
+.timeSlotBox {
+  background-color: var(--blue);
   border-radius: 10px;
   padding: 7px 14px;
   color: rgb(255, 255, 255);
-  float:right;
+  float: right;
   right: -30px;
   font-weight: 500;
 }
-.multiBox{
+.multiBox {
   color: white;
   background-color: rgb(180, 112, 216);
   width: 250px;
@@ -330,14 +371,14 @@ html {
   text-align: center;
   font-size: 18px;
 }
-.corner-blob{
-  float:right;
-  height: 120vh; 
+.corner-blob {
+  float: right;
+  height: 120vh;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
-.multiBox p{
+.multiBox p {
   text-align: center;
   margin: 0 auto;
   margin-top: 10px;
@@ -349,32 +390,39 @@ html {
   width: 240px;
   height: 265px;
   background-color: #03627d;
-  -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  -webkit-clip-path: polygon(
+    50% 0%,
+    100% 25%,
+    100% 75%,
+    50% 100%,
+    0% 75%,
+    0% 25%
+  );
   clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
 }
-.smallHex{
+.smallHex {
   width: 160px;
   height: 165px;
 }
-.wave{
-  background-position: center; 
+.wave {
+  background-position: center;
   background-repeat: no-repeat;
-  background-image: url('./img/wave-9.svg');
+  background-image: url("./img/wave-9.svg");
 }
 .rmpNotiBox {
-  background-color:white;
+  background-color: white;
   width: 450px;
   padding: 18px 26px;
   font-weight: 600;
   margin: 10px;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
-  border-left:7px solid var(--blue);
+  border-left: 7px solid var(--blue);
 
   text-align: left;
   font-size: 18px;
 }
 
-.login-button a:hover{
-color:white;
+.login-button a:hover {
+  color: white;
 }

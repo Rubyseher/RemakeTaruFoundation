@@ -10,17 +10,16 @@ function MainPg() {
             <ParallaxContainer />
 
             <div style={{ background: 'var(--babyBlue)', margin: '0 auto' }}>
-
-                <h1 id="services" className="title-main" >Our Services</h1>
-                <div  style={{ display: 'inline-flex',  width: '100%',flexFlow: 'wrap',justifyContent:'center' }}>
-                    <div style={{display: 'inline-flex',width:'60%', minWidth:'60rem', flexFlow: 'wrap'}}>
+                <h1 id="#services" className="subTitle-main" >Our Services</h1>
+                <div className='servicesOuterBox' >
+                    <div  className='servicesInnerBox' >
                     <Services />
                     </div>
                 </div>
             </div>
 
             <div style={{ background: 'white', width: '75rem', margin: '0 auto' }}>
-                <h1  className="title-main" style={{ padding: '60px 0 -40px 0' }} >Our Mission</h1>
+                <h1  className="subTitle-main" >Our Mission</h1>
                 <div style={{ display: 'flex' }}>
                     <img src="/img/front2.png" height={707} width={500} style={{ display: 'inline-flex' ,margin:'0 5rem 0 0'}} className='floating-img' />
 
