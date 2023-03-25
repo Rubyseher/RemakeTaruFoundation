@@ -228,6 +228,7 @@ export const Services = () => {
         )
     )
 }
+
 export const ParallaxContainer = () => {
     return (
         <Parallax bgImage='./img/main2.jpg' strength={500}
