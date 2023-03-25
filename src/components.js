@@ -21,19 +21,19 @@ export const NavbarMain = () => {
     return (
         <Navbar bg="light" variant="light" className='shadow' >
             <Container>
-                <Navbar.Brand href="/" style={{ display: 'flex', alignItems: 'center' }}>
+                <Navbar.Brand href="/" style={{ display: 'flex', alignItems: 'center',width:'15%' ,fontWeight:'bold',color:'var(--blue)'}}>
                     <img
                         alt=""
                         src="/img/healthfocus.svg"
-                        width="7%"
+                        width="40px"
                         className="d-inline-block align-top"
                     />{' '}
                     &nbsp;Health Focus
                 </Navbar.Brand>
-                <Nav className="me-auto">
-                    <Nav.Link href="/">Home</Nav.Link>
-                    <Nav.Link href="/#services">Services</Nav.Link>
-                    <Nav.Link href="/#about">About</Nav.Link>
+                <Nav className="me-auto" style={{fontWeight:'bold'}}>
+                    <Nav.Link href="/" style={{paddingLeft:'20px'}} >Home</Nav.Link>
+                    <Nav.Link href="/#services" style={{paddingLeft:'30px'}}>Services</Nav.Link>
+                    <Nav.Link href="/#about" style={{paddingLeft:'30px'}}>About</Nav.Link>
                 </Nav>
             </Container>
             <div className="login-button">
@@ -224,7 +224,7 @@ export const Services = () => {
 export const ParallaxContainer = () => {
     return (
         <Parallax bgImage='./img/main2.jpg' strength={500}
-            bgImageStyle={{ width: '100%' }} style={{ height: '670px' }}>
+            bgImageStyle={{ width: '100%'}} style={{ height: '670px' }}>
             <div style={{ height: 500 }}>
                 <div className='parallax' style={{ background: 'transparent' }}>
                     <Typist>
