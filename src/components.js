@@ -4,7 +4,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import "./App.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCarrot, faUserDoctor, faBriefcaseMedical, faBacterium, faClock, faCalendarCheck, faCommentMedical, faWeightScale, faLungs, faBrain, faBone, faTooth, faHeadSideCough, faHandDots, faBaby, faPersonPregnant, faHeartPulse } from '@fortawesome/free-solid-svg-icons'
+import { faCarrot, faUserDoctor, faBriefcaseMedical, faBacterium, faClock, faCalendarCheck, faCommentMedical, faWeightScale, faLungs, faBrain, faBone, faTooth, faHeadSideCough, faHandDots, faBaby, faPersonPregnant, faHeartPulse, faStar } from '@fortawesome/free-solid-svg-icons'
 import IconButton from '@mui/material/IconButton';
 import CalendarMonthOutlinedIcon from '@mui/icons-material/CalendarMonthOutlined';
 import CancelRoundedIcon from '@mui/icons-material/CancelRounded';
@@ -21,7 +21,7 @@ export const NavbarMain = () => {
     return (
         <Navbar collapseOnSelect expand="lg" bg="light" variant="light" className='shadow'>
             <Container>
-                <Navbar.Brand href="/" style={{ display: 'flex', alignItems: 'center', fontWeight: 'bold', color: 'var(--blue)'}}>
+                <Navbar.Brand href="/" style={{ display: 'flex', alignItems: 'center', fontWeight: 'bold', color: 'var(--blue)' }}>
                     <img
                         alt=""
                         src="/img/healthfocus.svg"
@@ -256,13 +256,26 @@ export const RmpNotification = (props) => {
 export const DoctorsAvaliable = (props) => {
     return (
         <div className="rmpNotiBox shadow" onClick={props.onClick}>
-            <span className="timeSlotBox shadow" style={{ letterSpacing: '0.1px', fontSize: 14 }}><b>BOOK NOW</b></span>
-            <div style={{ margin: '2px 0 6px 0' }}>{props.name}</div>
-            <div>
+            <div style={{ display: 'flex' }}>
+                <img
+                    alt=""
+                    src="/img/doctor1.jpg"
+                    width="100"
+                    height="100"
+                    style={{ borderRadius: '50%', display: 'inline-flex', marginRight: 40 }}
+                />
+                <div>
+                    <div style={{ margin: '10px 0 4px 0', color: 'var(--blue)' }}>{props.name}</div>
+                    <FontAwesomeIcon icon={faStar} size='l' style={{ marginRight: '7px' }} color="#f8bc45" />
+                    <span style={{ color: 'gray', fontSize: '14px' }}>4.5,&nbsp; &nbsp;+ {props.experience} yrs Experience </span>
+                    <span style={{ color: 'gray', fontSize: '14px' }}>{props.languages}</span>
 
-                <span className="specialization">{props.spec} , {props.experience} yrs</span>
-                <span className="language" >{props.languages}</span>
+                </div>
             </div>
+            {/* <span className="timeSlotBox shadow" style={{ letterSpacing: '0.1px', fontSize: 14 }}><b>BOOK NOW</b></span> */}
+            {/* <div>
+                <span className="specialization">,  yrs</span>
+            </div> */}
         </div>
     )
 }

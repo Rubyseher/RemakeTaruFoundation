@@ -33,26 +33,26 @@ function Booking(props) {
   }, [])
 
   return (
-    <div>
-      <div style={{ display: 'flex', padding: '50px 30px 25px 60px' }}>
+    <div style={{backgroundColor:'var(--lightBlue)'}}>
+      <div style={{ display: 'flex', padding: '60px 30px 25px 60px' ,marginBottom:'70px'}}>
 
-        <div >
+        <div style={{ margin: '0 auto', width: '70vw' }}>
           <h3 style={{ color: 'var(--blue)', marginBottom: '2rem', marginTop: '0.5rem', textAlign: 'center' }}><b>Select Doctor</b></h3>
-          <div style={{ display: 'flex', flexFlow: 'wrap', maxHeight: '230px', margin: '0 auto' }}>
+          <div style={{ display: 'flex', flexFlow: 'wrap', margin: '0 auto' }}>
             {
               Notification && Notification.map((d) => (
-                <DoctorsAvaliable name={d.name} experience={d.experience} languages={d.languages} spec={d.specialization}
-                  onClick={() => { setSelectedDoc(d.name); setTimeSlot(d.time) }} />
+                  <DoctorsAvaliable name={d.name} experience={d.experience} languages={d.languages} spec={d.specialization}
+                    onClick={() => { window.location.replace("/booking#selectTime");setSelectedDoc(d.name); setTimeSlot(d.time) }} />
               ))
             }
           </div>
         </div>
       </div>
 
-      <div style={{ padding: '50px 30px 25px 60px', overflowX: 'hidden', margin: '0 auto' }}>
-        <h3 style={{ color: 'var(--blue)', marginBottom: '3rem', marginTop: '3rem', textAlign: 'center' }}><b>Select Time With {selectedDoc}</b></h3>
+      <div id="selectTime" style={{  padding: '70px 30px 110px 60px', overflowX: 'hidden', margin: '0 auto' ,backgroundColor:'white'}}>
+        <h3  style={{ color: 'var(--blue)', marginBottom: '3rem', marginTop: '0.5rem',textAlign: 'center' }}><b>Select Date & Time With {selectedDoc}</b></h3>
 
-        <div style={{ display: 'flex', width: '70rem', margin: '0 auto' }}>
+        <div  style={{ display: 'flex', width: '70rem', margin: '0 auto' }}>
 
           <div style={{ width: '25rem', marginRight: 50 }}>
             <Calendar onChange={onChange} value={value} class='react-calendar shadow'
@@ -64,8 +64,8 @@ function Booking(props) {
           <div className='booking-time-container'>
             {
               timeSlot && timeSlot.map((i) => (
-                <div className='bookingTime shadow' onClick={() => setSelectedTime(i)} 
-                style={{color:selectedTime==i?"var(--lightBlue)":"var(--blue)",backgroundColor:selectedTime==i?"var(--blue)":"var(--lightBlue)"}}>
+                <div className='bookingTime shadow' onClick={() => setSelectedTime(i)}
+                  style={{ color: selectedTime == i ? "var(--lightBlue)" : "var(--blue)", backgroundColor: selectedTime == i ? "var(--blue)" : "var(--lightBlue)" }}>
                   {i}
                 </div>
               ))
@@ -76,8 +76,9 @@ function Booking(props) {
         </div>
       </div>
 
-      <div style={{ padding: '45px 30px 55px 60px' }}>
-        <h3 style={{ color: 'var(--blue)', marginBottom: '2rem', marginTop: '0.5rem' }}><b>Confirm Booking</b></h3>
+      <div style={{  padding: '70px 30px 110px 60px', }}>
+        <h3 style={{ color: 'var(--blue)', marginBottom: '3rem', marginTop: '0.5rem', textAlign: 'center' }}><b>Confirm Booking</b></h3>
+
         <ConfirmBooking specialization={state.specialization} time={selectedTime} doc={selectedDoc} date={selectedDate} />
       </div>
       <Footer />

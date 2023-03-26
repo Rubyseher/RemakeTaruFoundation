@@ -100,7 +100,7 @@
   margin: 0 auto;
 }
 .react-calendar__tile--now {
-  background: #4e7de3 !important;
+  background: var(--lightBlue) !important;
   color: white;
   border-radius: 20px;
 }
@@ -236,7 +236,7 @@
   padding: 30px 0 0px 60px;
 }
 .react-calendar__tile--active {
-  background: #c0b6f5 !important;
+  background: var(--blue) !important;
   border-radius: 20px;
 }
 .react-calendar__tile {
@@ -415,7 +415,7 @@ html {
   width: 450px;
   padding: 18px 26px;
   font-weight: 600;
-  margin: 10px;
+  margin: 18px;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
   border-left: 7px solid var(--blue);
