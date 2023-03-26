@@ -140,7 +140,7 @@
   flex-flow: wrap;
 }
 .mission {
-  margin-top: 5rem;
+  margin-top: 5vw;
   text-align: center;
   line-height: 2rem;
   width: 60rem;
@@ -206,6 +206,9 @@
   padding: 60px 0 40px 0;
 }
 @media screen and (max-width: 600px) {
+  /* *{
+    
+  } */
   .title-main {
     font-size: 6.5vw;
   }
@@ -220,8 +223,19 @@
     width:40vw;
     flex-direction: column;
   }
+  .mission{
+    width: 80vw;
+    text-align: justify;
+  }
   .services-container {
     font-size: 3.7vw;
+  }
+  .missionContainer{
+    flex-direction: column;
+    overflow-x: hidden;
+  }
+  .missionImg{
+    width: 80vw;
   }
 }
 
