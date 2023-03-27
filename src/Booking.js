@@ -34,10 +34,10 @@ function Booking(props) {
 
   return (
     <div style={{backgroundColor:'var(--lightBlue)'}}>
-      <div style={{ display: 'flex', padding: '60px 30px 25px 60px' ,marginBottom:'70px'}}>
+      <div className='AvaliableDocContainer'>
 
-        <div style={{ margin: '0 auto', width: '70vw' }}>
-          <h3 style={{ color: 'var(--blue)', marginBottom: '2rem', marginTop: '0.5rem', textAlign: 'center' }}><b>Select Doctor</b></h3>
+        <div className='selectDoc'>
+          <h3 className='subTitle-other' style={{ color: 'var(--blue)', marginBottom: '2rem', marginTop: '0.5rem', textAlign: 'center' }}><b>Select Doctor</b></h3>
           <div style={{ display: 'flex', flexFlow: 'wrap', margin: '0 auto' }}>
             {
               Notification && Notification.map((d) => (
@@ -49,18 +49,16 @@ function Booking(props) {
         </div>
       </div>
 
-      <div id="selectTime" style={{  padding: '70px 30px 110px 60px', overflowX: 'hidden', margin: '0 auto' ,backgroundColor:'white'}}>
-        <h3  style={{ color: 'var(--blue)', marginBottom: '3rem', marginTop: '0.5rem',textAlign: 'center' }}><b>Select Date & Time With {selectedDoc}</b></h3>
+      <div id="selectTime" className='selectTime' style={{   overflowX: 'hidden', margin: '0 auto' ,backgroundColor:'white'}}>
+        <h3 className='subTitle-other' style={{ color: 'var(--blue)', marginBottom: '3rem', marginTop: '0.5rem',textAlign: 'center' }}><b>Select Date & Time With {selectedDoc}</b></h3>
 
-        <div  style={{ display: 'flex', width: '70rem', margin: '0 auto' }}>
+        <div  className='selectDateTimeContainer' style={{ display: 'flex', margin: '0 auto' ,flexFlow: 'wrap' }}>
 
-          <div style={{ width: '25rem', marginRight: 50 }}>
+          <div className='mobileCalendar'>
             <Calendar onChange={onChange} value={value} class='react-calendar shadow'
               onClickDay={() => setSelectedDate(new Intl.DateTimeFormat('en-GB', { dateStyle: 'full' }).format(value).toUpperCase())}
             />
           </div>
-
-          {/* <div style={{ borderRadius: '20px', backgroundColor: 'white' }} className='shadow'> */}
           <div className='booking-time-container'>
             {
               timeSlot && timeSlot.map((i) => (
@@ -71,7 +69,6 @@ function Booking(props) {
               ))
             }
           </div>
-          {/* </div> */}
 
         </div>
       </div>

@@ -260,16 +260,13 @@ export const DoctorsAvaliable = (props) => {
                 <img
                     alt=""
                     src="/img/doctor1.jpg"
-                    width="100"
-                    height="100"
-                    style={{ borderRadius: '50%', display: 'inline-flex', marginRight: 40 }}
+                    className="docImage"
                 />
                 <div>
-                    <div style={{ margin: '10px 0 4px 0', color: 'var(--blue)' }}>{props.name}</div>
+                    <div className="selectDocName" style={{  color: 'var(--blue)' }}>{props.name}</div>
                     <FontAwesomeIcon icon={faStar} size='l' style={{ marginRight: '7px' }} color="#f8bc45" />
                     <span style={{ color: 'gray', fontSize: '14px' }}>4.5,&nbsp; &nbsp;+ {props.experience} yrs Experience </span>
                     <span style={{ color: 'gray', fontSize: '14px' }}>{props.languages}</span>
-
                 </div>
             </div>
             {/* <span className="timeSlotBox shadow" style={{ letterSpacing: '0.1px', fontSize: 14 }}><b>BOOK NOW</b></span> */}

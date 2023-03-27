@@ -121,11 +121,11 @@
   top: 0;
   transition: top ease 0.5s;
 }
-.servicesOuterBox{
+.servicesOuterBox {
   display: inline-flex;
   width: 100vw;
   flex-flow: wrap;
-  justify-content:center;
+  justify-content: center;
 }
 
 .services-container:hover {
@@ -133,10 +133,10 @@
   box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.25);
   top: -5px;
 }
-.servicesInnerBox{
-  display:inline-flex;
-  width:20vw;
-  min-width:60rem;
+.servicesInnerBox {
+  display: inline-flex;
+  width: 20vw;
+  min-width: 60rem;
   flex-flow: wrap;
 }
 .mission {
@@ -205,37 +205,99 @@
   text-align: center;
   padding: 60px 0 40px 0;
 }
+.mobileCalendar {
+  display: inline-flex;
+  width: 25rem;
+  margin-right: 50;
+}
+.docImage {
+  width: 8vw;
+  height: 8vw;
+  border-radius: 50%;
+  display: inline-flex;
+  margin-right: 2vw;
+}
+.AvaliableDocContainer {
+  display: flex;
+  padding: 60px 30px 25px 60px;
+  margin-bottom: 70px;
+}
+.selectDoc {
+  margin: 0 auto;
+  width: 70vw;
+}
+.selectDocName {
+  margin: 10px 0px 4px 0px;
+}
 @media screen and (max-width: 600px) {
   /* *{
     
   } */
+  .selectDocName {
+    margin: 12px 0px 6px 0px;
+  }
+  .selectDoc {
+    margin: 0 auto;
+    width: 90vw;
+  }
+  .AvaliableDocContainer {
+    display: flex;
+    padding: 0px;
+    margin-bottom: 70px;
+  }
   .title-main {
     font-size: 6.5vw;
   }
-  .subTitle-main {
+  .subTitle-main,
+  .subTitle-other {
     font-size: 6vw;
   }
-  .servicesOuterBox{
+  .servicesOuterBox {
     width: 100vw;
     align-items: center;
   }
-  .servicesInnerBox{
-    width:40vw;
+  .servicesInnerBox {
+    width: 40vw;
     flex-direction: column;
   }
-  .mission{
+  .selectTime{
+    padding: 70px 0px 110px 0px;
+  }
+  .docImage {
+    width: 26vw;
+    height: 26vw;
+    border-radius: 50%;
+    display: inline-flex;
+    margin-right: 5vw;
+  }
+  .mobileCalendar {
+    width: 20rem;
+    margin: 0 auto;
+  }
+  .mission {
     width: 80vw;
     text-align: justify;
   }
   .services-container {
     font-size: 3.7vw;
   }
-  .missionContainer{
+  .missionContainer {
     flex-direction: column;
     overflow-x: hidden;
   }
-  .missionImg{
+
+  .missionImg {
     width: 80vw;
+  }
+  .booking-time-container {
+    padding: 20px 0px 0px 0px;
+    border-radius: 20px;
+    grid-template-columns: auto auto;
+margin-left: -60px;
+  }
+  .bookingTime {
+    padding: 12px 0px;
+    min-width: 141px;
   }
 }
 
@@ -249,12 +311,18 @@
   -webkit-text-fill-color: transparent;
   padding: 30px 0 0px 60px;
 }
+.selectDateTimeContainer{
+  width: 80vw;
+}
 .react-calendar__tile--active {
   background: var(--blue) !important;
   border-radius: 20px;
 }
 .react-calendar__tile {
   padding: 12px 18px !important;
+}
+.selectTime{
+  padding: 70px 30px 110px 60px;
 }
 :root {
   --babyPurple: #f8f3ff;
@@ -285,7 +353,7 @@
 
 .bookingTime {
   font-weight: bold;
-  color:var(--blue);
+  color: var(--blue);
   margin: 12px 35px;
   padding: 12px 35px;
   border-radius: 10px;
@@ -433,7 +501,6 @@ html {
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
   border-left: 7px solid var(--blue);
-
   text-align: left;
   font-size: 18px;
 }
