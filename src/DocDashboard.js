@@ -14,10 +14,11 @@ function DocDashboard() {
     const [shortDate, setShortDate] = useState((new Intl.DateTimeFormat('en-GB', { dateStyle: 'full' }).format(value).toUpperCase().toString()));
 
     const [PatientsList, setPatientsList] = React.useState([])
+    // const [docName, setDocName] = React.useState()
     const [post, setPost] = React.useState()
 
     const data = useLocation();
-    console.log(data.state.data.fullName);
+    // setDocName(data.state.data.fullName);
     async function fetchData() {
         const db = await axios.get('/doc')
         console.log(db.data);
@@ -42,17 +43,17 @@ function DocDashboard() {
 
     return (
         <div style={{ backgroundColor: ' var(--lightBlue)' }}>
-            <h2 className='title-main'> Schedule</h2>
+            <h3 style={{ color: 'var(--blue)', padding: '45px 30px 15px 60px' }}><b>Welcome {data.state.data.fullName}</b></h3>
 
-            <div style={{ display: 'flex', margin: '0 auto',width:'88rem' }}>
+            <div style={{ display: 'flex', margin: '0 auto',width:'70vw' }}>
                 
-                <div style={{ width: '25rem',margin:'0 auto' }}>
+                <div style={{ width: '25rem' }}>
                     <Calendar onChange={onChange} value={value} class='react-calendar'
                         onClickDay={() => setShortDate(new Intl.DateTimeFormat('en-GB', { dateStyle: 'full' }).format(value).toUpperCase().toString())}
                     />
                 </div>
 
-                <div style={{ marginLeft:'2rem',display: 'inline-flex', flexFlow: 'wrap', height: '430px', width: '37rem', overflowY: 'scroll', overflowX: 'hidden' }}>
+                <div style={{ marginLeft:'2rem',display: 'inline-flex', flexFlow: 'wrap', height: '300px', width:'600px',overflowY: 'scroll', overflowX: 'hidden' }}>
                     {
                         PatientsList && PatientsList.map((d) => (
                             shortDate && d.date == shortDate && d.doc == data.state.data.fullName ?
@@ -63,12 +64,12 @@ function DocDashboard() {
                                         <div class="back"> <PatientsTodayBack onClick={() => handleClick(d._id)} /></div>
                                     </div>
                                 </label>
-                                : <br />
+                                : <div></div>
                         ))
                     }
 
                 </div>
-                <img src='./img/Hospital_wheelchair-2.gif' height='350' style={{ float: 'right', marginTop: '-70px' }} />
+                {/* <img src='./img/Hospital_wheelchair-2.gif' height='350' style={{ float: 'right', marginTop: '-70px' }} /> */}
             </div>
             {/* <div style={{ display: 'flex', justifyContent: 'center', backgroundColor: 'var(--babyPurple)' }}>
                 <MultipurposeButton color={'#6d45ae'} bg={'#eae1fa'} text={'Publish Free Slots'} />
