@@ -16,6 +16,7 @@ function Booking(props) {
   const { state } = useLocation();
   const { id, color } = state;
   useEffect(() => {
+    console.log(selectedDate);
     async function fetchData() {
       const db = await axios.get('/booking')
 
@@ -29,7 +30,7 @@ function Booking(props) {
       setNotification((oldState) => newAr)
     }
     fetchData();
-    // console.log(window.localStorage.getItem("token") );
+    console.log(window.localStorage.getItem("token") );
   }, [])
 
   return (
@@ -41,7 +42,7 @@ function Booking(props) {
           <div style={{ display: 'flex', flexFlow: 'wrap', margin: '0 auto' }}>
             {
               Notification && Notification.map((d) => (
-                  <DoctorsAvaliable name={d.name} experience={d.experience} languages={d.languages} spec={d.specialization}
+                  <DoctorsAvaliable image={d.image} name={d.name} experience={d.experience} languages={d.languages} spec={d.specialization}
                     onClick={() => { window.location.replace("/booking#selectTime");setSelectedDoc(d.name); setTimeSlot(d.time) }} />
               ))
             }

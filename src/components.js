@@ -15,6 +15,7 @@ import { Parallax } from 'react-parallax';
 import LoginIcon from '@mui/icons-material/Login';
 import { useNavigate } from "react-router-dom";
 import axios from './axios.js';
+
 import Typist from 'react-typist-component';
 
 export const NavbarMain = () => {
@@ -106,8 +107,12 @@ export const ConfirmBooking = (props) => {
     var link = "";
 
     async function handleLogin() {
-        if (window.localStorage.getItem('signedIN') === null)
+        if (window.localStorage.getItem('signedIN') === null) {
+
+            alert("Please login first");
             navigate('/login')
+        }
+
         else {
             meetLink()
             const res = await axios.post('/booking', {
@@ -259,11 +264,11 @@ export const DoctorsAvaliable = (props) => {
             <div style={{ display: 'flex' }}>
                 <img
                     alt=""
-                    src="/img/doctor1.jpg"
+                    src={props.image}
                     className="docImage"
                 />
                 <div>
-                    <div className="selectDocName" style={{  color: 'var(--blue)' }}>{props.name}</div>
+                    <div className="selectDocName" style={{ color: 'var(--blue)' }}>{props.name}</div>
                     <FontAwesomeIcon icon={faStar} size='l' style={{ marginRight: '7px' }} color="#f8bc45" />
                     <span style={{ color: 'gray', fontSize: '14px' }}>4.5,&nbsp; &nbsp;+ {props.experience} yrs Experience </span>
                     <span style={{ color: 'gray', fontSize: '14px' }}>{props.languages}</span>

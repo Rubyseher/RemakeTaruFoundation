@@ -37,7 +37,7 @@ function PatientDashboard() {
   }, [])
 
   return (
-    <div style={{ backgroundColor: 'var(--lightBlue)', margin: '0 auto' }}>
+    <div style={{margin: '0 auto' }}>
       <h3 style={{ color: 'var(--blue)', padding: '45px 30px 15px 60px' }}><b>Welcome {userData.fullName}</b></h3>
 
       <div style={{ display: 'flex', margin: '0 auto', width: '92rem', position: 'relative' }}>
@@ -53,9 +53,9 @@ function PatientDashboard() {
           </span>
         </div>
 
-        <div style={{ position: 'absolute', right: -200, zIndex: 1 }} >
+        {/* <div style={{ position: 'absolute', right: -200, zIndex: 1 }} >
           <img src='./img/profile.svg' height={500} />
-        </div>
+        </div> */}
         <div style={{ width: '90rem', zIndex: 1000 }}>
           {
             Array.isArray(userData.appointments) && userData.appointments.length ?

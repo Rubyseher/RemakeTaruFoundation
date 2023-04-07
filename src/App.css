@@ -411,7 +411,7 @@ html {
 }
 .profile-card {
   border-radius: 20px;
-  width: 32rem;
+  width: 24vw;
   height: fit-content;
   background-color: var(--blue);
   margin-left: 60px;
